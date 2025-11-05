@@ -50,8 +50,9 @@ html {
 }
 
 .brand-logo {
-    height: 100px;
-    margin-right: 15px;
+    height: 70px;
+    padding-left: 29px;
+    padding-right: 35px;
 }
 
 .navbar-brand {
@@ -2176,3 +2177,4 @@ html {
         max-width: 100% !important;
     }
 }
+
