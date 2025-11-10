@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+Note<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -62,12 +62,14 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-          <li class="nav-item"><a class="nav-link" href="#features">Why Us</a></li>
-          <li class="nav-item"><a class="nav-link" href="#booking">Book Now</a></li>
-          <li class="nav-item"><a class="nav-link btn-vendor" href="#vendor">Vendor Registration</a></li>
-        </ul>
+    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+    <li class="nav-item"><a class="nav-link" href="destinations.html">Destinations</a></li>
+    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+    <li class="nav-item"><a class="nav-link" href="vendor.html">Vendor Registration</a></li>
+    <li class="nav-item"><a class="nav-link btn btn-primary text-white px-3 ms-2" href="#booking">Book Now</a></li>
+  </ul>
+
       </div>
     </div>
   </nav>
@@ -196,12 +198,22 @@
 
               <!-- Vehicle Selection -->
               <div id="vehicleTariffSection" class="vehicle-tariff-section" style="display:none;">
-                <h5 class="text-center mb-3">Choose Your Vehicle</h5>
-                <div id="vehicleTariffGrid" class="vehicle-tariff-grid"></div>
-                <div class="extra-charges-note mt-3 text-center small-muted">
-                  <i class="fas fa-info-circle"></i> Note: Tolls, parking & permits are extra
-                </div>
-              </div>
+    <h5 class="text-center mb-3">Choose Your Vehicle</h5>
+
+    <div id="vehicleTariffGrid" class="vehicle-tariff-grid"></div>
+
+    <!-- Traveller info (shown only for local trips) -->
+    <div id="travellerNote" class="text-center small-muted mt-3" style="display:none;">
+      <i class="fas fa-info-circle text-primary"></i>
+      For <b>Tempo Traveller</b> bookings, kindly call us at
+      <a href="tel:+919500530043" class="text-decoration-none fw-semibold">95005 30043</a>.
+    </div>
+
+    <div class="extra-charges-note mt-3 text-center small-muted">
+      <i class="fas fa-info-circle"></i> Note: Tolls, parking & permits are extra
+    </div>
+  </div>
+
 
               <!-- Customer Info Page -->
               <div id="customerInfoPage" style="display:none;">
@@ -242,10 +254,24 @@
                 </div>
 
                 <!-- Fare Breakdown -->
-                <div id="fareBreakdownBox" class="border rounded p-3 mb-3">
-                  <h6 class="mb-2">Fare Breakdown</h6>
-                  <pre id="fareBreakdownText" class="mb-0 small-muted"></pre>
-                </div>
+    <div id="fareBreakdownBox" class="border rounded p-3 mb-3">
+      <h6 class="mb-2">Note</h6>
+      <pre id="fareBreakdownText" class="mb-0 small-muted"></pre>
+    </div>
+
+    <!-- Terms & Conditions -->
+    <div class="border rounded p-3 mb-3 bg-light small-muted">
+      <h6 class="mb-2"><i class="fas fa-info-circle text-primary"></i> Terms & Conditions</h6>
+      <ul class="mb-0 ps-3">
+        <li>KM & time counted from office to office</li>
+        <li>Note starting KM reading before trip</li>
+        <li>A/C off in hills or while idle</li>
+        <li>₹400 night allowance (9 PM – 6 AM)</li>
+        <li>Ensure your stay has nearby parking facilities</li>
+        <li>Vomit cleaning charges apply if vehicle is soiled</li>
+      </ul>
+    </div>
+
 
                 <!-- Add-ons -->
                 <h6 class="mb-2">Add Extra Services (Optional)</h6>
@@ -388,6 +414,8 @@
   }
 
   /* ====== Trip type switcher ====== */
+  document.getElementById('vehicleTariffSection').style.display = 'none';
+
   document.querySelectorAll('.trip-type-btn-horizontal').forEach(btn=>{
     btn.addEventListener('click', function(){
       document.querySelectorAll('.trip-type-btn-horizontal').forEach(b=>b.classList.remove('active'));
@@ -462,7 +490,9 @@ async function calculateAndDisplayAllPrices(){
     if (currentTripType === 'oneway') {
       const from = document.getElementById('onewayPickup').value.trim();
       const to = document.getElementById('onewayDrop').value.trim();
-      if (!from || !to) { spinner.style.display='none'; return; }
+      const pax = parseInt(document.getElementById('onewayPassengers').value || 0);
+      if (!from || !to || pax <= 0) { spinner.style.display='none'; return; }
+
 
       // forward distance
       const res1 = await calculateDistance([from],[to]);
@@ -608,7 +638,7 @@ async function calculateAndDisplayAllPrices(){
       const days = lastComputedDays || 1;
       const distance = lastComputedDistance || 0;
       const baseTotal = Math.round((dayRent * days) + (perKm * distance));
-      const breakdown = `Day Rent: ₹${dayRent}\nNo. of Days: ${days}\nDistance: ${distance} km\nPer KM: ₹${perKm}\nTotal (Base Fare): ₹${baseTotal}`;
+      const breakdown = `No. of Days: ${days}\nKilometer limit: ${distance} km\nExtra Day Charge: ₹${dayRent}\nExtra km Charge: ₹${perKm} /km\nTotal (Base Fare): ₹${baseTotal}`;
       document.getElementById('fareBreakdownText').textContent = breakdown;
       lastBasePrice = baseTotal;
     }
@@ -660,7 +690,7 @@ async function calculateAndDisplayAllPrices(){
     const pax = parseInt(document.querySelector(`#${currentTripType}Passengers`) ? document.querySelector(`#${currentTripType}Passengers`).value : 0, 10) || 0;
 
     Object.keys(data).forEach(v => {
-      if (pax > 8 && v !== 'Traveller') return;
+      if (pax > 7 && v !== 'Traveller') return;
       const p = data[v];
       let total = 0;
       if (currentTripType === 'oneway') {
@@ -695,25 +725,34 @@ async function calculateAndDisplayAllPrices(){
     grid.innerHTML = '';
     const pax = parseInt(document.getElementById('localPassengers').value || 0, 10) || 0;
 
+    // 🟢 Loop through vehicles — exclude Traveller
     Object.keys(data).forEach(v => {
-      if (pax > 8 && v !== 'Traveller') return;
+      if (v.toLowerCase().includes('traveller')) return; // ❌ Skip Traveller completely
+
       const p = data[v];
       const base = p.packageRate || 0;
       const card = document.createElement('div');
       card.className = 'vehicle-tariff-card';
       card.innerHTML = `
         <div style="min-height:56px;">
-          <div class="vehicle-icon-circle-horizontal"><img src="${p.image}" alt="${v}" onerror="this.style.display='none'"></div>
+          <div class="vehicle-icon-circle-horizontal">
+            <img src="${p.image}" alt="${v}" onerror="this.style.display='none'">
+          </div>
           <div class="vehicle-name-horizontal">${v}</div>
-          <div class="vehicle-category">${p.category||''}</div>
+          <div class="vehicle-category">${p.category || ''}</div>
         </div>
         <div class="tariff-price">Rs. ${base}</div>
       `;
       grid.appendChild(card);
       attachVehicleClickHandler(card, base);
     });
+
+    // 🟢 Show Traveller note only in Local trip mode
+    document.getElementById('travellerNote').style.display = 'block';
+
     document.getElementById('vehicleTariffSection').style.display = 'block';
   }
+
 
   /* ====== Input listeners to trigger calculation ====== */
   document.querySelectorAll('#onewayPassengers, #roundtripPassengers, #localPassengers').forEach(inp=>{
@@ -760,6 +799,25 @@ async function calculateAndDisplayAllPrices(){
     const phone = document.getElementById('customerPhone').value.trim();
     if (!name || !phone) { alert('Please enter name and phone.'); return; }
 
+    // ✅ Ensure pickup time is at least 1 hour from now
+    let pickupTime = null;
+    if (currentTripType === 'oneway') {
+      pickupTime = new Date(document.getElementById('onewayDateTime').value);
+    } else if (currentTripType === 'roundtrip') {
+      pickupTime = new Date(document.getElementById('roundtripPickupDateTime').value);
+    } else if (currentTripType === 'local') {
+      pickupTime = new Date(document.getElementById('localDateTime').value);
+    }
+
+    if (pickupTime && !isNaN(pickupTime)) {
+      const now = new Date();
+      const diffMinutes = (pickupTime - now) / (1000 * 60);
+      if (diffMinutes < 60) {
+        alert('⚠️ Please book at least 1 hour before pickup time.');
+        return;
+      }
+    }
+
     const totalText = document.getElementById('totalFare').textContent.replace('₹','').trim();
     const addons = [];
     document.querySelectorAll('.addon-checkbox:checked').forEach(chk=>{
@@ -769,7 +827,7 @@ async function calculateAndDisplayAllPrices(){
 
     const tripDetails = stripHtml(document.getElementById('summaryTripDetails').innerHTML);
     const breakdown = document.getElementById('fareBreakdownText').textContent;
-    const msg = `🚗 New Booking - Prayaan Cabs\n\nName: ${name}\nPhone: ${phone}\nTrip Type: ${currentTripType.toUpperCase()}\nVehicle: ${selectedVehicle}\nBase Fare: ₹${lastBasePrice}\nTotal Fare: ₹${totalText}${addonText}\n\nTrip Details:\n${tripDetails}\n\nFare Breakdown:\n${breakdown}\n\nNote: Tolls, parking & permits are extra.`;
+    const msg = `🚗 New Booking - Prayaan Cabs\n\nName: ${name}\nPhone: ${phone}\nTrip Type: ${currentTripType.toUpperCase()}\nVehicle: ${selectedVehicle}\nBase Fare: ₹${lastBasePrice}\nTotal Fare: ₹${totalText}${addonText}\n\nTrip Details:\n${tripDetails}\n\nAdditional Charges:\n${breakdown}\n\nNote: Tolls, parking & permits are extra.`;
 
     const waUrl = `https://wa.me/919500530043?text=${encodeURIComponent(msg)}`;
     window.open(waUrl, '_blank');
@@ -783,28 +841,38 @@ async function calculateAndDisplayAllPrices(){
     const now = new Date();
     now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
     document.querySelectorAll('input[type="datetime-local"]').forEach(i => i.min = now.toISOString().slice(0,16));
+    // Trigger recalculation only for the currently active form
+    function triggerRecalculation() {
+      if (currentTripType === 'oneway') {
+        const from = document.getElementById('onewayPickup').value.trim();
+        const to = document.getElementById('onewayDrop').value.trim();
+        const pax = parseInt(document.getElementById('onewayPassengers').value || 0);
+        if (from && to && pax > 0) calculateAndDisplayAllPrices();
+      }
+      else if (currentTripType === 'roundtrip') {
+        const from = document.getElementById('roundtripPickup').value.trim();
+        const to = document.getElementById('roundtripDrop').value.trim();
+        const pickup = document.getElementById('roundtripPickupDateTime').value;
+        const ret = document.getElementById('roundtripReturnDateTime').value;
+        const pax = parseInt(document.getElementById('roundtripPassengers').value || 0);
+        if (from && to && pickup && ret && pax > 0) calculateAndDisplayAllPrices();
+      }
+      else if (currentTripType === 'local') {
+        const pickup = document.getElementById('localPickup').value.trim();
+        const dt = document.getElementById('localDateTime').value;
+        const pax = parseInt(document.getElementById('localPassengers').value || 0);
+        if (pickup && dt && pax > 0) calculateAndDisplayAllPrices();
+      }
+    }
 
-    const ids = ['onewayPickup','onewayDrop','onewayDateTime','onewayPassengers',
-      'roundtripPickup','roundtripDrop','roundtripPickupDateTime','roundtripReturnDateTime','roundtripPassengers',
-      'localPickup','localDateTime','localPassengers'];
-
-    ids.forEach(id => {
+    ['onewayPickup','onewayDrop','onewayDateTime','onewayPassengers',
+     'roundtripPickup','roundtripDrop','roundtripPickupDateTime','roundtripReturnDateTime','roundtripPassengers',
+     'localPickup','localDateTime','localPassengers']
+    .forEach(id=>{
       const el = document.getElementById(id);
-      if (!el) return;
-      el.addEventListener('change', ()=>{
-        if (currentTripType === 'oneway') {
-          if (document.getElementById('onewayPickup').value && document.getElementById('onewayDrop').value)
-            calculateAndDisplayAllPrices();
-        } else if (currentTripType === 'roundtrip') {
-          if (document.getElementById('roundtripPickup').value && document.getElementById('roundtripDrop').value
-              && document.getElementById('roundtripPickupDateTime').value && document.getElementById('roundtripReturnDateTime').value)
-            calculateAndDisplayAllPrices();
-        } else {
-          if (document.getElementById('localPickup').value && document.getElementById('localDateTime').value)
-            calculateAndDisplayAllPrices();
-        }
-      });
+      if (el) el.addEventListener('change', triggerRecalculation);
     });
+
   });
   </script>
 </body>
