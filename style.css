@@ -1547,3 +1547,62 @@ textarea:focus {
         transition-duration: 0.01ms !important;
     }
 }
+/* Add ups */
+
+/* ===== Premium Blue Animated Background (Floating Lines + Boxes) ===== */
+.booking-section {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #002b5b 0%, #007bff 100%);
+}
+
+/* Floating glowing boxes */
+.booking-section::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background-image:
+    radial-gradient(rgba(255,255,255,0.2) 2px, transparent 2px),
+    radial-gradient(rgba(255,255,255,0.15) 2px, transparent 2px),
+    radial-gradient(rgba(255,255,255,0.1) 2px, transparent 2px);
+  background-size: 120px 120px, 180px 180px, 240px 240px;
+  animation: floatBoxes 35s linear infinite;
+  opacity: 0.6;
+  z-index: 0;
+}
+
+/* Moving diagonal light lines */
+.booking-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(255,255,255,0.08),
+    rgba(255,255,255,0.08) 1px,
+    transparent 1px,
+    transparent 20px
+  );
+  animation: moveLines 50s linear infinite;
+  opacity: 0.25;
+  z-index: 0;
+}
+
+@keyframes floatBoxes {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(120px, 120px) rotate(360deg); }
+}
+
+@keyframes moveLines {
+  0% { background-position: 0 0; }
+  100% { background-position: 600px 600px; }
+}
+
+/* Keep form content above background */
+.booking-section .container {
+  position: relative;
+  z-index: 2;
+}
