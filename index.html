@@ -118,6 +118,12 @@
                     <label class="form-label"><i class="fas fa-users"></i> Passengers</label>
                     <input type="number" class="form-control" id="onewayPassengers" placeholder="Number of people" min="1" max="50" required>
                   </div>
+                  <div class="col-12 text-center mt-3">
+  <button type="button" class="btn btn-primary" id="onewayCheckBtn">
+    <i class="fas fa-calculator"></i> Check Prices
+  </button>
+</div>
+
                 </div>
               </div>
 
@@ -150,6 +156,12 @@
                     <label class="form-label"><i class="fas fa-users"></i> Passengers</label>
                     <input type="number" class="form-control" id="roundtripPassengers" min="1" max="50" required>
                   </div>
+                  <div class="col-12 text-center mt-3">
+  <button type="button" class="btn btn-primary" id="roundtripCheckBtn">
+    <i class="fas fa-calculator"></i> Check Prices
+  </button>
+</div>
+
                 </div>
               </div>
 
@@ -187,6 +199,12 @@
                     <label class="form-label"><i class="fas fa-users"></i> Passengers</label>
                     <input type="number" class="form-control" id="localPassengers" min="1" max="50" required>
                   </div>
+                  <div class="col-12 text-center mt-3">
+  <button type="button" class="btn btn-primary" id="localCheckBtn">
+    <i class="fas fa-calculator"></i> Check Prices
+  </button>
+</div>
+
                 </div>
               </div>
 
@@ -872,6 +890,42 @@ async function calculateAndDisplayAllPrices(){
     });
 
   });
+  /* ====== "Check Prices" button handlers ====== */
+document.getElementById('onewayCheckBtn').addEventListener('click', () => {
+  const from = document.getElementById('onewayPickup').value.trim();
+  const to = document.getElementById('onewayDrop').value.trim();
+  const pax = parseInt(document.getElementById('onewayPassengers').value || 0);
+  if (!from || !to || pax <= 0) {
+    alert('Please enter From, To and Passenger details.');
+    return;
+  }
+  calculateAndDisplayAllPrices();
+});
+
+document.getElementById('roundtripCheckBtn').addEventListener('click', () => {
+  const from = document.getElementById('roundtripPickup').value.trim();
+  const to = document.getElementById('roundtripDrop').value.trim();
+  const pickup = document.getElementById('roundtripPickupDateTime').value;
+  const ret = document.getElementById('roundtripReturnDateTime').value;
+  const pax = parseInt(document.getElementById('roundtripPassengers').value || 0);
+  if (!from || !to || !pickup || !ret || pax <= 0) {
+    alert('Please enter all details before checking prices.');
+    return;
+  }
+  calculateAndDisplayAllPrices();
+});
+
+document.getElementById('localCheckBtn').addEventListener('click', () => {
+  const pickup = document.getElementById('localPickup').value.trim();
+  const dt = document.getElementById('localDateTime').value;
+  const pax = parseInt(document.getElementById('localPassengers').value || 0);
+  if (!pickup || !dt || pax <= 0) {
+    alert('Please enter Pickup, Date & Passenger details.');
+    return;
+  }
+  calculateAndDisplayAllPrices();
+});
+
   </script>
 </body>
 </html>
