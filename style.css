@@ -1606,3 +1606,7 @@ textarea:focus {
   position: relative;
   z-index: 2;
 }
+#onewayCheckBtn, #roundtripCheckBtn, #localCheckBtn {
+  min-width: 180px;
+  font-weight: 600;
+}
