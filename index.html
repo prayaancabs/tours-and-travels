@@ -488,31 +488,23 @@ async function calculateAndDisplayAllPrices(){
     }
 
     if (currentTripType === 'oneway') {
-      const from = document.getElementById('onewayPickup').value.trim();
-      const to = document.getElementById('onewayDrop').value.trim();
-      const pax = parseInt(document.getElementById('onewayPassengers').value || 0);
-      if (!from || !to || pax <= 0) { spinner.style.display='none'; return; }
+    const from = document.getElementById('onewayPickup').value.trim();
+    const to = document.getElementById('onewayDrop').value.trim();
+    const pax = parseInt(document.getElementById('onewayPassengers').value || 0);
+    if (!from || !to || pax <= 0) { spinner.style.display = 'none'; return; }
 
+    // ✅ Only forward distance (no return km)
+    const res = await calculateDistance([from], [to]);
+    const forwardDistance = (res.rows[0].elements[0].distance.value || 0) / 1000;
 
-      // forward distance
-      const res1 = await calculateDistance([from],[to]);
-      let forwardDistance = (res1.rows[0].elements[0].distance.value || 0) / 1000;
+    totalDistance = forwardDistance;
+    lastComputedDistance = Math.round(totalDistance);
+    lastComputedDays = 1;
 
-      // add return distance only if pickup is Coimbatore
-      let returnDistance = 0;
-      if (isCoimbatoreLocation(from)) {
-        const coimbatore = "Coimbatore, Tamil Nadu";
-        try {
-          const res2 = await calculateDistance([to],[coimbatore]);
-          returnDistance = (res2.rows[0].elements[0].distance.value || 0) / 1000;
-        } catch(e){}
-      }
+    // display based on forward distance only
+    displayAllVehiclePrices(totalDistance, 1);
+  }
 
-      totalDistance = forwardDistance + returnDistance;
-      lastComputedDistance = Math.round(totalDistance);
-      lastComputedDays = 1;
-      displayAllVehiclePrices(totalDistance, 1);
-    }
 
     else if (currentTripType === 'roundtrip') {
       const from = document.getElementById('roundtripPickup').value.trim();
@@ -607,20 +599,26 @@ async function calculateAndDisplayAllPrices(){
 
     let summaryHTML = '';
     if (currentTripType === 'oneway') {
-      const from = document.getElementById('onewayPickup').value;
-      const to = document.getElementById('onewayDrop').value;
-      const dt = new Date(document.getElementById('onewayDateTime').value).toLocaleString('en-IN');
-      const pax = document.getElementById('onewayPassengers').value;
-      summaryHTML = `<b>From:</b> ${from}<br><b>To:</b> ${to}<br><b>Date & Time:</b> ${dt}<br><b>Passengers:</b> ${pax}`;
-      // breakdown
-      const cfg = vehiclePricing.oneway[selectedVehicle] || {};
-      const perKm = cfg.perKm || 0;
-      const distance = lastComputedDistance || 0;
-      const totalComputed = Math.round(perKm * distance);
-      const breakdown = `Per KM: ₹${perKm}\nDistance: ${distance} km\nBase Fare: ₹${totalComputed}`;
-      document.getElementById('fareBreakdownText').textContent = breakdown;
-      lastBasePrice = totalComputed;
-    }
+  const from = document.getElementById('onewayPickup').value;
+  const to = document.getElementById('onewayDrop').value;
+  const dt = new Date(document.getElementById('onewayDateTime').value).toLocaleString('en-IN');
+  const pax = document.getElementById('onewayPassengers').value;
+
+  summaryHTML = `<b>From:</b> ${from}<br><b>To:</b> ${to}<br><b>Date & Time:</b> ${dt}<br><b>Passengers:</b> ${pax}`;
+
+  // ✅ calculate only one-way fare
+  const cfg = vehiclePricing.oneway[selectedVehicle] || {};
+  const perKm = cfg.perKm || 0;
+  const distance = lastComputedDistance || 0;
+  const totalComputed = Math.round(perKm * distance);
+  lastBasePrice = totalComputed;
+
+  // ✅ Hide the fare breakdown box and "tolls/parking" note for one-way
+  document.getElementById('fareBreakdownBox').style.display = 'none';
+  const tollNote = document.querySelector('.text-center.small-muted.mb-3');
+  if (tollNote) tollNote.style.display = 'none';
+}
+
     else if (currentTripType === 'roundtrip') {
       const from = document.getElementById('roundtripPickup').value;
       const to = document.getElementById('roundtripDrop').value;
@@ -877,5 +875,3 @@ async function calculateAndDisplayAllPrices(){
   </script>
 </body>
 </html>
-
-
