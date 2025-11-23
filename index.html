@@ -9,6 +9,9 @@
   <link rel="stylesheet" href="style.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
   <style>
     /* Compact Vehicle Grid */
     .vehicle-tariff-grid {
@@ -48,24 +51,47 @@
     .summary-box { background: #f8f9fa; }
     .small-muted { color: #6c757d; font-size: 0.95rem; }
     pre#fareBreakdownText { margin:0; font-family: inherit; white-space: pre-wrap; }
-  </style>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17734250014">
-</script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'AW-17734250014');
-</script>
+    .floating-contact {
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      z-index: 999;
+    }
+    .call-btn, .whatsapp-btn {
+      width: 48px;
+      height: 48px;
+    }
+  </style>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17734250014"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-17734250014');
+  </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17734014377"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag2(){dataLayer.push(arguments);}
+    gtag2('js', new Date());
+    gtag2('config', 'AW-17734014377');
+  </script>
+  <!-- Event snippet for Phone call lead conversion page -->
+  <script>
+    gtag('event', 'conversion', {'send_to': 'AW-17734014377/tewdCKjJosIbEKmrnohC'});
+  </script>
 </head>
 <body>
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
     <div class="container">
       <a class="navbar-brand" href="#home">
-        <img src="images/logo.png" alt="Prayaan Logo" class="brand-logo" onerror="this.style.display='none'">
+        <img src="https://prayaancabs.com/images/Logo.png" alt="Prayaan Logo" class="brand-logo" onerror="this.style.display='none'">
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
@@ -284,16 +310,9 @@
                 </div>
 
                 <!-- Terms & Conditions -->
-                <div class="border rounded p-3 mb-3 bg-light small-muted">
+                <div id="termsBox" class="border rounded p-3 mb-3 bg-light small-muted">
                   <h6 class="mb-2"><i class="fas fa-info-circle text-primary"></i> Terms & Conditions</h6>
-                  <ul class="mb-0 ps-3">
-                    <li>KM & time counted from office to office</li>
-                    <li>Note starting KM reading before trip</li>
-                    <li>A/C off in hills or while idle</li>
-                    <li>₹400 night allowance (9 PM – 6 AM)</li>
-                    <li>Ensure your stay has nearby parking facilities</li>
-                    <li>Vomit cleaning charges apply if vehicle is soiled</li>
-                  </ul>
+                  <ul id="termsList" class="mb-0 ps-3"></ul>
                 </div>
 
                 <!-- Add-ons -->
@@ -303,7 +322,6 @@
                     <input class="form-check-input addon-checkbox" type="checkbox" id="addonLuggage" data-price="149">
                     <label class="form-check-label" for="addonLuggage">Cab with Luggage Carrier (+ ₹149)</label>
                   </div>
-                  <!-- Removed Driver Language addon as requested -->
                   <div class="form-check">
                     <input class="form-check-input addon-checkbox" type="checkbox" id="addonNewCar" data-price="249">
                     <label class="form-check-label" for="addonNewCar">New Car Promise (2022-2025 Model) (+ ₹249)</label>
@@ -316,9 +334,36 @@
 
                 <div class="text-center small-muted mb-3">Tolls, Parking & Permits are extra</div>
 
-                <button type="button" id="finalProceedBtn" class="btn btn-success btn-lg w-100">
-                  <i class="fab fa-whatsapp"></i> Proceed to WhatsApp
-                </button>
+                <!-- TWO MAIN BUTTONS: WHATSAPP + PAY ONLINE -->
+                <div class="d-flex flex-column flex-md-row gap-2 mb-3">
+                  <button type="button" id="finalProceedBtn" class="btn btn-success btn-lg w-100">
+                    <i class="fab fa-whatsapp"></i> Proceed
+                  </button>
+
+                  <button type="button" id="payOnlineBtn" class="btn btn-primary btn-lg w-100">
+                    Pay Online
+                  </button>
+                </div>
+
+                <!-- Payment Options (shown AFTER Pay Online is clicked) -->
+                <div id="paymentOptionsSection" class="border rounded p-3 mb-3" style="display:none;">
+                  <h6 class="mb-2">Choose Payment Option</h6>
+                  <div class="form-check mb-2">
+                    <input class="form-check-input" type="radio" name="paymentOption" id="payAdvance" value="advance">
+                    <label class="form-check-label" for="payAdvance">
+                      Pay Advance (10% of Total Fare)
+                    </label>
+                  </div>
+                  <div class="form-check mb-3">
+                    <input class="form-check-input" type="radio" name="paymentOption" id="payFull" value="full">
+                    <label class="form-check-label" for="payFull">
+                      Pay Full Amount
+                    </label>
+                  </div>
+                  <button type="button" id="payNowBtn" class="btn btn-dark btn-lg w-100">
+                    Pay Now
+                  </button>
+                </div>
               </div>
 
             </form>
@@ -344,6 +389,58 @@
     </div>
   </section>
 
+  <div class="floating-contact d-flex flex-column">
+    <a href="tel:+919500530043"
+       class="btn btn-primary rounded-circle d-flex align-items-center justify-content-center mb-2 shadow call-btn">
+      <i class="bi bi-telephone-fill"></i>
+    </a>
+
+    <a href="https://wa.me/919500530043?text=Hello%20Prayaan%20Cabs%2C%20I%20need%20cab%20service."
+       target="_blank"
+       class="btn btn-success rounded-circle d-flex align-items-center justify-content-center shadow whatsapp-btn">
+      <i class="bi bi-whatsapp"></i>
+    </a>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 mb-4">
+          <h5><i class="fas fa-car"></i> Prayaan Cabs</h5>
+          <p>Premium car rental services across South India. Reliable, affordable, and professional.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="https://wa.me/919500530043"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-4 mb-4">
+          <h5>Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="booking.html">Book Now</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 mb-4">
+          <h5>Contact Us</h5>
+          <ul class="footer-contact">
+            <li><i class="fas fa-phone"></i> +91 9500530043</li>
+            <li><i class="fas fa-envelope"></i> prayaancabs@gmail.com</li>
+            <li><i class="fas fa-map-marker-alt"></i> 6/391 B<br> Near SBIOA School<br> Sathyabhama Nagar<br> Pattanam <br> Coimbatore-641016 </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Prayaan Cabs. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
   <!-- scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <!-- Google Places -->
@@ -356,8 +453,8 @@
       'Swift Dzire / Toyota Etios': { perKm: 20, icon: 'fa-car', image: 'images/sedan.png', category: 'Sedan' },
       'Mahindra Xylo / Ertiga':    { perKm: 24, icon: 'fa-car-side', image: 'images/ertiga.png', category: 'SUV' },
       'Innova':                    { perKm: 28, icon: 'fa-shuttle-van', image: 'images/innova.png', category: 'MPV' },
-      'Innova Crysta (6+1)':       { perKm: 30, icon: 'fa-van-shuttle', image: 'images/crysta.png', category: 'Premium MPV' },
-      'Innova Crysta (7+1)':       { perKm: 30, icon: 'fa-van-shuttle', image: 'images/crysta.png', category: 'Premium MPV' }
+      'Innova Crysta (6+1)':       { perKm: 32, icon: 'fa-van-shuttle', image: 'images/crysta.png', category: 'Premium MPV' },
+      'Innova Crysta (7+1)':       { perKm: 32, icon: 'fa-van-shuttle', image: 'images/crysta.png', category: 'Premium MPV' }
       // Traveller removed in ONE WAY
     },
     roundtrip: {
@@ -414,6 +511,7 @@
   let lastBasePrice = 0;
   let lastCgst = 0;
   let lastSgst = 0;
+  let lastGst = 0;
 
   /* ====== Autocomplete init ====== */
   function initAutocomplete(){
@@ -433,7 +531,7 @@
   /* ====== Update form sections (enable/disable) ====== */
   function updateFormSections(){
     document.querySelectorAll('.form-section').forEach(section=>{
-      const isActive = section.classList.contains('active') || section.style.display !== 'none';
+      const isActive = section.style.display !== 'none';
       section.querySelectorAll('input, select, textarea, button').forEach(el=>{
         if (el === document.getElementById('addStopBtn')) return;
         el.disabled = !isActive;
@@ -614,6 +712,29 @@
     return tmp.textContent || tmp.innerText || "";
   }
 
+  /* ====== Terms & Conditions Sets ====== */
+  const terms = {
+    oneway: [
+      "__EXTRAKM__",
+      "One pickup at origin and one drop at destination. No within-city travel included.",
+      "AC may be switched off during hill climbs.",
+      "Multiple pickups/drops may incur extra charges."
+    ],
+    roundtrip: [
+      "Trip includes a KM limit; extra KM charged as per the vehicle.",
+      "Toll, parking, state permit & airport entry fees are extra.",
+      "Night driving allowance applies between 9:45 PM and 6:00 AM.",
+      "All planned cities must be informed in advance; adding cities mid-trip may not be possible.",
+      "AC may be turned off during hill climbs."
+    ],
+    local: [
+      "Package includes fixed KM and hours; excess KM/hours charged as per the vehicle.",
+      "KM & hours count from pickup and back to pickup point.",
+      "Toll, parking, permit & airport entry charges are extra.",
+      "Night driving allowance applies between 9:45 PM and 6:00 AM."
+    ]
+  };
+
   /* ====== Show booking preview and fare breakdown ====== */
   function showBookingPreview() {
     document.getElementById('vehicleTariffSection').style.display = 'none';
@@ -635,6 +756,10 @@
 
       const cfg = vehiclePricing.oneway[selectedVehicle] || {};
       const perKm = cfg.perKm || 0;
+
+      const extraKMText = `Extra KM Charge: ₹${perKm} / km`;
+      terms.oneway[0] = extraKMText;
+
       lastBasePrice = Math.round(perKm * distance);
 
       breakdown = `Distance: ${distance} km\nRate: ₹${perKm} /km\nBase Fare: ₹${lastBasePrice}`;
@@ -667,7 +792,6 @@
 
       breakdown =
         `No. of Days: ${days}\nKilometer limit: ${distance} km\n`+
-        `Extra Day Charge: ₹${dayRent}\nExtra km Charge: ₹${perKm} /km\n`+
         `Base Fare: ₹${baseTotal}`;
     }
     else {
@@ -692,28 +816,34 @@
       }
     }
 
-    // GST on BASE only
+    // GST on Base – split as CGST & SGST
     lastCgst = Math.round(lastBasePrice * 0.025);
     lastSgst = Math.round(lastBasePrice * 0.025);
-    breakdown += `\nCGST (2.5%): ₹${lastCgst}\nSGST (2.5%): ₹${lastSgst}`;
+    lastGst  = lastCgst + lastSgst;
+    breakdown += `\nCGST (2.5%): ₹${lastCgst}\nSGST (2.5%): ₹${lastSgst}\nTotal GST: ₹${lastGst}`;
 
     document.getElementById('fareBreakdownText').textContent = breakdown;
-
     document.getElementById('summaryTripDetails').innerHTML = summaryHTML;
     document.getElementById('summaryVehicle').textContent = `Vehicle: ${selectedVehicle || 'Not selected'}`;
     document.getElementById('summaryBasePrice').textContent = `Base Fare: ₹${lastBasePrice}`;
+
+    // Insert Dynamic Terms
+    const t = terms[currentTripType] || [];
+    const ul = document.getElementById('termsList');
+    ul.innerHTML = t.map(item => `<li>${item}</li>`).join('');
+
     document.getElementById('bookingPreviewSection').style.display = 'block';
 
     // reset add-ons
     document.querySelectorAll('.addon-checkbox').forEach(chk => { chk.checked = false; });
 
-    // update total when add-ons change (base + GST on base + addons)
+    // update total when add-ons change (base + GST + addons)
     function updateTotalFare(){
       let addons = 0;
       document.querySelectorAll('.addon-checkbox:checked').forEach(chk => {
         addons += parseInt(chk.dataset.price || 0, 10);
       });
-      const total = lastBasePrice + lastCgst + lastSgst + addons;
+      const total = lastBasePrice + lastGst + addons;
       document.getElementById('totalFare').textContent = `₹${total}`;
     }
 
@@ -721,6 +851,9 @@
     document.querySelectorAll('.addon-checkbox').forEach(chk => {
       chk.onchange = updateTotalFare;
     });
+
+    // hide payment options until user clicks Pay Online
+    document.getElementById('paymentOptionsSection').style.display = 'none';
   }
 
   /* ====== Display available vehicles (oneway/roundtrip) ====== */
@@ -744,33 +877,29 @@
     }
 
     Object.keys(data).forEach(v => {
-      // ==========================
-    // Seating Capacity Filtering
-    // ==========================
-    const p = data[v]; // vehicle pricing object
-    if (pax > 0) {
+      const p = data[v]; // vehicle pricing object
 
-      // 1️⃣ Hide Sedan above 4 passengers
-      if (pax > 4 && (
-        v.includes('Swift Dzire') ||
-        v.includes('Toyota Etios')
-      )) return;
+      if (pax > 0) {
+        // Hide Sedan above 4 passengers
+        if (pax > 4 && (
+          v.includes('Swift Dzire') ||
+          v.includes('Toyota Etios')
+        )) return;
 
-      // 2️⃣ Crysta seating rules
-      if (v.includes('Innova Crysta (6+1)') && pax > 6) return;
-      if (v.includes('Innova Crysta (7+1)') && pax > 7) return;
+        // Crysta seating rules
+        if (v.includes('Innova Crysta (6+1)') && pax > 6) return;
+        if (v.includes('Innova Crysta (7+1)') && pax > 7) return;
 
-      // 3️⃣ Innova & SUV limit 7+1
-      if ((v.includes('Innova') && !v.includes('Crysta')) && pax > 7) return;
-      if ((v.includes('Xylo') || v.includes('Ertiga') || v.includes('SUV')) && pax > 7) return;
+        // Innova & SUV limit 7+1
+        if ((v.includes('Innova') && !v.includes('Crysta')) && pax > 7) return;
+        if ((v.includes('Xylo') || v.includes('Ertiga') || v.includes('SUV')) && pax > 7) return;
 
-      // 4️⃣ Tempo Traveller rule
-      if (v.includes('Traveller')) {
-        if (currentTripType === 'oneway' || currentTripType === 'local') return;
-        if (pax <= 7) return;
+        // Tempo Traveller rule
+        if (v.includes('Traveller')) {
+          if (currentTripType === 'oneway' || currentTripType === 'local') return;
+          if (pax <= 7) return;
+        }
       }
-    }
-
 
       let total = 0;
       if (currentTripType === 'oneway') {
@@ -838,7 +967,6 @@
     document.getElementById('travellerNote').style.display = 'block';
     document.getElementById('vehicleTariffSection').style.display = 'block';
   }
-
 
   /* ====== Input listeners to trigger calculation ====== */
   document.querySelectorAll('#onewayPassengers, #roundtripPassengers, #localPassengers').forEach(inp=>{
@@ -937,6 +1065,38 @@ Note: Tolls, parking & permits are extra.`;
     window.open(waUrl, '_blank');
   });
 
+  function sendToWhatsappAfterPayment(paymentId, paidAmount) {
+    const name = document.getElementById('customerName').value.trim();
+    const phone = document.getElementById('customerPhone').value.trim();
+    const tripDetails = stripHtml(document.getElementById('summaryTripDetails').innerHTML);
+    const breakdown   = document.getElementById('fareBreakdownText').textContent;
+    const totalFare = parseInt(document.getElementById('totalFare').textContent.replace('₹','').trim());
+
+    const balance = totalFare - paidAmount;
+
+    const msg =
+`🚗 *New Booking - Prayaan Cabs*
+
+Name: ${name}
+Phone: ${phone}
+
+*Payment Completed*
+Payment ID: ${paymentId}
+Paid Amount: ₹${paidAmount}
+Balance: ₹${balance}
+
+Trip Details:
+${tripDetails}
+
+Fare Breakdown:
+${breakdown}
+
+Note: Tolls, parking & permits extra.`;
+
+    const waUrl = `https://wa.me/919500530043?text=${encodeURIComponent(msg)}`;
+    window.open(waUrl, "_blank");
+  }
+
   /* ====== When user changes main fields -> recalc ====== */
   window.addEventListener('load', ()=>{
     initAutocomplete();
@@ -945,7 +1105,7 @@ Note: Tolls, parking & permits are extra.`;
     const now = new Date();
     now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
     document.querySelectorAll('input[type="datetime-local"]').forEach(i => i.min = now.toISOString().slice(0,16));
-    // Trigger recalculation only for the currently active form
+
     function triggerRecalculation() {
       if (currentTripType === 'oneway') {
         const from = document.getElementById('onewayPickup').value.trim();
@@ -977,7 +1137,6 @@ Note: Tolls, parking & permits are extra.`;
       const el = document.getElementById(id);
       if (el) el.addEventListener('change', triggerRecalculation);
     });
-
   });
 
   /* ====== "Check Prices" button handlers ====== */
@@ -1014,6 +1173,121 @@ Note: Tolls, parking & permits are extra.`;
       return;
     }
     calculateAndDisplayAllPrices();
+  });
+
+  /* ====== SAVE TO SHEET (Bookings / Sheet1) ====== */
+  async function saveToSheet(paymentType, paymentAmount, paymentId = "", paymentStatus = "Pending") {
+    const totalFareText = document.getElementById("totalFare").textContent.replace("₹","").trim();
+
+    const payload = {
+      name: document.getElementById('customerName').value.trim(),
+      phone: document.getElementById('customerPhone').value.trim(),
+      tripType: currentTripType,
+      pickup:
+        currentTripType === "oneway"
+          ? document.getElementById("onewayPickup").value
+          : currentTripType === "roundtrip"
+          ? document.getElementById("roundtripPickup").value
+          : document.getElementById("localPickup").value,
+      drop:
+        currentTripType === "oneway"
+          ? document.getElementById("onewayDrop").value
+          : currentTripType === "roundtrip"
+          ? document.getElementById("roundtripDrop").value
+          : "",
+      datetime: new Date().toLocaleString("en-IN"),
+      vehicle: selectedVehicle,
+      baseFare: lastBasePrice,
+      gst: lastGst,
+      addons: Array.from(document.querySelectorAll('.addon-checkbox:checked')).map(c => c.nextElementSibling.textContent.trim()).join(', '),
+      totalFare: totalFareText,
+      paymentType,
+      paymentAmount,
+      paymentStatus,
+      paymentId
+    };
+
+    // 🔴 Your Web App URL (Google Apps Script)
+    const scriptUrl = "https://script.google.com/macros/s/AKfycbwLiz394-vUSknp5pXgLtsJBjCnsGrH3myJjY8KvAw7xdS9t0zMwrEsjOEIl6EL0twW/exec";
+
+    const res = await fetch(scriptUrl, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload)
+    });
+
+    // NOT throwing if fails, you can inspect if needed:
+    if (!res.ok) {
+      console.warn("Sheet save returned non-OK status:", res.status);
+    }
+  }
+
+  /* ====== PAY ONLINE → GO TO PAYMENT OPTIONS (ALWAYS) ====== */
+  document.getElementById("payOnlineBtn").addEventListener("click", async function () {
+    try {
+      await saveToSheet("Online", 0, "", "Pending");
+    } catch (e) {
+      console.warn("saveToSheet failed before payment, continuing anyway:", e);
+    }
+
+    const section = document.getElementById("paymentOptionsSection");
+    section.style.display = "block";
+    section.scrollIntoView({ behavior: "smooth" });
+  });
+
+  /* ====== PAY NOW → RAZORPAY (Advance / Full) ====== */
+  document.getElementById("payNowBtn").addEventListener("click", function () {
+    const option = document.querySelector("input[name='paymentOption']:checked");
+    if (!option) {
+      alert("Please select a payment option (Advance or Full).");
+      return;
+    }
+
+    const totalFare = parseInt(document.getElementById("totalFare").textContent.replace("₹","").trim());
+    if (!totalFare || isNaN(totalFare)) {
+      alert("Total fare is not calculated. Please check details again.");
+      return;
+    }
+
+    let payableAmount = 0;
+    let paymentTypeLabel = "";
+
+    if (option.value === "advance") {
+      payableAmount = Math.round(totalFare * 0.10);
+      paymentTypeLabel = "Online Advance";
+    } else {
+      payableAmount = totalFare;
+      paymentTypeLabel = "Online Full";
+    }
+
+    const razorAmount = payableAmount * 100;
+
+    const rzpOptions = {
+      key: "rzp_live_RhxzNJboDF9avv", // 🔴 Your Razorpay Key
+      amount: razorAmount,
+      currency: "INR",
+      name: "Prayaan Cabs",
+      description: "Cab Booking Payment",
+      handler: async function (response) {
+        const paymentId = response.razorpay_payment_id;
+
+        // Try to save as PAID in sheet – even if fails, continue WhatsApp
+        try {
+          await saveToSheet(paymentTypeLabel, payableAmount, paymentId, "Paid");
+        } catch (e) {
+          console.warn("saveToSheet failed after payment:", e);
+        }
+
+        // WhatsApp confirmation with payment details
+        sendToWhatsappAfterPayment(paymentId, payableAmount);
+      },
+      theme: {
+        color: "#0d6efd"
+      }
+    };
+
+    const rzp = new Razorpay(rzpOptions);
+    rzp.open();
   });
 
   </script>
