@@ -1175,7 +1175,7 @@ Note: Tolls, parking & permits extra.`;
     calculateAndDisplayAllPrices();
   });
 
-  /* ====== SAVE TO SHEET (Bookings / Sheet1) ====== */
+  /* ====== SAVE TO  (Bookings / Sheet1) ====== */
   async function saveToSheet(paymentType, paymentAmount, paymentId = "", paymentStatus = "Pending") {
     const totalFareText = document.getElementById("totalFare").textContent.replace("₹","").trim();
 
@@ -1208,7 +1208,7 @@ Note: Tolls, parking & permits extra.`;
     };
 
     // 🔴 Your Web App URL (Google Apps Script)
-    const scriptUrl = "https://script.google.com/macros/s/AKfycbwLiz394-vUSknp5pXgLtsJBjCnsGrH3myJjY8KvAw7xdS9t0zMwrEsjOEIl6EL0twW/exec";
+    const scriptUrl = "https://script.google.com/macros/s/AKfycbwS-RynXFnt60SHCIO7nxoNNIXzZzn9fQ-_3oVVLY9aP6gaSUePAZp9GrGeHhYoMES5/exec";
 
     const res = await fetch(scriptUrl, {
       method: "POST",
@@ -1293,3 +1293,4 @@ Note: Tolls, parking & permits extra.`;
   </script>
 </body>
 </html>
+
