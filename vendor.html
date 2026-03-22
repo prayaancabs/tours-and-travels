@@ -1,153 +1,496 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vendor Registration - Prayaan Cabs</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vendor Registration - Prayaan Cabs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">
-                <img src="images/logo.png" alt="Prayaan Logo" class="brand-logo" style="height:100px;">
+  <main class="page-shell">
+    <section class="hero">
+      <div class="hero-badge">Prayaan Cabs Partner Network</div>
+      <h1>Vendor Registration</h1>
+      <p class="hero-text">
+        Complete the form in 3 simple steps. Submit owner details, vehicle documents, and driver information for verification.
+      </p>
+    </section>
 
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav ms-auto">
-                  <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                  <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-                  <li class="nav-item"><a class="nav-link active" href="destinations.html">Destinations</a></li>
-                  <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                  <li class="nav-item"><a class="nav-link" href="index.html#qwe">Book Now</a></li>
-                  <li class="nav-item"><a class="nav-link btn-vendor" href="vendor.html">Vendor Registration</a></li>
-              </ul>
-            </div>
+    <section class="registration-card">
+      <div class="progress-wrap">
+        <div class="progress-top">
+          <p class="progress-label">Registration Progress</p>
+          <p class="progress-count"><span id="currentStepText">1</span> / 3</p>
         </div>
-    </nav>
 
-    <!-- Vendor Registration Section -->
-    <!-- <section class="booking-section">
-        <div class="container">
-            <div class="section-header text-center">
-                <h2><i class="fas fa-user-tie"></i> Vendor Registration</h2>
-                <p>Join our network of trusted drivers and vehicle owners</p>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="booking-form-card">
-                        <p class="text-muted mb-4">Fill in your details below to register as a vendor partner.</p>
-                        <form id="vendorForm">
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <label class="form-label">Full Name</label>
-                                    <input type="text" class="form-control" id="vendorName" placeholder="Enter full name" required>
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="form-label">Phone Number</label>
-                                    <input type="tel" class="form-control" id="vendorPhone" placeholder="10-digit number" pattern="[0-9]{10}" required>
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="form-label">Vehicle Registration Number</label>
-                                    <input type="text" class="form-control" id="vehicleNumber" placeholder="e.g., TN01AB1234" required>
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="form-label">Driving License Number</label>
-                                    <input type="text" class="form-control" id="licenseNumber" placeholder="Enter license number" required>
-                                </div>
-                                <div class="col-12">
-                                    <label class="form-label">Vehicle Type</label>
-                                    <select class="form-select" id="vendorVehicleType" required>
-                                        <option value="">Select vehicle type</option>
-                                        <option value="Sedan">Sedan</option>
-                                        <option value="SUV">SUV</option>
-                                        <option value="Innova">Innova</option>
-                                        <option value="Tempo Traveller">Tempo Traveller</option>
-                                        <option value="Mini Bus">Mini Bus</option>
-                                        <option value="Bus">Bus</option>
-                                    </select>
-                                </div>
-                                <div class="col-12">
-                                    <label class="form-label">Additional Information</label>
-                                    <textarea class="form-control" id="vendorNotes" rows="3" placeholder="Experience, availability, etc."></textarea>
-                                </div>
-                                <div class="col-12">
-                                    <div class="alert alert-info">
-                                        <i class="fas fa-info-circle"></i> <strong>Required Documents:</strong>
-                                        <p class="mb-0 mt-2">After submitting this form, please send the following documents via WhatsApp:</p>
-                                        <ul class="mb-0 mt-2">
-                                            <li>Driving License</li>
-                                            <li>RC Book (Registration Certificate)</li>
-                                            <li>Insurance Certificate</li>
-                                            <li>Pollution Certificate</li>
-                                            <li>Fitness Certificate</li>
-                                            <li>Aadhar Card</li>
-                                            <li>Vehicle Photo</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <button type="submit" class="btn btn-primary btn-lg w-100">
-                                        <i class="fab fa-whatsapp me-2"></i>Submit Registration via WhatsApp
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
+        <div class="progressbar">
+          <div class="progressbar-fill" id="progressFill"></div>
         </div>
-    </section> -->
-<div class="brand-name">
-  <h1 style="font-size: 40px;text-align:center;"> <br> 🚧 This section is under development. <br><h5 style="text-align:center"> Please check back later. </h5><br> </h1>
-</div>
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 mb-4">
-                    <h5><i class="fas fa-car"></i> Prayaan Cabs</h5>
-                    <p>Premium car rental services across South India. Reliable, affordable, and professional.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="https://wa.me/919500530043"><i class="fab fa-whatsapp"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-4 mb-4">
-                    <h5>Quick Links</h5>
-                    <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="destinations.html">Destinations</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="booking.html">Book Now</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-4 mb-4">
-                    <h5>Contact Us</h5>
-                    <ul class="footer-contact">
-                        <li><i class="fas fa-phone"></i> +91 9500530043</li>
-                        <li><i class="fas fa-envelope"></i>prayaancabs@gmail.com</li>
-                        <li><i class="fas fa-map-marker-alt"></i> 315 Manikam Nagar <br> Irugur <br> Coimbatore-641003</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Prayaan Cabs. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
+        <div class="stepper">
+          <button type="button" class="step-pill active" data-step="1">1. Owner Details</button>
+          <button type="button" class="step-pill" data-step="2">2. Vehicle Details</button>
+          <button type="button" class="step-pill" data-step="3">3. Driver Details</button>
+        </div>
+      </div>
+
+      <form id="vendorForm" class="vendor-form" novalidate>
+        <input type="hidden" id="ownerIsDriverValue" name="owner_is_driver_value" value="no" />
+
+        <!-- STEP 1 -->
+        <section class="form-step active" data-step="1">
+          <div class="section-header">
+            <div>
+              <h2>Owner Details</h2>
+              <p>Enter the main vendor details exactly as per documents.</p>
+            </div>
+          </div>
+
+          <div class="form-grid two-col">
+            <div class="field-group">
+              <label for="ownerName">Owner Full Name <span>*</span></label>
+              <input type="text" id="ownerName" name="owner_name" placeholder="Enter owner full name" required />
+            </div>
+
+            <div class="field-group">
+              <label for="ownerMobile">Owner Mobile Number <span>*</span></label>
+              <input type="tel" id="ownerMobile" name="owner_mobile" placeholder="10-digit mobile number" maxlength="10" required />
+            </div>
+
+            <div class="field-group">
+              <label for="alternateMobile">Alternate Mobile Number</label>
+              <input type="tel" id="alternateMobile" name="alternate_mobile" placeholder="Optional alternate number" maxlength="10" />
+            </div>
+
+            <div class="field-group">
+              <label for="rtoMobile">RTO Registered Mobile Number <span>*</span></label>
+              <input type="tel" id="rtoMobile" name="rto_mobile" placeholder="Mobile number registered in RTO" maxlength="10" required />
+            </div>
+
+            <div class="field-group full-width">
+              <label for="ownerAddress">Address <span>*</span></label>
+              <textarea id="ownerAddress" name="owner_address" rows="4" placeholder="Enter full address" required></textarea>
+            </div>
+          </div>
+
+          <div class="subcard">
+            <div class="subcard-head">
+              <h3>Owner Documents</h3>
+              <p>Upload clear image or PDF files only.</p>
+            </div>
+
+            <div class="form-grid three-col">
+              <div class="field-group">
+                <label for="ownerAadhaar">Owner Aadhaar <span>*</span></label>
+                <input type="file" id="ownerAadhaar" name="owner_aadhaar" accept=".jpg,.jpeg,.png,.pdf" required />
+              </div>
+
+              <div class="field-group">
+                <label for="ownerLicense">Owner Driving License <span>*</span></label>
+                <input type="file" id="ownerLicense" name="owner_license" accept=".jpg,.jpeg,.png,.pdf" required />
+              </div>
+
+              <div class="field-group">
+                <label for="ownerPhoto">Owner Photo <span>*</span></label>
+                <input type="file" id="ownerPhoto" name="owner_photo" accept=".jpg,.jpeg,.png" required />
+              </div>
+            </div>
+          </div>
+
+          <div class="owner-driver-box">
+            <label class="checkbox-row">
+              <input type="checkbox" id="ownerIsDriver" />
+              <span>Owner is also the driver</span>
+            </label>
+            <p class="helper-text">
+              If checked, owner details will be treated as Driver 1. You can still add extra drivers in Step 3.
+            </p>
+          </div>
+
+          <div class="form-actions align-end">
+            <button type="button" class="btn btn-primary" onclick="nextStep()">Next Step</button>
+          </div>
+        </section>
+
+        <!-- STEP 2 -->
+        <section class="form-step" data-step="2">
+          <div class="section-header">
+            <div>
+              <h2>Vehicle Details</h2>
+              <p>Add one or more vehicles. Each vehicle gets stored in a separate folder.</p>
+            </div>
+          </div>
+
+          <div id="vehiclesContainer"></div>
+
+          <div class="inline-actions">
+            <button type="button" class="btn btn-secondary" onclick="addVehicleCard()">+ Add Another Vehicle</button>
+          </div>
+
+          <div class="form-actions">
+            <button type="button" class="btn btn-light" onclick="prevStep()">Previous</button>
+            <button type="button" class="btn btn-primary" onclick="nextStep()">Next Step</button>
+          </div>
+        </section>
+
+        <!-- STEP 3 -->
+        <section class="form-step" data-step="3">
+          <div class="section-header">
+            <div>
+              <h2>Driver Details</h2>
+              <p>Add driver details. If owner is also driver, owner details will be saved as Driver 1 and you can still add more drivers below.</p>
+            </div>
+          </div>
+
+          <div id="ownerDriverNotice" class="info-box hidden">
+            Owner details will be used as <strong>Driver 1</strong>. You can still add additional drivers below if needed.
+          </div>
+
+          <div id="driversContainer"></div>
+
+          <div class="inline-actions" id="addDriverButtonWrap">
+            <button type="button" class="btn btn-secondary" onclick="addDriverCard()">+ Add Another Driver</button>
+          </div>
+
+          <div class="declaration-box">
+            <label class="checkbox-row">
+              <input type="checkbox" id="declaration1" required />
+              <span>I confirm that all submitted details and documents are correct.</span>
+            </label>
+            <label class="checkbox-row">
+              <input type="checkbox" id="declaration2" required />
+              <span>I agree to be contacted by the Prayaan Cabs verification team.</span>
+            </label>
+          </div>
+
+          <div class="form-actions">
+            <button type="button" class="btn btn-light" onclick="prevStep()">Previous</button>
+            <button type="submit" class="btn btn-primary">Submit Registration</button>
+          </div>
+        </section>
+      </form>
+
+      <div id="successMessage" class="success-box hidden">
+        <h3>Successfully submitted</h3>
+        <p>Our verification team will contact you within 24 hours.</p>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    let currentStep = 1;
+    let vehicleCount = 0;
+    let driverCount = 0;
+
+    // PUT YOUR REAL DEPLOYED WEB APP URL HERE
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxtf0oX-XPvY9pawokWKcVObRLHRNtRK_313oOVNwOQNT7nUZQPRdPGblJQFx3THY_-vA/exec";
+
+    const stepEls = () => document.querySelectorAll('.form-step');
+    const stepPills = () => document.querySelectorAll('.step-pill');
+
+    function updateProgress() {
+      const progressFill = document.getElementById('progressFill');
+      const currentStepText = document.getElementById('currentStepText');
+      const width = ((currentStep - 1) / 2) * 100;
+
+      progressFill.style.width = width + '%';
+      currentStepText.textContent = currentStep;
+
+      stepEls().forEach(step => {
+        step.classList.toggle('active', Number(step.dataset.step) === currentStep);
+      });
+
+      stepPills().forEach(pill => {
+        const stepNum = Number(pill.dataset.step);
+        pill.classList.toggle('active', stepNum === currentStep);
+        pill.classList.toggle('done', stepNum < currentStep);
+      });
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function validateStep(stepNumber) {
+      const step = document.querySelector('.form-step[data-step="' + stepNumber + '"]');
+      const requiredFields = step.querySelectorAll('[required]');
+
+      for (const field of requiredFields) {
+        if (field.type === 'checkbox') {
+          if (!field.checked) {
+            field.focus();
+            field.reportValidity();
+            return false;
+          }
+        } else if (!field.value) {
+          field.focus();
+          field.reportValidity();
+          return false;
+        }
+      }
+
+      return true;
+    }
+
+    function nextStep() {
+      if (!validateStep(currentStep)) return;
+      if (currentStep < 3) {
+        currentStep += 1;
+        updateProgress();
+      }
+    }
+
+    function prevStep() {
+      if (currentStep > 1) {
+        currentStep -= 1;
+        updateProgress();
+      }
+    }
+
+    function removeCard(button) {
+      button.closest('.repeat-card').remove();
+    }
+
+    function addVehicleCard() {
+      vehicleCount += 1;
+      const container = document.getElementById('vehiclesContainer');
+      const card = document.createElement('div');
+      card.className = 'repeat-card';
+      card.innerHTML = `
+        <div class="repeat-head">
+          <h3>Vehicle ${vehicleCount}</h3>
+          ${vehicleCount > 1 ? `<button type="button" class="remove-link" onclick="removeCard(this)">Remove</button>` : ''}
+        </div>
+
+        <div class="form-grid two-col">
+          <div class="field-group">
+            <label>Vehicle Number <span>*</span></label>
+            <input type="text" name="vehicle_number_${vehicleCount}" placeholder="Enter vehicle number" required />
+          </div>
+
+          <div class="field-group">
+            <label>Vehicle Category <span>*</span></label>
+            <select name="vehicle_category_${vehicleCount}" required>
+              <option value="">Select category</option>
+              <option>Sedan</option>
+              <option>Ertiga</option>
+              <option>Xylo</option>
+              <option>Innova Crysta</option>
+              <option>Hycross</option>
+              <option>Fortuner</option>
+              <option>Tempo Traveller (12+1)</option>
+              <option>Tempo Traveller (14+1)</option>
+              <option>Tempo Traveller (18+1)</option>
+              <option>Urbania</option>
+            </select>
+          </div>
+
+          <div class="field-group">
+            <label>Insurance Expiry Date <span>*</span></label>
+            <input type="date" name="insurance_expiry_${vehicleCount}" required />
+          </div>
+
+          <div class="field-group">
+            <label>Permit Expiry Date <span>*</span></label>
+            <input type="date" name="permit_expiry_${vehicleCount}" required />
+          </div>
+
+          <div class="field-group">
+            <label>Fitness Expiry Date <span>*</span></label>
+            <input type="date" name="fitness_expiry_${vehicleCount}" required />
+          </div>
+        </div>
+
+        <div class="subcard compact">
+          <div class="subcard-head"><h4>Vehicle Documents</h4></div>
+          <div class="form-grid two-col">
+            <div class="field-group">
+              <label>RC <span>*</span></label>
+              <input type="file" name="vehicle_rc_${vehicleCount}" accept=".jpg,.jpeg,.png,.pdf" required />
+            </div>
+            <div class="field-group">
+              <label>Insurance <span>*</span></label>
+              <input type="file" name="vehicle_insurance_${vehicleCount}" accept=".jpg,.jpeg,.png,.pdf" required />
+            </div>
+            <div class="field-group">
+              <label>Permit <span>*</span></label>
+              <input type="file" name="vehicle_permit_${vehicleCount}" accept=".jpg,.jpeg,.png,.pdf" required />
+            </div>
+            <div class="field-group">
+              <label>Fitness <span>*</span></label>
+              <input type="file" name="vehicle_fitness_${vehicleCount}" accept=".jpg,.jpeg,.png,.pdf" required />
+            </div>
+          </div>
+        </div>
+
+        <div class="subcard compact">
+          <div class="subcard-head"><h4>Vehicle Photos</h4></div>
+          <div class="form-grid three-col">
+            <div class="field-group">
+              <label>Front Photo <span>*</span></label>
+              <input type="file" name="vehicle_front_${vehicleCount}" accept=".jpg,.jpeg,.png" required />
+            </div>
+            <div class="field-group">
+              <label>Back Photo <span>*</span></label>
+              <input type="file" name="vehicle_back_${vehicleCount}" accept=".jpg,.jpeg,.png" required />
+            </div>
+            <div class="field-group">
+              <label>Side Photo 1 <span>*</span></label>
+              <input type="file" name="vehicle_side1_${vehicleCount}" accept=".jpg,.jpeg,.png" required />
+            </div>
+            <div class="field-group">
+              <label>Side Photo 2 <span>*</span></label>
+              <input type="file" name="vehicle_side2_${vehicleCount}" accept=".jpg,.jpeg,.png" required />
+            </div>
+            <div class="field-group">
+              <label>Interior Photo 1 <span>*</span></label>
+              <input type="file" name="vehicle_interior1_${vehicleCount}" accept=".jpg,.jpeg,.png" required />
+            </div>
+            <div class="field-group">
+              <label>Interior Photo 2 <span>*</span></label>
+              <input type="file" name="vehicle_interior2_${vehicleCount}" accept=".jpg,.jpeg,.png" required />
+            </div>
+          </div>
+        </div>
+      `;
+      container.appendChild(card);
+    }
+
+    function addDriverCard() {
+      driverCount += 1;
+      const container = document.getElementById('driversContainer');
+      const card = document.createElement('div');
+      card.className = 'repeat-card';
+      card.innerHTML = `
+        <div class="repeat-head">
+          <h3>Extra Driver ${driverCount}</h3>
+          ${driverCount > 1 ? `<button type="button" class="remove-link" onclick="removeCard(this)">Remove</button>` : ''}
+        </div>
+
+        <div class="form-grid two-col">
+          <div class="field-group">
+            <label>Driver Name <span>*</span></label>
+            <input type="text" name="driver_name_${driverCount}" placeholder="Enter driver name" required />
+          </div>
+
+          <div class="field-group">
+            <label>Driver Mobile Number <span>*</span></label>
+            <input type="tel" name="driver_mobile_${driverCount}" placeholder="10-digit mobile number" maxlength="10" required />
+          </div>
+
+          <div class="field-group">
+            <label>License Expiry Date <span>*</span></label>
+            <input type="date" name="driver_license_expiry_${driverCount}" required />
+          </div>
+        </div>
+
+        <div class="form-grid three-col">
+          <div class="field-group">
+            <label>Driver Aadhaar <span>*</span></label>
+            <input type="file" name="driver_aadhaar_${driverCount}" accept=".jpg,.jpeg,.png,.pdf" required />
+          </div>
+          <div class="field-group">
+            <label>Driver License <span>*</span></label>
+            <input type="file" name="driver_license_${driverCount}" accept=".jpg,.jpeg,.png,.pdf" required />
+          </div>
+          <div class="field-group">
+            <label>Driver Photo <span>*</span></label>
+            <input type="file" name="driver_photo_${driverCount}" accept=".jpg,.jpeg,.png" required />
+          </div>
+        </div>
+      `;
+      container.appendChild(card);
+    }
+
+    function toggleOwnerDriverMode() {
+      const checked = document.getElementById('ownerIsDriver').checked;
+      const notice = document.getElementById('ownerDriverNotice');
+      const hiddenField = document.getElementById('ownerIsDriverValue');
+
+      hiddenField.value = checked ? 'yes' : 'no';
+
+      if (checked) {
+        notice.classList.remove('hidden');
+      } else {
+        notice.classList.add('hidden');
+      }
+    }
+
+    async function submitVendorForm(e) {
+      e.preventDefault();
+
+      if (!validateStep(3)) return;
+
+      if (!SCRIPT_URL || SCRIPT_URL.includes('https://script.google.com/macros/s/AKfycbxtf0oX-XPvY9pawokWKcVObRLHRNtRK_313oOVNwOQNT7nUZQPRdPGblJQFx3THY_-vA/exec')) {
+        alert('Apps Script Web App URL is not added yet.');
+        return;
+      }
+
+      const form = document.getElementById('vendorForm');
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const successMessage = document.getElementById('successMessage');
+
+      const formData = new FormData(form);
+      formData.append('vehicle_count', document.querySelectorAll('#vehiclesContainer .repeat-card').length);
+      formData.append('driver_count', document.querySelectorAll('#driversContainer .repeat-card').length);
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Submitting...';
+
+      try {
+        const response = await fetch(SCRIPT_URL, {
+          method: 'POST',
+          body: formData
+        });
+
+        const text = await response.text();
+        let result = {};
+
+        try {
+          result = JSON.parse(text);
+        } catch (err) {
+          throw new Error('Invalid server response: ' + text);
+        }
+
+        if (!result.success) {
+          throw new Error(result.message || 'Submission failed');
+        }
+
+        successMessage.classList.remove('hidden');
+        successMessage.innerHTML = `
+          <h3>Successfully submitted</h3>
+          <p>Our verification team will contact you within 24 hours.</p>
+        `;
+
+        form.classList.add('hidden');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } catch (error) {
+        console.error(error);
+        alert(error.message || 'Error submitting form. Please try again.');
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Submit Registration';
+      }
+    }
+
+    document.getElementById('ownerIsDriver').addEventListener('change', toggleOwnerDriverMode);
+
+    document.querySelectorAll('.step-pill').forEach(pill => {
+      pill.addEventListener('click', () => {
+        const targetStep = Number(pill.dataset.step);
+        if (targetStep < currentStep) {
+          currentStep = targetStep;
+          updateProgress();
+        }
+      });
+    });
+
+    document.getElementById('vendorForm').addEventListener('submit', submitVendorForm);
+
+    addVehicleCard();
+    addDriverCard();
+    updateProgress();
+  </script>
 </body>
 </html>
