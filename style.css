@@ -2132,3 +2132,29 @@ textarea:focus {
   border-width: 0 2px 2px 0 !important;
   transform: rotate(45deg) !important;
 }
+input[type="checkbox"] {
+  appearance: none !important;
+  width: 18px !important;
+  height: 18px !important;
+  border: 2px solid #0066cc !important;
+  border-radius: 4px !important;
+  background: #fff !important;
+  position: relative !important;
+  cursor: pointer !important;
+}
+
+input[type="checkbox"]:checked {
+  background: #0066cc !important;
+}
+
+input[type="checkbox"]:checked::after {
+  content: "" !important;
+  position: absolute !important;
+  left: 5px !important;
+  top: 1px !important;
+  width: 5px !important;
+  height: 10px !important;
+  border: solid white !important;
+  border-width: 0 2px 2px 0 !important;
+  transform: rotate(45deg) !important;
+}

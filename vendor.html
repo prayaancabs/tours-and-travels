@@ -4,10 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vendor Registration - Prayaan Cabs</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <main class="page-shell">
@@ -40,7 +37,6 @@
       <form id="vendorForm" class="vendor-form" novalidate>
         <input type="hidden" id="ownerIsDriverValue" name="owner_is_driver_value" value="no" />
 
-        <!-- STEP 1 -->
         <section class="form-step active" data-step="1">
           <div class="section-header">
             <div>
@@ -85,17 +81,17 @@
             <div class="form-grid three-col">
               <div class="field-group">
                 <label for="ownerAadhaar">Owner Aadhaar <span>*</span></label>
-                <input type="file" id="ownerAadhaar" name="owner_aadhaar" accept=".jpg,.jpeg,.png,.pdf" required />
+                <input type="file" id="ownerAadhaar" name="owner_aadhaar" accept=".jpg,.jpeg,.png,.pdf" />
               </div>
 
               <div class="field-group">
                 <label for="ownerLicense">Owner Driving License <span>*</span></label>
-                <input type="file" id="ownerLicense" name="owner_license" accept=".jpg,.jpeg,.png,.pdf" required />
+                <input type="file" id="ownerLicense" name="owner_license" accept=".jpg,.jpeg,.png,.pdf" />
               </div>
 
               <div class="field-group">
                 <label for="ownerPhoto">Owner Photo <span>*</span></label>
-                <input type="file" id="ownerPhoto" name="owner_photo" accept=".jpg,.jpeg,.png" required />
+                <input type="file" id="ownerPhoto" name="owner_photo" accept=".jpg,.jpeg,.png" />
               </div>
             </div>
           </div>
@@ -115,7 +111,6 @@
           </div>
         </section>
 
-        <!-- STEP 2 -->
         <section class="form-step" data-step="2">
           <div class="section-header">
             <div>
@@ -136,7 +131,6 @@
           </div>
         </section>
 
-        <!-- STEP 3 -->
         <section class="form-step" data-step="3">
           <div class="section-header">
             <div>
@@ -185,8 +179,7 @@
     let vehicleCount = 0;
     let driverCount = 0;
 
-    // PUT YOUR REAL DEPLOYED WEB APP URL HERE
-    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxtf0oX-XPvY9pawokWKcVObRLHRNtRK_313oOVNwOQNT7nUZQPRdPGblJQFx3THY_-vA/exec";
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzNScIgUDCs3mv3CrBWcYP4Nj47ht3JodiMfg5_rQH9KSn4svkNOzVZweE8lt84aEjpew/exec";
 
     const stepEls = () => document.querySelectorAll('.form-step');
     const stepPills = () => document.querySelectorAll('.step-pill');
@@ -306,20 +299,20 @@
           <div class="subcard-head"><h4>Vehicle Documents</h4></div>
           <div class="form-grid two-col">
             <div class="field-group">
-              <label>RC <span>*</span></label>
-              <input type="file" name="vehicle_rc_${vehicleCount}" accept=".jpg,.jpeg,.png,.pdf" required />
+              <label>RC</label>
+              <input type="file" name="vehicle_rc_${vehicleCount}" accept=".jpg,.jpeg,.png,.pdf" />
             </div>
             <div class="field-group">
-              <label>Insurance <span>*</span></label>
-              <input type="file" name="vehicle_insurance_${vehicleCount}" accept=".jpg,.jpeg,.png,.pdf" required />
+              <label>Insurance</label>
+              <input type="file" name="vehicle_insurance_${vehicleCount}" accept=".jpg,.jpeg,.png,.pdf" />
             </div>
             <div class="field-group">
-              <label>Permit <span>*</span></label>
-              <input type="file" name="vehicle_permit_${vehicleCount}" accept=".jpg,.jpeg,.png,.pdf" required />
+              <label>Permit</label>
+              <input type="file" name="vehicle_permit_${vehicleCount}" accept=".jpg,.jpeg,.png,.pdf" />
             </div>
             <div class="field-group">
-              <label>Fitness <span>*</span></label>
-              <input type="file" name="vehicle_fitness_${vehicleCount}" accept=".jpg,.jpeg,.png,.pdf" required />
+              <label>Fitness</label>
+              <input type="file" name="vehicle_fitness_${vehicleCount}" accept=".jpg,.jpeg,.png,.pdf" />
             </div>
           </div>
         </div>
@@ -328,28 +321,28 @@
           <div class="subcard-head"><h4>Vehicle Photos</h4></div>
           <div class="form-grid three-col">
             <div class="field-group">
-              <label>Front Photo <span>*</span></label>
-              <input type="file" name="vehicle_front_${vehicleCount}" accept=".jpg,.jpeg,.png" required />
+              <label>Front Photo</label>
+              <input type="file" name="vehicle_front_${vehicleCount}" accept=".jpg,.jpeg,.png" />
             </div>
             <div class="field-group">
-              <label>Back Photo <span>*</span></label>
-              <input type="file" name="vehicle_back_${vehicleCount}" accept=".jpg,.jpeg,.png" required />
+              <label>Back Photo</label>
+              <input type="file" name="vehicle_back_${vehicleCount}" accept=".jpg,.jpeg,.png" />
             </div>
             <div class="field-group">
-              <label>Side Photo 1 <span>*</span></label>
-              <input type="file" name="vehicle_side1_${vehicleCount}" accept=".jpg,.jpeg,.png" required />
+              <label>Side Photo 1</label>
+              <input type="file" name="vehicle_side1_${vehicleCount}" accept=".jpg,.jpeg,.png" />
             </div>
             <div class="field-group">
-              <label>Side Photo 2 <span>*</span></label>
-              <input type="file" name="vehicle_side2_${vehicleCount}" accept=".jpg,.jpeg,.png" required />
+              <label>Side Photo 2</label>
+              <input type="file" name="vehicle_side2_${vehicleCount}" accept=".jpg,.jpeg,.png" />
             </div>
             <div class="field-group">
-              <label>Interior Photo 1 <span>*</span></label>
-              <input type="file" name="vehicle_interior1_${vehicleCount}" accept=".jpg,.jpeg,.png" required />
+              <label>Interior Photo 1</label>
+              <input type="file" name="vehicle_interior1_${vehicleCount}" accept=".jpg,.jpeg,.png" />
             </div>
             <div class="field-group">
-              <label>Interior Photo 2 <span>*</span></label>
-              <input type="file" name="vehicle_interior2_${vehicleCount}" accept=".jpg,.jpeg,.png" required />
+              <label>Interior Photo 2</label>
+              <input type="file" name="vehicle_interior2_${vehicleCount}" accept=".jpg,.jpeg,.png" />
             </div>
           </div>
         </div>
@@ -387,16 +380,16 @@
 
         <div class="form-grid three-col">
           <div class="field-group">
-            <label>Driver Aadhaar <span>*</span></label>
-            <input type="file" name="driver_aadhaar_${driverCount}" accept=".jpg,.jpeg,.png,.pdf" required />
+            <label>Driver Aadhaar</label>
+            <input type="file" name="driver_aadhaar_${driverCount}" accept=".jpg,.jpeg,.png,.pdf" />
           </div>
           <div class="field-group">
-            <label>Driver License <span>*</span></label>
-            <input type="file" name="driver_license_${driverCount}" accept=".jpg,.jpeg,.png,.pdf" required />
+            <label>Driver License</label>
+            <input type="file" name="driver_license_${driverCount}" accept=".jpg,.jpeg,.png,.pdf" />
           </div>
           <div class="field-group">
-            <label>Driver Photo <span>*</span></label>
-            <input type="file" name="driver_photo_${driverCount}" accept=".jpg,.jpeg,.png" required />
+            <label>Driver Photo</label>
+            <input type="file" name="driver_photo_${driverCount}" accept=".jpg,.jpeg,.png" />
           </div>
         </div>
       `;
@@ -422,7 +415,7 @@
 
       if (!validateStep(3)) return;
 
-      if (!SCRIPT_URL || SCRIPT_URL.includes('https://script.google.com/macros/s/AKfycbxtf0oX-XPvY9pawokWKcVObRLHRNtRK_313oOVNwOQNT7nUZQPRdPGblJQFx3THY_-vA/exec')) {
+      if (!SCRIPT_URL) {
         alert('Apps Script Web App URL is not added yet.');
         return;
       }
