@@ -1,0 +1,533 @@
+
+  .mobile-friendly-check input[type="checkbox"] {
+  width: 20px !important;
+  height: 20px !important;
+  accent-color: #0d6efd !important; /* Bootstrap blue */
+  cursor: pointer;
+}
+
+/* If you had appearance:none somewhere, override it */
+.mobile-friendly-check input[type="checkbox"] {
+  appearance: auto !important;
+  -webkit-appearance: checkbox !important;
+}
+
+/* Optional: better alignment */
+.mobile-friendly-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+    .hidden {
+      display: none !important;
+    }
+
+    .owner-driver-box,
+    .declaration-box,
+    .info-box,
+    .success-box,
+    .fitness-box {
+      border-radius: 18px;
+    }
+
+    .owner-driver-box {
+      margin-top: 24px;
+      padding: 18px 18px 14px;
+      border: 1px solid rgba(13, 110, 253, 0.16);
+      background: linear-gradient(180deg, #f8fbff 0%, #f4f8ff 100%);
+    }
+
+    .owner-driver-switch {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      flex-wrap: nowrap;
+    }
+
+    .owner-driver-switch .form-check-input {
+      width: 3rem;
+      height: 1.6rem;
+      margin-top: 2px;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .owner-driver-switch .switch-copy {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .owner-driver-switch .switch-title {
+      display: block;
+      font-weight: 700;
+      font-size: 1rem;
+      color: #1d2a3a;
+      margin-bottom: 4px;
+      line-height: 1.35;
+    }
+
+    .owner-driver-switch .switch-subtitle {
+      display: block;
+      font-size: 0.92rem;
+      color: #5f6b7a;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .owner-license-near-toggle {
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px dashed rgba(13, 110, 253, 0.18);
+    }
+
+    .mobile-friendly-check {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 14px 16px;
+      border: 1px solid #e6ebf2;
+      border-radius: 14px;
+      background: #fff;
+      margin-bottom: 12px;
+    }
+
+    .mobile-friendly-check input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      margin-top: 3px;
+      flex-shrink: 0;
+    }
+
+    .mobile-friendly-check span {
+      line-height: 1.5;
+      font-size: 0.97rem;
+      color: #1f2937;
+    }
+
+    .step3-card {
+      border: 1px solid #e9eef5;
+      border-radius: 20px;
+      padding: 18px;
+      background: #ffffff;
+      box-shadow: 0 8px 24px rgba(18, 38, 63, 0.04);
+    }
+
+    .step3-top-note {
+      margin-bottom: 18px;
+    }
+
+    .repeat-card {
+      border: 1px solid #e8edf5;
+      border-radius: 20px;
+      padding: 20px;
+      background: #fff;
+      margin-bottom: 18px;
+      box-shadow: 0 8px 22px rgba(15, 23, 42, 0.04);
+    }
+
+    .repeat-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .repeat-head h3 {
+      margin: 0;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #1d2a3a;
+    }
+
+    .remove-link {
+      border: none;
+      background: transparent;
+      color: #dc3545;
+      font-weight: 600;
+      padding: 0;
+    }
+
+    .subcard {
+      margin-top: 18px;
+      border: 1px solid #e9eef5;
+      border-radius: 18px;
+      padding: 18px;
+      background: #fbfdff;
+    }
+
+    .subcard.compact {
+      padding: 16px;
+    }
+
+    .subcard-head {
+      margin-bottom: 14px;
+    }
+
+    .subcard-head h3,
+    .subcard-head h4 {
+      margin: 0 0 4px;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #22324a;
+    }
+
+    .subcard-head p {
+      margin: 0;
+      font-size: 0.92rem;
+      color: #667085;
+    }
+
+    .form-grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .form-grid.two-col {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .form-grid.three-col {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .field-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .field-group.full-width {
+      grid-column: 1 / -1;
+    }
+
+    .field-group label {
+      font-weight: 600;
+      color: #24364d;
+      margin-bottom: 8px;
+      font-size: 0.95rem;
+    }
+
+    .field-group label span {
+      color: #dc3545;
+    }
+
+    .field-group input,
+    .field-group select,
+    .field-group textarea {
+      width: 100%;
+      min-height: 46px;
+      border: 1px solid #d8e2ee;
+      border-radius: 12px;
+      padding: 12px 14px;
+      font-size: 0.95rem;
+      outline: none;
+      background: #fff;
+    }
+
+    .field-group textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    .field-group input:focus,
+    .field-group select:focus,
+    .field-group textarea:focus {
+      border-color: #0d6efd;
+      box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.08);
+    }
+
+    .fitness-box {
+      margin-top: 12px;
+      padding: 14px;
+      background: #fafcff;
+      border: 1px solid #e6edf7;
+    }
+
+    .fitness-note {
+      display: block;
+      margin-top: 8px;
+      color: #6b7280;
+      font-size: 0.88rem;
+      line-height: 1.45;
+    }
+
+    .info-box {
+      background: #eef6ff;
+      border: 1px solid #cfe3ff;
+      color: #184b8c;
+      padding: 16px 18px;
+    }
+
+    .success-box {
+      background: #eefcf3;
+      border: 1px solid #cdeed8;
+      color: #155b2a;
+      padding: 20px;
+      margin-top: 20px;
+    }
+
+    .form-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .form-actions.align-end {
+      justify-content: flex-end;
+    }
+
+    .inline-actions {
+      margin-top: 8px;
+      margin-bottom: 8px;
+    }
+
+    .form-actions .btn,
+    .inline-actions .btn {
+      min-height: 46px;
+      border-radius: 12px;
+      font-weight: 600;
+    }
+
+    .section-header {
+      margin-bottom: 18px;
+    }
+
+    .section-header h2 {
+      margin: 0 0 6px;
+      font-size: 1.45rem;
+      font-weight: 700;
+      color: #1d2a3a;
+    }
+
+    .section-header p {
+      margin: 0;
+      color: #667085;
+    }
+
+    .page-shell {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 28px 16px 50px;
+    }
+
+    .hero {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: #eaf3ff;
+      color: #0d6efd;
+      font-weight: 700;
+      font-size: 0.88rem;
+      margin-bottom: 14px;
+    }
+
+    .hero h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+      color: #15253a;
+    }
+
+    .hero-text {
+      max-width: 760px;
+      margin: 0 auto;
+      color: #667085;
+      line-height: 1.7;
+    }
+
+    .registration-card {
+      background: #fff;
+      border: 1px solid #e9eef5;
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: 0 12px 32px rgba(18, 38, 63, 0.06);
+    }
+
+    .progress-wrap {
+      margin-bottom: 24px;
+    }
+
+    .progress-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+      gap: 12px;
+    }
+
+    .progress-label,
+    .progress-count {
+      margin: 0;
+      font-weight: 700;
+      color: #1f3047;
+    }
+
+    .progressbar {
+      width: 100%;
+      height: 10px;
+      border-radius: 999px;
+      background: #edf2f9;
+      overflow: hidden;
+      margin-bottom: 18px;
+    }
+
+    .progressbar-fill {
+      width: 0%;
+      height: 100%;
+      background: linear-gradient(90deg, #0d6efd 0%, #4f8cff 100%);
+      transition: width 0.3s ease;
+    }
+
+    .stepper {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .step-pill {
+      border: 1px solid #d8e2ee;
+      background: #fff;
+      color: #3a4d67;
+      border-radius: 999px;
+      padding: 10px 16px;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+
+    .step-pill.active {
+      background: #0d6efd;
+      color: #fff;
+      border-color: #0d6efd;
+    }
+
+    .step-pill.done {
+      background: #eaf3ff;
+      color: #0d6efd;
+      border-color: #cfe1ff;
+    }
+
+    .form-step {
+      display: none;
+    }
+
+    .form-step.active {
+      display: block;
+    }
+
+    .brand-logo {
+      height: 54px;
+      width: auto;
+    }
+
+    @media (max-width: 991.98px) {
+      .form-grid.three-col {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 767.98px) {
+      .registration-card {
+        padding: 18px;
+        border-radius: 18px;
+      }
+
+      .form-grid.two-col,
+      .form-grid.three-col {
+        grid-template-columns: 1fr;
+      }
+
+      .owner-driver-box {
+        padding: 16px;
+      }
+
+      .owner-driver-switch {
+        gap: 12px;
+      }
+
+      .owner-driver-switch .form-check-input {
+        width: 2.8rem;
+        height: 1.5rem;
+      }
+
+      .owner-driver-switch .switch-title {
+        font-size: 0.98rem;
+      }
+
+      .owner-driver-switch .switch-subtitle {
+        font-size: 0.88rem;
+      }
+
+      .mobile-friendly-check {
+        padding: 12px 14px;
+        border-radius: 12px;
+      }
+
+      .mobile-friendly-check span {
+        font-size: 0.92rem;
+      }
+
+      .step3-card,
+      .repeat-card,
+      .subcard {
+        padding: 14px;
+      }
+
+      .hero h1 {
+        font-size: 1.65rem;
+      }
+
+      .brand-logo {
+        height: 46px;
+      }
+    }
+
+    .terms-modal-content {
+  border: 0;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.18);
+}
+
+.terms-box {
+  max-height: 380px;
+  overflow-y: auto;
+  padding: 16px;
+  border: 1px solid #e6edf7;
+  border-radius: 16px;
+  background: #fbfdff;
+}
+
+.terms-box h6 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1d2a3a;
+  margin-top: 14px;
+  margin-bottom: 8px;
+}
+
+.terms-box h6:first-child {
+  margin-top: 0;
+}
+
+.terms-box p {
+  margin-bottom: 10px;
+  color: #4b5563;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+#confirmSubmitBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+  
+.mt-20{margin-top:20px;}

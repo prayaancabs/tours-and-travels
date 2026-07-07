@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+  <meta content="Tour packages from Coimbatore for hill stations, pilgrimages, Kerala escapes and family holidays." name="description"/>
+
+  <title>Tour Packages | Prayaan Cabs</title>
+
+  <link href="images/favicon.png" rel="shortcut icon"/>
+  <link href="images/favicon.png" rel="icon" type="image/png"/>
+
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet"/>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17734250014"></script>
+  <script defer src="assets/js/tracking.js"></script>
+
+  <link href="style.css" rel="stylesheet"/>
+  <link href="tour-packages.css" rel="stylesheet"/>
+</head>
+
+<body class="tour-page">
+
+<nav class="navbar navbar-expand-lg site-navbar fixed-top" id="siteNavbar">
+  <div class="container">
+    <a aria-label="Prayaan Cabs home" class="navbar-brand brand-mark" href="index.html">
+      <img alt="Prayaan Cabs Logo" class="brand-logo" src="https://prayaancabs.com/images/Logo.png"/>
+    </a>
+
+    <button aria-controls="mobileMenu" aria-label="Open menu" class="navbar-toggler" data-bs-target="#mobileMenu" data-bs-toggle="offcanvas" type="button">
+      <i class="bi bi-list"></i>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end d-none d-lg-flex">
+      <ul class="navbar-nav align-items-center">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+        <li class="nav-item"><a class="nav-link active" href="tour-packages.html">Tour Packages</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="vendor.html">Vendor Registration</a></li>
+        <li class="nav-item"><a class="nav-link nav-cta" href="index.html#booking">Book Online</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div aria-labelledby="mobileMenuLabel" class="offcanvas offcanvas-start site-mobile-menu" id="mobileMenu" tabindex="-1">
+  <div class="offcanvas-header">
+    <h5 id="mobileMenuLabel">Prayaan <span>Cabs</span></h5>
+    <button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" type="button"></button>
+  </div>
+
+  <div class="offcanvas-body">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a class="active-mobile" href="tour-packages.html">Tour Packages</a>
+    <a href="about.html">About Us</a>
+    <a href="vendor.html">Vendor Registration</a>
+    <a class="mobile-cta" href="index.html#booking">Book Online</a>
+  </div>
+</div>
+
+<main>
+
+  <section class="page-hero package-hero">
+    <div class="container">
+      <div class="page-hero-inner reveal">
+        <span class="section-eyebrow">Coimbatore Based Tours</span>
+        <h1>Tour Packages From Coimbatore</h1>
+        <p>Explore 1-day to 7-day hill station, temple, wildlife and Kerala holiday routes with professional cab support.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="tour-browser-section">
+    <div class="container">
+
+      <div class="section-heading reveal">
+        <span class="section-eyebrow">Choose Duration</span>
+        <h2>Explore Tour Packages</h2>
+        <p>Select a duration on the left. Packages will switch on the right with compact details and enquiry options.</p>
+      </div>
+
+      <div class="tour-browser-shell reveal">
+
+        <aside class="duration-sidebar" aria-label="Package duration filter">
+  <button id="all-tour-packages" class="duration-pill active" data-duration="ALL" data-duration-hash="all-tour-packages" type="button">
+    <span>All Packages</span>
+    <small id="count-ALL">0 packages</small>
+  </button>
+
+  <button id="one-day-tour-packages" class="duration-pill" data-duration="1D" data-duration-hash="one-day-tour-packages" type="button">
+    <span>1 Day</span>
+    <small id="count-1D">0 packages</small>
+  </button>
+
+  <button id="two-day-tour-packages" class="duration-pill" data-duration="2D" data-duration-hash="two-day-tour-packages" type="button">
+    <span>2 Days</span>
+    <small id="count-2D">0 packages</small>
+  </button>
+
+  <button id="three-day-tour-packages" class="duration-pill" data-duration="3D" data-duration-hash="three-day-tour-packages" type="button">
+    <span>3 Days</span>
+    <small id="count-3D">0 packages</small>
+  </button>
+
+  <button id="four-day-tour-packages" class="duration-pill" data-duration="4D" data-duration-hash="four-day-tour-packages" type="button">
+    <span>4 Days</span>
+    <small id="count-4D">0 packages</small>
+  </button>
+
+  <button id="five-day-tour-packages" class="duration-pill" data-duration="5D" data-duration-hash="five-day-tour-packages" type="button">
+    <span>5 Days</span>
+    <small id="count-5D">0 packages</small>
+  </button>
+
+  <button id="six-day-tour-packages" class="duration-pill" data-duration="6D" data-duration-hash="six-day-tour-packages" type="button">
+    <span>6 Days</span>
+    <small id="count-6D">0 packages</small>
+  </button>
+
+  <button id="seven-day-tour-packages" class="duration-pill" data-duration="7D" data-duration-hash="seven-day-tour-packages" type="button">
+    <span>7 Days</span>
+    <small id="count-7D">0 packages</small>
+  </button>
+
+  <button id="eight-day-tour-packages" class="duration-pill" data-duration="8D" data-duration-hash="eight-day-tour-packages" type="button">
+    <span>8 Days</span>
+    <small id="count-8D">0 packages</small>
+  </button>
+</aside>
+
+        <div class="tour-results-panel">
+          <div class="tour-results-top">
+            <div>
+              <span id="activeDurationLabel">All Packages</span>
+              <h3 id="activeDurationTitle">Every Coimbatore tour route</h3>
+            </div>
+
+            <strong id="packageCount">0 packages</strong>
+          </div>
+
+          <div aria-live="polite" class="tour-list-grid" id="packageGrid"></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div aria-hidden="true" class="modal fade" id="packageModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+    <div class="modal-content package-modal">
+
+      <div class="modal-header">
+        <div>
+          <span class="modal-kicker" id="modalPackageDuration"></span>
+          <h5 class="modal-title" id="modalPackageTitle">Package Details</h5>
+          <p id="modalPackageRoute">Route</p>
+        </div>
+
+        <button aria-label="Close" class="btn-close btn-close-white" data-bs-dismiss="modal" type="button"></button>
+      </div>
+
+      <div class="modal-body">
+
+        <ul class="nav package-detail-tabs" id="packageDetailTabs" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="packageOverviewBtn" data-bs-toggle="tab" data-bs-target="#packageOverviewTab" type="button" role="tab">
+              Overview
+            </button>
+          </li>
+
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="packageItineraryBtn" data-bs-toggle="tab" data-bs-target="#packageItineraryTab" type="button" role="tab">
+              Itinerary
+            </button>
+          </li>
+
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="packageEnquiryBtn" data-bs-toggle="tab" data-bs-target="#packageEnquiryTab" type="button" role="tab">
+              Enquire Now
+            </button>
+          </li>
+        </ul>
+
+        <div class="tab-content package-tab-content">
+
+          <div class="tab-pane fade" id="packageOverviewTab" role="tabpanel">
+            <div class="package-overview-card">
+
+              <div class="overview-box">
+                <small>Package ID</small>
+                <strong id="modalPackageId">-</strong>
+              </div>
+
+              <div class="overview-box">
+                <small>Duration</small>
+                <strong id="modalOverviewDuration">-</strong>
+              </div>
+
+              <div class="overview-box">
+                <small>Category</small>
+                <strong id="modalOverviewCategory">-</strong>
+              </div>
+
+              <div class="overview-box">
+                <small>Route</small>
+                <strong id="modalOverviewRoute">-</strong>
+              </div>
+
+            </div>
+
+            <p class="modal-summary-text" id="modalOverviewSummary"></p>
+
+            <button class="modal-tab-enquire-btn" type="button" id="goToEnquiryTab">
+              Enquire For This Package
+            </button>
+          </div>
+
+          <div class="tab-pane fade show active" id="packageItineraryTab" role="tabpanel">
+            <div class="modal-badges" id="modalPackageBadges"></div>
+
+            <h6 class="modal-subtitle">Itinerary</h6>
+            <div class="itinerary-list" id="modalItinerary"></div>
+
+            <button class="modal-tab-enquire-btn" type="button" id="goToEnquiryTabFromItinerary">
+              Enquire Now
+            </button>
+          </div>
+
+          <div class="tab-pane fade" id="packageEnquiryTab" role="tabpanel">
+            <div id="modalEnquiryFormArea">
+              <h6 class="modal-subtitle">Send Enquiry</h6>
+
+              <form data-prevent-submit="true" id="packageEnquiryForm">
+                <div class="row g-3">
+
+                  <div class="col-md-6">
+                    <label>Full Name</label>
+                    <input id="customerName" placeholder="Enter your name" required type="text">
+                  </div>
+
+                  <div class="col-md-6">
+                    <label>Phone Number</label>
+                    <input id="customerPhone" maxlength="10" placeholder="10-digit mobile number" required type="tel">
+                  </div>
+
+                  <div class="col-md-6">
+                    <label>Pickup Location</label>
+                    <input id="customerPickup" placeholder="Example: Coimbatore Railway Station" required type="text">
+                  </div>
+
+                  <div class="col-md-6 travel-date-field">
+                    <label>Travel Date</label>
+                    <input id="travelDate" required type="date">
+                  </div>
+
+                  <div class="col-md-6">
+                    <label>Vehicle</label>
+                    <select id="vehicleSelect" required>
+                      <option value="">Select Vehicle</option>
+                      <option>Sedan</option>
+                      <option>Ertiga</option>
+                      <option>Innova</option>
+                      <option>Innova Crysta</option>
+                      <option>Tempo Traveller</option>
+                      <option>Urbania</option>
+                    </select>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label>Passenger Count</label>
+                    <input id="passengerCount" min="1" placeholder="Example: 4" required type="number">
+                  </div>
+
+                  <div class="col-md-6">
+                    <label>Accommodation Needed?</label>
+                    <select id="packageAccommodation" required>
+                      <option value="">Select Option</option>
+                      <option>No</option>
+                      <option>Yes</option>
+                    </select>
+                  </div>
+
+                  <div class="col-md-6 accommodation-extra">
+                    <label>Adult Count</label>
+                    <input id="adultCount" min="1" placeholder="Adults" type="number">
+                  </div>
+
+                  <div class="col-md-6 accommodation-extra">
+                    <label>Child Count</label>
+                    <input id="childCount" min="0" placeholder="Children" type="number">
+                  </div>
+
+                </div>
+
+                <div class="child-note accommodation-extra">
+                  Children above 10 years will be considered as adults.
+                </div>
+
+                <button class="package-submit-btn" id="previewPackageBtn" type="button">
+                  Preview &amp; Submit
+                </button>
+              </form>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div aria-hidden="true" class="modal fade" id="previewPackageModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content preview-modal">
+
+      <div class="modal-header">
+        <h5 class="modal-title">Confirm Your Enquiry</h5>
+        <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+      </div>
+
+      <div class="modal-body" id="packagePreviewContent"></div>
+
+      <div class="modal-footer">
+        <button class="modal-cancel" id="editPackagePreview" type="button">Edit</button>
+        <button class="modal-send" id="sendPackageWhatsapp" type="button">Send to WhatsApp</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+
+      <div>
+        <a class="footer-brand" href="index.html">
+          <img alt="Prayaan Cabs logo" src="https://prayaancabs.com/images/Logo.png"/>
+          <span>Prayaan <strong>Cabs</strong></span>
+        </a>
+
+        <p>Premium cab rentals, tour packages, airport transfers and corporate travel support across South India.</p>
+
+        <div class="footer-socials">
+          <a aria-label="Facebook" href="#"><i class="bi bi-facebook"></i></a>
+          <a aria-label="Instagram" href="#"><i class="bi bi-instagram"></i></a>
+          <a aria-label="WhatsApp" href="https://wa.me/919500530043"><i class="bi bi-whatsapp"></i></a>
+        </div>
+      </div>
+
+      <div>
+        <h5>Company</h5>
+        <a href="services.html">Services</a>
+        <a href="tour-packages.html">Tour Packages</a>
+        <a href="about.html">About Us</a>
+        <a href="vendor.html">Vendor Registration</a>
+      </div>
+
+      <div>
+        <h5>Support</h5>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="delete-account.html">Delete Account</a>
+        <a href="index.html#booking">Book Online</a>
+      </div>
+
+      <div>
+        <h5>Contact</h5>
+        <p><i class="bi bi-telephone-fill"></i> <a href="tel:+919500530043">+91 95005 30043</a></p>
+        <p><i class="bi bi-envelope-fill"></i> <a href="mailto:prayaancabs@gmail.com">prayaancabs@gmail.com</a></p>
+        <p><i class="bi bi-geo-alt-fill"></i> 6/391 B, Near SBIOA School, Sathyabhama Nagar, Pattanam, Coimbatore - 641016</p>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 Prayaan Cabs. All Rights Reserved.</span>
+      <span>Designed &amp; Developed by <a href="https://marcinmind.in" rel="noopener" target="_blank">Marc in Mind Technologies</a></span>
+    </div>
+  </div>
+</footer>
+
+<div aria-label="Quick contact" class="bottom-contact-bar">
+  <a href="tel:+919500530043">
+    <i class="bi bi-telephone-fill"></i>
+    <span>Call</span>
+  </a>
+
+  <a href="https://wa.me/919500530043?text=Hello%20Prayaan%20Cabs%2C%20I%20need%20cab%20service." rel="noopener" target="_blank">
+    <i class="bi bi-whatsapp"></i>
+    <span>WhatsApp</span>
+  </a>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/packages-data.js"></script>
+<script src="assets/js/packages.js"></script>
+
+</body>
+</html>

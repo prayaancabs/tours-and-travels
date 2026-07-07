@@ -1,1505 +1,670 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Prayaan Cabs - Premium car rental services in Tamil Nadu, Kerala, Karnataka, Andhra Pradesh."/>
-  <title>Prayaan Cabs | Premium Car Hire & Taxi Services</title>
-  <link rel="shortcut icon" href="images/favicon.png">
-  <link rel="stylesheet" href="style.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-
-  <style>
-    /* Compact Vehicle Grid */
-    .vehicle-tariff-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-      gap: 10px;
-      margin-top: 12px;
-      text-align: center;
-    }
-    .vehicle-tariff-card {
-      background: transparent;
-      border: 1px solid #eee;
-      box-shadow: none;
-      padding: 10px;
-      cursor: pointer;
-      transition: transform 0.15s ease, border-color 0.15s ease;
-      border-radius: 8px;
-    }
-    .vehicle-tariff-card:hover { transform: translateY(-4px); border-color:#d1e7ff; }
-    .vehicle-tariff-card.selected {
-      background: rgba(0, 123, 255, 0.06);
-      border-color: #007bff;
-    }
-    .vehicle-icon-circle-horizontal img { width: 40px; height: 30px; object-fit: contain; margin-bottom:6px; }
-    .vehicle-name-horizontal { font-size: 14px; font-weight: 600; color: #222; line-height:1.1; }
-    .vehicle-category { font-size: 12px; color: #666; margin-bottom: 4px; }
-    .tariff-price { font-size: 14px; font-weight: 700; color: #007bff; }
-
-    @media (max-width: 576px) {
-      .vehicle-tariff-grid { grid-template-columns: repeat(3, 1fr); gap: 6px; }
-      .vehicle-icon-circle-horizontal img { width: 30px; height: 24px; }
-      .vehicle-name-horizontal { font-size: 12px; }
-      .tariff-price { font-size: 12px; }
-    }
-
-    .btn-back { background: transparent; border: 1px solid #ddd; padding: .375rem .75rem; border-radius: .375rem; }
-    .summary-box { background: #f8f9fa; }
-    .small-muted { color: #6c757d; font-size: 0.95rem; }
-    pre#fareBreakdownText { margin:0; font-family: inherit; white-space: pre-wrap; }
-
-    .floating-contact {
-      position: fixed;
-      right: 16px;
-      bottom: 16px;
-      z-index: 999;
-    }
-    .call-btn, .whatsapp-btn {
-      width: 48px;
-      height: 48px;
-    }
-  </style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<meta content="Premium cab rental, airport transfer, corporate travel and tour package services from Coimbatore." name="description"/>
+<title>Prayaan Cabs | Premium Car Rentals &amp; Tour Packages</title>
+<link href="images/favicon.png" rel="shortcut icon"/>
+<link href="images/favicon.png" rel="icon" type="image/png"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=AW-17734250014"></script>
+<script defer="" src="assets/js/tracking.js"></script>
 
 
 
 
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17734250014"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'AW-17734250014');
-  </script>
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17734014377"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag2(){dataLayer.push(arguments);}
-    gtag2('js', new Date());
-    gtag2('config', 'AW-17734014377');
-  </script>
-  <!-- Event snippet for Phone call lead conversion page -->
-  <script>
-    gtag('event', 'conversion', {'send_to': 'AW-17734014377/tewdCKjJosIbEKmrnohC'});
-  </script>
-
-
-  <!-- Event snippet for Contact conversion page --> <script> gtag('event', 'conversion', {'send_to': 'AW-17850099906/xDrrCMDBvd8bEMLRy79C'}); </script>
-</head>
+<link href="style.css" rel="stylesheet"/></head>
 <body>
-  <!-- Navigation -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
-    <div class="container">
-      <a class="navbar-brand" href="#home">
-        <img src="https://prayaancabs.com/images/Logo.png" alt="Prayaan Logo" class="brand-logo" onerror="this.style.display='none'">
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-          <li class="nav-item"><a class="nav-link" href="destinations.html">Destinations</a></li>
-          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-          <li class="nav-item"><a class="nav-link" href="vendor.html">Vendor Registration</a></li>
-          <li class="nav-item"><a class="nav-link btn btn-primary text-white px-3 ms-2" href="#booking">Book Now</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+<nav class="navbar navbar-expand-lg site-navbar fixed-top" id="siteNavbar">
+<div class="container">
+<a aria-label="Prayaan Cabs home" class="navbar-brand brand-mark" href="index.html">
+<img alt="Prayaan Cabs Logo" class="brand-logo" src="https://prayaancabs.com/images/Logo.png"/>
+</a>
+<button aria-controls="mobileMenu" aria-label="Open menu" class="navbar-toggler" data-bs-target="#mobileMenu" data-bs-toggle="offcanvas" type="button">
+<i class="bi bi-list"></i>
+</button>
+<div class="collapse navbar-collapse justify-content-end d-none d-lg-flex">
+<ul class="navbar-nav align-items-center">
+<li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+<li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+<li class="nav-item"><a class="nav-link" href="tour-packages.html">Tour Packages</a></li>
+<li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+<li class="nav-item"><a class="nav-link" href="vendor.html">Vendor Registration</a></li>
+<li class="nav-item"><a class="nav-link nav-cta" href="index.html#booking">Book Online</a></li>
+</ul>
+</div>
+</div>
+</nav>
+<div aria-labelledby="mobileMenuLabel" class="offcanvas offcanvas-start site-mobile-menu" id="mobileMenu" tabindex="-1">
+<div class="offcanvas-header">
+<h5 id="mobileMenuLabel">Prayaan <span>Cabs</span></h5>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" type="button"></button>
+</div>
+<div class="offcanvas-body">
+<a class="active-mobile" href="index.html">Home</a>
+<a class="" href="services.html">Services</a>
+<a class="" href="tour-packages.html">Tour Packages</a>
+<a class="" href="about.html">About Us</a>
+<a class="" href="vendor.html">Vendor Registration</a>
+<a class="mobile-cta" href="index.html#booking">Book Online</a>
+</div>
+</div>
+<main>
+<section class="booking-hub-section" id="booking">
+<div class="container">
+<div class="booking-hub-header reveal">
+<span class="section-eyebrow">Book Online</span>
+<h1>Book online or send a trip enquiry.</h1>
+<p>Use Enquire Now for custom tours and package planning. Use Book Online for one way, round trip and local cab booking with Razorpay payment.</p>
+</div>
+<div class="booking-hub-card reveal delay">
+<div aria-label="Booking options" class="booking-mode-tabs" role="tablist">
+  <button class="booking-mode-btn active" data-booking-mode="online" type="button">Book Online</button>
+<button class="booking-mode-btn" data-booking-mode="enquiry" type="button">Enquire Now</button>
 
-  <!-- Quick Booking Section -->
-  <section id="booking" class="booking-section py-5">
-    <div class="container">
-      <div class="section-header text-center mb-4">
-        <h2>Book Your Ride</h2>
-        <p class="small-muted">Enter your trip details to see instant pricing</p>
-      </div>
-      <div class="row justify-content-center">
-        <div class="col-lg-11">
-          <div class="booking-form-card p-3 shadow-sm rounded">
-
-            <!-- Trip Type Selector -->
-            <div class="trip-type-selector-horizontal d-flex justify-content-center gap-3 mb-3">
-              <div class="trip-type-btn-horizontal active p-2" data-trip="oneway" style="cursor:pointer;">
-                <i class="fas fa-route me-1"></i><span>One Way</span>
-              </div>
-              <div class="trip-type-btn-horizontal p-2" data-trip="roundtrip" style="cursor:pointer;">
-                <i class="fas fa-exchange-alt me-1"></i><span>Round Trip</span>
-              </div>
-              <div class="trip-type-btn-horizontal p-2" data-trip="local" style="cursor:pointer;">
-                <i class="fas fa-map-marked-alt me-1"></i><span>Local</span>
-              </div>
-            </div>
-
-            <form id="bookingForm" onsubmit="return false;">
-              <!-- One Way Form -->
-              <div id="onewayForm" class="form-section active">
-                <div class="row g-3">
-                  <div class="col-md-6">
-                    <label class="form-label"><i class="fas fa-map-marker-alt"></i> Pickup Location</label>
-                    <input type="text" class="form-control location-input" id="onewayPickup" placeholder="Enter starting location" required>
-                  </div>
-                  <div class="col-md-6">
-                    <label class="form-label"><i class="fas fa-flag-checkered"></i> Drop Location</label>
-                    <input type="text" class="form-control location-input" id="onewayDrop" placeholder="Enter destination" required>
-                  </div>
-                  <div class="col-md-6">
-                    <label class="form-label"><i class="fas fa-calendar-alt"></i> Date & Time</label>
-                    <input type="datetime-local" class="form-control" id="onewayDateTime" required>
-                  </div>
-                  <div class="col-md-6">
-                    <label class="form-label"><i class="fas fa-users"></i> Passengers</label>
-                    <input type="number" class="form-control" id="onewayPassengers" placeholder="Number of people" min="1" max="50" required>
-                  </div>
-                  <div class="col-12 text-center mt-3">
-                    <button type="button" class="btn btn-primary" id="onewayCheckBtn">
-                      <i class="fas fa-calculator"></i> Check Prices
+</div>
+<div class="booking-mode-panel" id="enquiryPanel">
+<div class="enquiry-panel-wrap">
+<div class="enquiry-card">
+<h3>Quick Enquiry</h3>
+<p>Fill your trip details and send directly to WhatsApp. Our team will confirm package availability and pricing.</p>
+<form data-prevent-submit="true" id="tripForm">
+<div class="form-group">
+<label for="destination">Where are you planning to visit?</label>
+<input id="destination" placeholder="Example: Ooty, Munnar, Rameswaram" required="" type="text"/>
+</div>
+<div class="step-fields" id="locationFields">
+<div class="row g-3">
+<div class="col-md-6 form-group">
+<label for="pickup">Pickup Location</label>
+<input id="pickup" placeholder="Enter pickup location" type="text"/>
+</div>
+<div class="col-md-6 form-group">
+<label for="drop">Drop Location</label>
+<input id="drop" placeholder="Enter drop location" type="text"/>
+</div>
+</div>
+</div>
+<div class="step-fields" id="dateFields">
+<div class="row g-3">
+<div class="col-md-6 form-group">
+<label for="pickupDate">Pickup Date &amp; Time</label>
+<input id="pickupDate" type="datetime-local"/>
+</div>
+<div class="col-md-6 form-group">
+<label for="dropDate">Drop Date &amp; Time</label>
+<input id="dropDate" type="datetime-local"/>
+</div>
+</div>
+</div>
+<div class="step-fields" id="vehicleFields">
+<div class="row g-3">
+<div class="col-md-6 form-group">
+<label for="vehicle">Vehicle Selection</label>
+<select id="vehicle">
+<option value="">Select Vehicle</option>
+<option>Sedan (4+1)</option>
+<option>Ertiga (6+1)</option>
+<option>Innova (7+1)</option>
+<option>Innova Crysta (6+1)</option>
+<option>Innova Crysta (7+1)</option>
+<option>Toyota Hycross</option>
+<option>Tempo Traveller (12-18 Seater)</option>
+<option>Urbania (12-16 Seater)</option>
+<option>Coach (21 Seater)</option>
+</select>
+</div>
+<div class="col-md-6 form-group">
+<label for="passengers">Passenger Count</label>
+<input id="passengers" min="1" placeholder="Example: 4" type="number"/>
+</div>
+</div>
+</div>
+<div class="step-fields" id="stayFields">
+<div class="form-group">
+<label for="accommodation">Accommodation Needed?</label>
+<select id="accommodation">
+<option value="">Select Option</option>
+<option value="No">No</option>
+<option value="Yes">Yes</option>
+</select>
+</div>
+</div>
+<div class="step-fields" id="guestFields">
+<div class="note">Children above 10 years will be considered as adults.</div>
+<div class="row g-3">
+<div class="col-md-6 form-group">
+<label for="adults">Adult Count</label>
+<input id="adults" min="1" placeholder="Adults" type="number"/>
+</div>
+<div class="col-md-6 form-group">
+<label for="children">Child Count</label>
+<input id="children" min="0" placeholder="Children" type="number"/>
+</div>
+</div>
+</div>
+<button class="submit-btn w-100" id="previewBtn" type="button">Preview &amp; Submit</button>
+</form>
+</div>
+<aside class="enquiry-side-card">
+<div>
+<h3>Custom tour support</h3>
+<p>Best for tour packages, multi-day plans, accommodation help, family trips and group travel.</p>
+</div>
+<div class="enquiry-points">
+<div><i class="bi bi-whatsapp"></i><span>WhatsApp confirmation</span></div>
+<div><i class="bi bi-calendar2-check"></i><span>Dates, route and vehicle captured</span></div>
+<div><i class="bi bi-building-check"></i><span>Accommodation option included</span></div>
+</div>
+</aside>
+</div>
+</div>
+<div class="booking-mode-panel  active" id="onlinePanel">
+<div class="online-panel-intro">
+<h3>Book Online</h3>
+<p>Select one way, round trip or local package, choose a vehicle and continue to Razorpay payment.</p>
+</div>
+<div class="booking-form-card p-3 shadow-sm rounded">
+<!-- Trip Type Selector -->
+<div class="trip-type-selector-horizontal d-flex justify-content-center gap-3 mb-3">
+<div class="trip-type-btn-horizontal active p-2" data-trip="oneway">
+<i class="fas fa-route me-1"></i><span>One Way</span>
+</div>
+<div class="trip-type-btn-horizontal p-2" data-trip="roundtrip">
+<i class="fas fa-exchange-alt me-1"></i><span>Round Trip</span>
+</div>
+<div class="trip-type-btn-horizontal p-2" data-trip="local">
+<i class="fas fa-map-marked-alt me-1"></i><span>Local</span>
+</div>
+</div>
+<form data-prevent-submit="true" id="bookingForm">
+<!-- One Way Form -->
+<div class="form-section active" id="onewayForm">
+<div class="row g-3">
+<div class="col-md-6">
+<label class="form-label"><i class="fas fa-map-marker-alt"></i> From</label>
+<input class="form-control location-input" id="onewayPickup" placeholder="Enter starting location" required="" type="text"/>
+</div>
+<div class="col-md-6">
+<label class="form-label"><i class="fas fa-flag-checkered"></i> To</label>
+<input class="form-control location-input" id="onewayDrop" placeholder="Enter destination" required="" type="text"/>
+</div>
+<div class="col-md-6">
+<label class="form-label"><i class="fas fa-calendar-alt"></i> Date &amp; Time</label>
+<input class="form-control" id="onewayDateTime" required="" type="datetime-local"/>
+</div>
+<div class="col-md-6">
+<label class="form-label"><i class="fas fa-users"></i> Passengers</label>
+<input class="form-control" id="onewayPassengers" max="50" min="1" placeholder="Number of people" required="" type="number"/>
+</div>
+<div class="col-12 text-center mt-3">
+<button class="btn btn-primary" id="onewayCheckBtn" type="button">
+<i class="fas fa-calculator"></i> Continue
                     </button>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Round Trip Form -->
-              <div id="roundtripForm" class="form-section" style="display:none;">
-                <div class="row g-3">
-                  <div class="col-md-6">
-                    <label class="form-label"><i class="fas fa-map-marker-alt"></i> Pickup Location</label>
-                    <input type="text" class="form-control location-input" id="roundtripPickup" placeholder="Enter starting location" required>
-                  </div>
-                  <div class="col-md-6">
-                    <label class="form-label"><i class="fas fa-flag-checkered"></i> Drop Location</label>
-                    <input type="text" class="form-control location-input" id="roundtripDrop" placeholder="Enter destination" required>
-                  </div>
-                  <div class="col-12" id="intermediateStops"></div>
-                  <div class="col-12">
-                    <button type="button" class="add-stop-btn btn btn-outline-primary btn-sm" id="addStopBtn">
-                      <i class="fas fa-plus-circle"></i> Add Stop
+</div>
+</div>
+</div>
+<!-- Round Trip Form -->
+<div class="form-section" id="roundtripForm">
+<div class="row g-3">
+<div class="col-md-6">
+<label class="form-label"><i class="fas fa-map-marker-alt"></i> From</label>
+<input class="form-control location-input" id="roundtripPickup" placeholder="Enter starting location" required="" type="text"/>
+</div>
+<div class="col-md-6">
+<label class="form-label"><i class="fas fa-flag-checkered"></i> To</label>
+<input class="form-control location-input" id="roundtripDrop" placeholder="Enter destination" required="" type="text"/>
+</div>
+<div class="col-12" id="intermediateStops"></div>
+<div class="col-12">
+<button class="add-stop-btn btn btn-outline-primary btn-sm" id="addStopBtn" type="button">
+<i class="fas fa-plus-circle"></i> Add Stop
                     </button>
-                  </div>
-                  <div class="col-md-6">
-                    <label class="form-label"><i class="fas fa-calendar-alt"></i> Pickup Date & Time</label>
-                    <input type="datetime-local" class="form-control" id="roundtripPickupDateTime" required>
-                  </div>
-                  <div class="col-md-6">
-                    <label class="form-label"><i class="fas fa-calendar-check"></i> Return Date & Time</label>
-                    <input type="datetime-local" class="form-control" id="roundtripReturnDateTime" required>
-                  </div>
-                  <div class="col-md-6">
-                    <label class="form-label"><i class="fas fa-users"></i> Passengers</label>
-                    <input type="number" class="form-control" id="roundtripPassengers" min="1" max="50" required>
-                  </div>
-                  <div class="col-12 text-center mt-3">
-                    <button type="button" class="btn btn-primary" id="roundtripCheckBtn">
-                      <i class="fas fa-calculator"></i> Check Prices
+</div>
+<div class="col-md-6">
+<label class="form-label"><i class="fas fa-calendar-alt"></i> Pickup Date &amp; Time</label>
+<input class="form-control" id="roundtripPickupDateTime" required="" type="datetime-local"/>
+</div>
+<div class="col-md-6">
+<label class="form-label"><i class="fas fa-calendar-check"></i> Return Date &amp; Time</label>
+<input class="form-control" id="roundtripReturnDateTime" required="" type="datetime-local"/>
+</div>
+<div class="col-md-6">
+<label class="form-label"><i class="fas fa-users"></i> Passengers</label>
+<input class="form-control" id="roundtripPassengers" max="50" min="1" required="" type="number"/>
+</div>
+<div class="col-12 text-center mt-3">
+<button class="btn btn-primary" id="roundtripCheckBtn" type="button">
+<i class="fas fa-calculator"></i> Continue
                     </button>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Local Trip Form -->
-              <div id="localForm" class="form-section" style="display:none;">
-                <div class="local-package-selector mb-3 d-flex flex-wrap gap-2">
-                  <div class="package-option p-2 border rounded" data-package="4hrs">
-                    <div class="package-header fw-semibold">4 Hours</div>
-                    <div class="package-detail small-muted">Free 40 KM</div>
-                  </div>
-                  <div class="package-option active p-2 border rounded" data-package="8hrs">
-                    <div class="package-header fw-semibold">8 Hours</div>
-                    <div class="package-detail small-muted">Free 80 KM</div>
-                  </div>
-                  <div class="package-option p-2 border rounded" data-package="10hrs">
-                    <div class="package-header fw-semibold">10 Hours</div>
-                    <div class="package-detail small-muted">Free 100 KM</div>
-                  </div>
-                  <div class="package-option p-2 border rounded" data-package="12hrs">
-                    <div class="package-header fw-semibold">12 Hours</div>
-                    <div class="package-detail small-muted">Free 120 KM</div>
-                  </div>
-                </div>
-
-                <div class="row g-3">
-                  <div class="col-md-6">
-                    <label class="form-label"><i class="fas fa-map-marker-alt"></i> Pickup Location</label>
-                    <input type="text" class="form-control location-input" id="localPickup" required>
-                  </div>
-                  <div class="col-md-6">
-                    <label class="form-label"><i class="fas fa-calendar-alt"></i> Date & Time</label>
-                    <input type="datetime-local" class="form-control" id="localDateTime" required>
-                  </div>
-                  <div class="col-md-6">
-                    <label class="form-label"><i class="fas fa-users"></i> Passengers</label>
-                    <input type="number" class="form-control" id="localPassengers" min="1" max="50" required>
-                  </div>
-                  <div class="col-12 text-center mt-3">
-                    <button type="button" class="btn btn-primary" id="localCheckBtn">
-                      <i class="fas fa-calculator"></i> Check Prices
+</div>
+</div>
+</div>
+<!-- Local Trip Form -->
+<div class="form-section" id="localForm">
+<div class="local-package-selector mb-3 d-flex flex-wrap gap-2">
+<div class="package-option p-2 border rounded" data-package="4hrs">
+<div class="package-header fw-semibold">4 Hours</div>
+<div class="package-detail small-muted">Free 40 KM</div>
+</div>
+<div class="package-option active p-2 border rounded" data-package="8hrs">
+<div class="package-header fw-semibold">8 Hours</div>
+<div class="package-detail small-muted">Free 80 KM</div>
+</div>
+<div class="package-option p-2 border rounded" data-package="10hrs">
+<div class="package-header fw-semibold">10 Hours</div>
+<div class="package-detail small-muted">Free 100 KM</div>
+</div>
+<div class="package-option p-2 border rounded" data-package="12hrs">
+<div class="package-header fw-semibold">12 Hours</div>
+<div class="package-detail small-muted">Free 120 KM</div>
+</div>
+</div>
+<div class="row g-3">
+<div class="col-md-6">
+<label class="form-label"><i class="fas fa-map-marker-alt"></i> Pickup</label>
+<input class="form-control location-input" id="localPickup" required="" type="text"/>
+</div>
+<div class="col-md-6">
+<label class="form-label"><i class="fas fa-calendar-alt"></i> Date &amp; Time</label>
+<input class="form-control" id="localDateTime" required="" type="datetime-local"/>
+</div>
+<div class="col-md-6">
+<label class="form-label"><i class="fas fa-users"></i> Passengers</label>
+<input class="form-control" id="localPassengers" max="50" min="1" required="" type="number"/>
+</div>
+<div class="col-12 text-center mt-3">
+<button class="btn btn-primary" id="localCheckBtn" type="button">
+<i class="fas fa-calculator"></i> Continue
                     </button>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Loading Spinner -->
-              <div class="loading-spinner text-center my-3" id="loadingSpinner" style="display:none;">
-                <i class="fas fa-spinner fa-spin fa-3x text-primary"></i>
-                <p class="small-muted">Calculating prices...</p>
-              </div>
-
-              <!-- Vehicle Selection -->
-              <div id="vehicleTariffSection" class="vehicle-tariff-section" style="display:none;">
-                <h5 class="text-center mb-3">Choose Your Vehicle</h5>
-
-                <div id="vehicleTariffGrid" class="vehicle-tariff-grid"></div>
-                <div id="paxWarning" class="text-center small-muted text-danger mt-2" style="display:none;"></div>
-
-                <!-- Traveller info (shown only for local trips) -->
-                <div id="travellerNote" class="text-center small-muted mt-3" style="display:none;">
-                  <i class="fas fa-info-circle text-primary"></i>
+</div>
+</div>
+</div>
+<!-- Loading Spinner -->
+<div class="loading-spinner text-center my-3" id="loadingSpinner">
+<i class="fas fa-spinner fa-spin fa-3x text-primary"></i>
+<p class="small-muted">Preparing booking options...</p>
+</div>
+<!-- Vehicle Selection -->
+<div class="vehicle-tariff-section" id="vehicleTariffSection">
+<h5 class="text-center mb-3">Choose Vehicle for Online Booking</h5>
+<div class="vehicle-tariff-grid" id="vehicleTariffGrid"></div>
+<div class="text-center small-muted text-danger mt-2" id="paxWarning"></div>
+<!-- Traveller info (shown only for local trips) -->
+<div class="text-center small-muted mt-3" id="travellerNote">
+<i class="fas fa-info-circle text-primary"></i>
                   For <b>Tempo Traveller</b> bookings, kindly call us at
-                  <a href="tel:+919500530043" class="text-decoration-none fw-semibold">95005 30043</a>.
+                  <a class="text-decoration-none fw-semibold" href="tel:+919500530043">95005 30043</a>.
                 </div>
-
-                <div class="extra-charges-note mt-3 text-center small-muted">
-                  <i class="fas fa-info-circle"></i> Note: Tolls, parking & permits are extra
+<div class="extra-charges-note mt-3 text-center small-muted">
+<i class="fas fa-info-circle"></i> Note: Tolls, parking &amp; permits are extra
                 </div>
-              </div>
-
-              <!-- Customer Info Page -->
-              <div id="customerInfoPage" style="display:none;">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                  <button id="backToVehiclesBtn" class="btn-back"><i class="fas fa-arrow-left"></i> Back</button>
-                  <h5 class="mb-0">Your Details</h5>
-                  <div style="width:64px"></div>
-                </div>
-
-                <p class="text-center small-muted mb-4">Please provide your name and contact number to continue.</p>
-                <div class="row g-3">
-                  <div class="col-md-6 mx-auto">
-                    <label class="form-label"><i class="fas fa-user"></i> Full Name</label>
-                    <input type="text" class="form-control" id="customerName" placeholder="Enter your full name" required>
-                  </div>
-                  <div class="col-md-6 mx-auto">
-                    <label class="form-label"><i class="fas fa-phone"></i> Phone Number</label>
-                    <input type="tel" class="form-control" id="customerPhone" placeholder="10-digit mobile number" pattern="[0-9]{10}" required>
-                  </div>
-                </div>
-                <div class="text-center mt-4">
-                  <button type="button" id="customerNextBtn" class="btn btn-success btn-lg w-100">Continue to Booking Summary</button>
-                </div>
-              </div>
-
-              <!-- Booking Preview -->
-              <div id="bookingPreviewSection" style="display:none;">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                  <button id="backToCustomerBtn" class="btn-back"><i class="fas fa-arrow-left"></i> Back</button>
-                  <h5 class="mb-0">Booking Summary</h5>
-                  <div style="width:64px"></div>
-                </div>
-
-                <div class="summary-box border rounded p-3 mb-3">
-                  <p id="summaryTripDetails" class="mb-2"></p>
-                  <p id="summaryVehicle" class="fw-bold mb-1"></p>
-                  <p id="summaryBasePrice" class="text-primary fw-semibold mb-0"></p>
-                </div>
-
-                <!-- Fare Breakdown -->
-                <div id="fareBreakdownBox" >
-                  <!-- <h6 class="mb-2">Note</h6> -->
-                  <pre id="fareBreakdownText" ></pre>
-                </div>
-
-                <!-- Terms & Conditions -->
-                <div id="termsBox" class="border rounded p-3 mb-3 bg-light small-muted">
-                  <h6 class="mb-2"><i class="fas fa-info-circle text-primary"></i> Terms & Conditions</h6>
-                  <ul id="termsList" class="mb-0 ps-3"></ul>
-                </div>
-
-                <!-- Add-ons -->
-                <h6 class="mb-2">Add Extra Services (Optional)</h6>
-                <div class="addon-options border rounded p-3 mb-3">
-                  <div class="form-check">
-                    <input class="form-check-input addon-checkbox" type="checkbox" id="addonLuggage" data-price="149">
-                    <label class="form-check-label" for="addonLuggage">Cab with Luggage Carrier (+ ₹149)</label>
-                  </div>
-                  <div class="form-check">
-                    <input class="form-check-input addon-checkbox" type="checkbox" id="addonNewCar" data-price="249">
-                    <label class="form-check-label" for="addonNewCar">New Car Promise (2022-2025 Model) (+ ₹249)</label>
-                  </div>
-                </div>
-
-                <div class="fare-preview text-center mb-2">
-                  <h5>Total Fare: <span id="totalFare" class="text-success fw-bold">₹0</span></h5>
-                </div>
-
-                <div class="text-center small-muted mb-3">Tolls, Parking & Permits are extra</div>
-
-                <!-- TWO MAIN BUTTONS: WHATSAPP + PAY ONLINE -->
-                <div class="d-flex flex-column flex-md-row gap-2 mb-3">
-                  <button type="button" id="finalProceedBtn" class="btn btn-success btn-lg w-100">
-                    <i class="fab fa-whatsapp"></i> Proceed
+</div>
+<!-- Customer Info Page -->
+<div id="customerInfoPage">
+<div class="d-flex justify-content-between align-items-center mb-3">
+<button class="btn-back" id="backToVehiclesBtn"><i class="fas fa-arrow-left"></i> Back</button>
+<h5 class="mb-0">Your Details</h5>
+<div class="booking-spacer"></div>
+</div>
+<p class="text-center small-muted mb-4">Please provide your name and contact number to continue.</p>
+<div class="row g-3">
+<div class="col-md-6 mx-auto">
+<label class="form-label"><i class="fas fa-user"></i> Full Name</label>
+<input class="form-control" id="customerName" placeholder="Enter your full name" required="" type="text"/>
+</div>
+<div class="col-md-6 mx-auto">
+<label class="form-label"><i class="fas fa-phone"></i> Phone Number</label>
+<input class="form-control" id="customerPhone" pattern="[0-9]{10}" placeholder="10-digit mobile number" required="" type="tel"/>
+</div>
+</div>
+<div class="text-center mt-4">
+<button class="btn btn-success btn-lg w-100" id="customerNextBtn" type="button">Continue to Booking Summary</button>
+</div>
+</div>
+<!-- Booking Preview -->
+<div id="bookingPreviewSection">
+<div class="d-flex justify-content-between align-items-center mb-3">
+<button class="btn-back" id="backToCustomerBtn"><i class="fas fa-arrow-left"></i> Back</button>
+<h5 class="mb-0">Booking Summary</h5>
+<div class="booking-spacer"></div>
+</div>
+<div class="summary-box border rounded p-3 mb-3">
+<p class="mb-2" id="summaryTripDetails"></p>
+<p class="fw-bold mb-1" id="summaryVehicle"></p>
+<p class="text-primary fw-semibold mb-0" id="summaryBasePrice"></p>
+</div>
+<!-- Fare Breakdown -->
+<div id="fareBreakdownBox">
+<!-- <h6 class="mb-2">Note</h6> -->
+<pre id="fareBreakdownText"></pre>
+</div>
+<!-- Terms & Conditions -->
+<div class="border rounded p-3 mb-3 bg-light small-muted" id="termsBox">
+<h6 class="mb-2"><i class="fas fa-info-circle text-primary"></i> Terms &amp; Conditions</h6>
+<ul class="mb-0 ps-3" id="termsList"></ul>
+</div>
+<!-- Add-ons -->
+<h6 class="mb-2">Add Extra Services (Optional)</h6>
+<div class="addon-options border rounded p-3 mb-3">
+<div class="form-check">
+<input class="form-check-input addon-checkbox" data-price="400" id="addonLuggage" type="checkbox"/>
+<label class="form-check-label" for="addonLuggage">Cab with Luggage Carrier (+ ₹400)</label>
+</div>
+<div class="form-check">
+<input class="form-check-input addon-checkbox" data-price="249" id="addonNewCar" type="checkbox"/>
+<label class="form-check-label" for="addonNewCar">New Car Promise (2022-2025 Model) (+ ₹249)</label>
+</div>
+</div>
+<div class="fare-preview text-center mb-2">
+<h5>Total Fare: <span class="text-success fw-bold" id="totalFare">₹0</span></h5>
+</div>
+<div class="text-center small-muted mb-3">Tolls, Parking &amp; Permits are extra</div>
+<!-- TWO MAIN BUTTONS: WHATSAPP + PAY ONLINE -->
+<div class="d-flex flex-column flex-md-row gap-2 mb-3">
+<button class="btn btn-success btn-lg w-100" id="finalProceedBtn" type="button">
+<i class="fab fa-whatsapp"></i> Send Booking on WhatsApp
                   </button>
-
-                  <button type="button" id="payOnlineBtn" class="btn btn-primary btn-lg w-100">
+<button class="btn btn-primary btn-lg w-100" id="payOnlineBtn" type="button">
                     Pay Online
                   </button>
-                </div>
-
-                <!-- Payment Options (shown AFTER Pay Online is clicked) -->
-                <div id="paymentOptionsSection" class="border rounded p-3 mb-3" style="display:none;">
-                  <h6 class="mb-2">Choose Payment Option</h6>
-                  <div class="form-check mb-2">
-                    <input class="form-check-input" type="radio" name="paymentOption" id="payAdvance" value="advance">
-                    <label class="form-check-label" for="payAdvance">
+</div>
+<!-- Payment Options (shown AFTER Pay Online is clicked) -->
+<div class="border rounded p-3 mb-3" id="paymentOptionsSection">
+<h6 class="mb-2">Choose Payment Option</h6>
+<div class="form-check mb-2">
+<input class="form-check-input" id="payAdvance" name="paymentOption" type="radio" value="advance"/>
+<label class="form-check-label" for="payAdvance">
                       Pay Advance (10% of Total Fare)
                     </label>
-                  </div>
-                  <div class="form-check mb-3">
-                    <input class="form-check-input" type="radio" name="paymentOption" id="payFull" value="full">
-                    <label class="form-check-label" for="payFull">
+</div>
+<div class="form-check mb-3">
+<input class="form-check-input" id="payFull" name="paymentOption" type="radio" value="full"/>
+<label class="form-check-label" for="payFull">
                       Pay Full Amount
                     </label>
-                  </div>
-                  <button type="button" id="payNowBtn" class="btn btn-dark btn-lg w-100">
+</div>
+<button class="btn btn-dark btn-lg w-100" id="payNowBtn" type="button">
                     Pay Now
                   </button>
-                </div>
-              </div>
-
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Hero + Services + Features -->
-  <section id="home" class="hero-section py-5">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-6 mb-4 mb-lg-0">
-          <h1 class="hero-title">Premium Car Rental Services</h1>
-          <p class="hero-subtitle small-muted">Comfortable, reliable, and affordable car hire across South India.</p>
-          <a href="#booking" class="btn btn-primary btn-lg mt-3">Book Now <i class="fas fa-arrow-right ms-2"></i></a>
-        </div>
-        <!--<div class="col-lg-6">-->
-        <!--  <img src="images/flota.jpeg" alt="Premium Car Rental" class="img-fluid rounded" onerror="this.src='https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800'">-->
-        <!--</div>-->
-      </div>
-    </div>
-  </section>
-
-  <div class="floating-contact d-flex flex-column">
-    <a href="tel:+919500530043"
-       class="btn btn-primary rounded-circle d-flex align-items-center justify-content-center mb-2 shadow call-btn">
-      <i class="bi bi-telephone-fill"></i>
-    </a>
-
-    <a href="https://wa.me/919500530043?text=Hello%20Prayaan%20Cabs%2C%20I%20need%20cab%20service."
-       target="_blank"
-       class="btn btn-success rounded-circle d-flex align-items-center justify-content-center shadow whatsapp-btn">
-      <i class="bi bi-whatsapp"></i>
-    </a>
-  </div>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-4 mb-4">
-          <h5><i class="fas fa-car"></i> Prayaan Cabs</h5>
-          <p>Premium car rental services across South India. Reliable, affordable, and professional.</p>
-          <div class="social-links">
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="https://wa.me/919500530043"><i class="fab fa-whatsapp"></i></a>
-          </div>
-        </div>
-        <div class="col-lg-4 mb-4">
-          <h5>Quick Links</h5>
-          <ul class="footer-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="destinations.html">Destinations</a></li>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="booking.html">Book Now</a></li>
-          </ul>
-        </div>
-        <div class="col-lg-4 mb-4">
-          <h5>Contact Us</h5>
-          <ul class="footer-contact">
-            <li><i class="fas fa-phone"></i> +91 9500530043</li>
-            <li><i class="fas fa-envelope"></i> prayaancabs@gmail.com</li>
-            <li><i class="fas fa-map-marker-alt"></i> 6/391 B<br> Near SBIOA School<br> Sathyabhama Nagar<br> Pattanam <br> Coimbatore-641016 </li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2025 Prayaan Cabs. All rights reserved.
-    </p>
-      <p style="font-size: 14px; opacity: 0.7;">
-        Designed & curated by
-        <a href="https://marcinmind.in" target="_blank" style="text-decoration: none; color: var(--gold);">
-          Marc in Mind Technologies
-        </a>.
-      </p>
-      </div>
-    </div>
-  </footer>
-
-  <!-- HIDDEN FORM + IFRAME for Sheet submission (NO CORS) -->
-  <iframe name="hiddenSheetFrame" style="display:none;"></iframe>
-  <form id="sheetForm"
-        action="https://script.google.com/macros/s/AKfycbzE7Xai27jt42c85uGZYW7-g3daHC3Ahb3gdOUx7zOWoKFb7fTLiXKtYyAfP8vfesH3/exec"
-        method="POST"
-        target="hiddenSheetFrame"
-        style="display:none;">
-    <input type="hidden" name="name" id="sheet_name">
-    <input type="hidden" name="phone" id="sheet_phone">
-    <input type="hidden" name="tripType" id="sheet_tripType">
-    <input type="hidden" name="pickup" id="sheet_pickup">
-    <input type="hidden" name="intermediate" id="sheet_intermediate">
-    <input type="hidden" name="drop" id="sheet_drop">
-    <input type="hidden" name="days" id="sheet_days">
-<input type="hidden" name="kmLimit" id="sheet_kmLimit">
-    <input type="hidden" name="pickupDateTime" id="sheet_pickupDateTime">
-    <input type="hidden" name="returnDateTime" id="sheet_returnDateTime">
-    <input type="hidden" name="vehicle" id="sheet_vehicle">
-    <input type="hidden" name="baseFare" id="sheet_baseFare">
-    <input type="hidden" name="gst" id="sheet_gst">
-    <input type="hidden" name="addons" id="sheet_addons">
-    <input type="hidden" name="totalFare" id="sheet_totalFare">
-    <input type="hidden" name="paymentType" id="sheet_paymentType">
-    <input type="hidden" name="paymentAmount" id="sheet_paymentAmount">
-    <input type="hidden" name="paymentStatus" id="sheet_paymentStatus">
-    <input type="hidden" name="paymentId" id="sheet_paymentId">
-  </form>
-
-  <!-- scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- Google Places -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBC6yIwGEbnc5IM_Fpa8M-CrZsnUt83BPQ&libraries=places"></script>
-
-  <script>
-  /* ==========================================================
-     12-HOUR FORMATTER (NEW) — For all pickup & return times
-     ========================================================== */
-  function formatDateTime12h(dateStr) {
-    if (!dateStr) return "";
-    const d = new Date(dateStr);
-    return d.toLocaleString("en-IN", {
-      year: "numeric",
-      month: "short",
-      day: "numeric",
-      hour: "numeric",
-      minute: "2-digit",
-      hour12: true
-    });
-  }
-
-  /* ===========================
-       GLOBAL DATA + VARIABLES
-     =========================== */
-     /* ====== Data & State ====== */
-     const vehiclePricing = {
-       oneway: {
-         'Swift Dzire / Toyota Etios': { perKm: 22, icon: 'fa-car', image: 'images/sedan.png', category: 'Sedan' },
-         'Mahindra Xylo / Ertiga':    { perKm: 26, icon: 'fa-car-side', image: 'images/ertiga.png', category: 'SUV' },
-         'Innova':                    { perKm: 28, icon: 'fa-shuttle-van', image: 'images/innova.png', category: 'MPV' },
-         'Innova Crysta (6+1)':       { perKm: 32, icon: 'fa-van-shuttle', image: 'images/crysta.png', category: 'Premium MPV' },
-         'Innova Crysta (7+1)':       { perKm: 32, icon: 'fa-van-shuttle', image: 'images/crysta.png', category: 'Premium MPV' }
-       },
-       roundtrip: {
-         'Swift Dzire / Toyota Etios': { dayRent: 2200, perKm: 13, icon: 'fa-car', image: 'images/sedan.png', category: 'Sedan' },
-         'Mahindra Xylo / Ertiga':     { dayRent: 2400, perKm: 14, icon: 'fa-car-side', image: 'images/xuv.png', category: 'SUV' },
-         'Innova':                     { dayRent: 3000, perKm: 15, icon: 'fa-shuttle-van', image: 'images/innova.png', category: 'MPV' },
-         'Innova Crysta (6+1)':        { dayRent: 3500, perKm: 18, icon: 'fa-van-shuttle', image: 'images/crysta.png', category: 'Premium MPV' },
-         'Innova Crysta (7+1)':        { dayRent: 3500, perKm: 18, icon: 'fa-van-shuttle', image: 'images/crysta.png', category: 'Premium MPV' },
-         'Traveller':                  { dayRent: 4200, perKm: 21, icon: 'fa-bus', image: 'images/tempo.png', category: '12/14-seater TT' }
-       },
-       local: {
-         '4hrs': {
-           'Swift Dzire or equivalent':         { packageRate: 1450, freeKm: 40, extraPerKm: 14, extraHour: 380, icon: 'fa-car', image: 'images/sedan.png', category: 'Sedan' },
-           'Ertiga':        { packageRate: 1720, freeKm: 40, extraPerKm: 17, extraHour: 430, icon: 'fa-car', image: 'images/ertiga.png', category: 'MPV' },
-           'Innova':              { packageRate: 2200, freeKm: 40, extraPerKm: 18, extraHour: 480, icon: 'fa-shuttle-van', image: 'images/innova.png', category: 'MPV' },
-           'Innova Crysta (6+1)': { packageRate: 2500, freeKm: 40, extraPerKm: 22, extraHour: 580, icon: 'fa-van-shuttle', image: 'images/crysta.png', category: 'Premium MPV' },
-           'Innova Crysta (7+1)': { packageRate: 2500, freeKm: 40, extraPerKm: 22, extraHour: 580, icon: 'fa-van-shuttle', image: 'images/crysta.png', category: 'Premium MPV' },
-           'Traveller':           { packageRate: 3000, freeKm: 40, extraPerKm: 19, extraHour: 450, icon: 'fa-bus', image: 'images/tempo.png', category: '12/14-seater TT' }
-         },
-         '8hrs': {
-           'Swift Dzire or equivalent':         { packageRate: 2880, freeKm: 80, extraPerKm: 14, extraHour: 350, icon: 'fa-car', image: 'images/sedan.png', category: 'Sedan' },
-           'Ertiga':        { packageRate: 3440, freeKm: 80, extraPerKm: 17, extraHour: 430, icon: 'fa-car', image: 'images/ertiga.png', category: 'MPV' },
-           'Innova':              { packageRate: 3840, freeKm: 80, extraPerKm: 18, extraHour: 480, icon: 'fa-shuttle-van', image: 'images/innova.png', category: 'MPV' },
-           'Innova Crysta (6+1)': { packageRate: 4640, freeKm: 80, extraPerKm: 22, extraHour: 580, icon: 'fa-van-shuttle', image: 'images/crysta.png', category: 'Premium MPV' },
-           'Innova Crysta (7+1)': { packageRate: 4640, freeKm: 80, extraPerKm: 22, extraHour: 580, icon: 'fa-van-shuttle', image: 'images/crysta.png', category: 'Premium MPV' },
-           'Traveller':           { packageRate: 4800, freeKm: 80, extraPerKm: 19, extraHour: 500, icon: 'fa-bus', image: 'images/tempo.png', category: '12/14-seater TT' }
-         },
-         '10hrs': {
-           'Swift Dzire or equivalent':         { packageRate: 3600, freeKm: 100, extraPerKm: 14, extraHour: 360, icon: 'fa-car', image: 'images/sedan.png', category: 'Sedan' },
-           'Ertiga':        { packageRate: 4300, freeKm: 100, extraPerKm: 17, extraHour: 430, icon: 'fa-car', image: 'images/ertiga.png', category: 'MPV' },
-           'Innova':              { packageRate: 4800, freeKm: 100, extraPerKm: 18, extraHour: 480, icon: 'fa-shuttle-van', image: 'images/innova.png', category: 'MPV' },
-           'Innova Crysta (6+1)': { packageRate: 5800, freeKm: 100, extraPerKm: 22, extraHour: 580, icon: 'fa-van-shuttle', image: 'images/crysta.png', category: 'Premium MPV' },
-           'Innova Crysta (7+1)': { packageRate: 5800, freeKm: 100, extraPerKm: 22, extraHour: 580, icon: 'fa-van-shuttle', image: 'images/crysta.png', category: 'Premium MPV' },
-           'Traveller':           { packageRate: 5300, freeKm: 100, extraPerKm: 19, extraHour: 500, icon: 'fa-bus', image: 'images/tempo.png', category: '12/14-seater TT' }
-         },
-         '12hrs': {
-           'Swift Dzire or equivalent':         { packageRate: 4320, freeKm: 120, extraPerKm: 14, extraHour: 360, icon: 'fa-car', image: 'images/sedan.png', category: 'Sedan' },
-           'Ertiga':        { packageRate: 5160, freeKm: 120, extraPerKm: 17, extraHour: 430, icon: 'fa-car', image: 'images/ertiga.png', category: 'MPV' },
-           'Innova':              { packageRate: 5760, freeKm: 120, extraPerKm: 18, extraHour: 480, icon: 'fa-shuttle-van', image: 'images/innova.png', category: 'MPV' },
-           'Innova Crysta (6+1)': { packageRate: 6960, freeKm: 120, extraPerKm: 22, extraHour: 580, icon: 'fa-van-shuttle', image: 'images/crysta.png', category: 'Premium MPV' },
-           'Innova Crysta (7+1)': { packageRate: 6960, freeKm: 120, extraPerKm: 22, extraHour: 580, icon: 'fa-van-shuttle', image: 'images/crysta.png', category: 'Premium MPV' },
-           'Traveller':           { packageRate: 6000, freeKm: 120, extraPerKm: 19, extraHour: 500, icon: 'fa-bus', image: 'images/tempo.png', category: '12/14-seater TT' }
-         }
-       }
-     };
-
-  /* =======================
-     TERMS (unchanged)
-     ======================= */
-  const terms = {
-    oneway: [
-      "__EXTRAKM__",
-      "5% GST Included",
-      "One pickup at origin and one drop at destination. No multiple city usage included.",
-      "Toll, parking, interstate permits extra (if applicable).",
-      "AC may be switched off during hill climbs.",
-      "Multiple pickups/drops will attract additional charges."
-    ],
-    roundtrip: [
-      "5% GST Included",
-      "Additional kms beyond the limit will be charged extra.",
-      "Kilometers and hours start and end at pickup location.",
-      "Toll, parking, state permit & entry fees are extra.",
-      "Night driving allowance applies between 9:45 PM and 6:00 AM.",
-      "All planned cities must be informed in advance.",
-      "AC may be turned off during steep hill climbs."
-    ],
-    local: [
-      "5% GST Included",
-      "Package includes fixed KM & fixed hours.",
-      "Extra KM & Extra hours are charged separately.",
-      "Toll, parking, permits are extra.",
-      "Night driving charges apply after 9:45 PM."
-    ]
-  };
-
-  /* =======================
-     GLOBAL STATE
-     ======================= */
-  let currentTripType = 'oneway';
-  let selectedLocalPackage = '8hrs';
-  let intermediateStopCount = 0;
-
-  let selectedVehicle = null;
-  let lastComputedDistance = 0;
-  let lastComputedDays = 1;
-  let lastBasePrice = 0;
-  let lastGst = 0;
-
-  /* ==================================
-     INIT AUTOCOMPLETE
-     ================================== */
-  function initAutocomplete() {
-    document.querySelectorAll('.location-input').forEach(input => {
-      if (!input.dataset.autoinit) {
-        try {
-          new google.maps.places.Autocomplete(input, {
-            componentRestrictions: { country: 'in' }
-          });
-        } catch(e){}
-        input.dataset.autoinit = "1";
-      }
-    });
-  }
-
-  /* ==================================
-     TRIP TYPE SWITCHER
-     ================================== */
-  document.querySelectorAll('.trip-type-btn-horizontal').forEach(btn=>{
-    btn.addEventListener('click', function(){
-      document.querySelectorAll('.trip-type-btn-horizontal')
-        .forEach(b=>b.classList.remove('active'));
-
-      this.classList.add('active');
-      currentTripType = this.dataset.trip;
-
-      document.getElementById('onewayForm').style.display     = currentTripType==='oneway'?'block':'none';
-      document.getElementById('roundtripForm').style.display  = currentTripType==='roundtrip'?'block':'none';
-      document.getElementById('localForm').style.display      = currentTripType==='local'?'block':'none';
-
-      document.getElementById('vehicleTariffSection').style.display = 'none';
-      document.getElementById('customerInfoPage').style.display     = 'none';
-      document.getElementById('bookingPreviewSection').style.display= 'none';
-
-      initAutocomplete();
-    });
-  });
-  /* ==================================
-     ADD INTERMEDIATE STOP
-     ================================== */
-  document.getElementById('addStopBtn').addEventListener('click', ()=>{
-    intermediateStopCount++;
-    const wrap = document.createElement('div');
-    wrap.className = "intermediate-stop mb-2";
-    wrap.innerHTML = `
-      <div class="d-flex justify-content-between align-items-center mb-2">
-        <h6 class="mb-0">Stop ${intermediateStopCount}</h6>
-        <button type="button" class="btn btn-sm btn-outline-danger remove-stop-btn">
-          <i class="fas fa-times"></i>
-        </button>
-      </div>
-      <input type="text" class="form-control location-input" placeholder="Enter location">
-    `;
-    document.getElementById('intermediateStops').appendChild(wrap);
-
-    wrap.querySelector('.remove-stop-btn').onclick = ()=>wrap.remove();
-
-    try {
-      new google.maps.places.Autocomplete(
-        wrap.querySelector('.location-input'),
-        { componentRestrictions:{country:'in'} }
-      );
-    } catch(e){}
-  });
-
-  /* ==================================
-     GOOGLE DISTANCE MATRIX
-     ================================== */
-  function calculateDistance(origins, destinations) {
-    return new Promise((resolve, reject)=>{
-      try {
-        const svc = new google.maps.DistanceMatrixService();
-        svc.getDistanceMatrix({
-          origins, destinations,
-          travelMode: google.maps.TravelMode.DRIVING,
-          unitSystem: google.maps.UnitSystem.METRIC
-        }, (res, status)=>{
-          if (status === 'OK') resolve(res);
-          else reject(status);
-        });
-      } catch(e){
-        reject(e);
-      }
-    });
-  }
-
-  /* ==================================
-     MAIN PRICING FLOW
-     ================================== */
-  async function calculateAndDisplayAllPrices(){
-    const spinner = document.getElementById('loadingSpinner');
-    spinner.style.display = 'block';
-    document.getElementById('vehicleTariffSection').style.display = 'none';
-    document.getElementById('customerInfoPage').style.display = 'none';
-    document.getElementById('bookingPreviewSection').style.display = 'none';
-
-    try {
-      let totalDistance = 0;
-      let days = 1;
-
-      function isCoimbatoreLocation(text){
-        if (!text) return false;
-        return text.toLowerCase().includes('coimbatore');
-      }
-
-      /* -------------------------------
-          ONEWAY
-         ------------------------------- */
-      if (currentTripType === 'oneway') {
-        const from = document.getElementById('onewayPickup').value.trim();
-        const to   = document.getElementById('onewayDrop').value.trim();
-        const pax  = parseInt(document.getElementById('onewayPassengers').value || 0, 10);
-        if (!from || !to || pax <= 0) { spinner.style.display = 'none'; return; }
-
-        const res = await calculateDistance([from], [to]);
-  const forwardDistance = (res.rows[0].elements[0].distance.value || 0) / 1000;
-
-  let returnDistance = 0;
-
-  // 👉 ADD RETURN KM ONLY IF PICKUP IS COIMBATORE
-  if (isCoimbatoreLocation(from)) {
-    try {
-      const resBack = await calculateDistance(
-        [to],
-        ["Coimbatore, Tamil Nadu"]
-      );
-      returnDistance = (resBack.rows[0].elements[0].distance.value || 0) / 1000;
-    } catch (e) {}
-  }
-
-  // 🔒 Total KM = forward + hidden return
-  totalDistance = forwardDistance + returnDistance;
-
-  lastComputedDistance = Math.round(totalDistance);
-  lastComputedDays = 1;
-
-  // UI will still look like one-way
-  displayAllVehiclePrices(totalDistance, 1);
-
-      }
-
-      /* -------------------------------
-          ROUNDTRIP
-         ------------------------------- */
-      else if (currentTripType === 'roundtrip') {
-        const from = document.getElementById('roundtripPickup').value.trim();
-        const to   = document.getElementById('roundtripDrop').value.trim();
-        const pickupRaw = document.getElementById('roundtripPickupDateTime').value;
-        const returnRaw = document.getElementById('roundtripReturnDateTime').value;
-        if (!from || !to || !pickupRaw || !returnRaw) { spinner.style.display='none'; return; }
-
-        // calculate days
-        const pDate = new Date(pickupRaw);
-        const rDate = new Date(returnRaw);
-        const msPerDay = 1000 * 60 * 60 * 24;
-        let rawDays = Math.floor((rDate - pDate) / msPerDay) + 1;
-        if (!isFinite(rawDays) || rawDays < 1) rawDays = 1;
-        days = rawDays;
-
-        const locs = [from];
-        document.querySelectorAll('#intermediateStops .location-input').forEach(i => {
-          if (i.value && i.value.trim()) locs.push(i.value.trim());
-        });
-        locs.push(to);
-
-        let forwardDistance = 0;
-        for (let i = 0; i < locs.length - 1; i++) {
-          try {
-            const res = await calculateDistance([locs[i]], [locs[i+1]]);
-            forwardDistance += ((res.rows[0].elements[0].distance.value || 0) / 1000);
-          } catch(e){}
-        }
-
-        let returnDistance = 0;
-        if (isCoimbatoreLocation(from)) {
-          const coimbatore = "Coimbatore, Tamil Nadu";
-          try {
-            const resBack = await calculateDistance([to],[coimbatore]);
-            returnDistance = (resBack.rows[0].elements[0].distance.value || 0) / 1000;
-          } catch(e){}
-        }
-
-        // LIMIT DAYS TO MAX 10
-let daysLimited = days;
-if (daysLimited > 10) daysLimited = 10;
-
-// ADD EXTRA KM (50 KM PER DAY)
-let extraKM = daysLimited * 50;
-
-// FINAL KM
-totalDistance = forwardDistance + returnDistance + extraKM;
-
-        lastComputedDistance = Math.round(totalDistance);
-        lastComputedDays = days;
-
-        displayAllVehiclePrices(totalDistance, days);
-      }
-
-      /* -------------------------------
-          LOCAL PACKAGE
-         ------------------------------- */
-      else if (currentTripType === 'local') {
-        displayLocalTariffs();
-      }
-
-    } catch(e){
-      console.error(e);
-      alert('Unable to calculate distance. Please check locations and try again.');
-    } finally {
-      spinner.style.display = 'none';
-    }
-  }
-
-  /* ==================================
-     VEHICLE CLICK HANDLER
-     ================================== */
-  function attachVehicleClickHandler(card, basePrice){
-    card.addEventListener('click', ()=>{
-      document.querySelectorAll('.vehicle-tariff-card').forEach(c=>c.classList.remove('selected'));
-      card.classList.add('selected');
-
-      selectedVehicle = card.querySelector('.vehicle-name-horizontal').textContent.trim();
-      lastBasePrice = parseInt(basePrice, 10) || 0;
-
-      document.getElementById('vehicleTariffSection').style.display = 'none';
-      document.getElementById('onewayForm').style.display = 'none';
-      document.getElementById('roundtripForm').style.display = 'none';
-      document.getElementById('localForm').style.display = 'none';
-
-      document.getElementById('customerInfoPage').style.display = 'block';
-      scrollTopSafe();
-
-      document.getElementById('bookingPreviewSection').style.display= 'none';
-      scrollTopSafe();
-
-    });
-  }
-
-  /* ==================================
-     SHOW BOOKING PREVIEW (12-HOUR FORMAT UPDATED)
-     ================================== */
-  function showBookingPreview(){
-    document.getElementById('vehicleTariffSection').style.display = 'none';
-    document.getElementById('customerInfoPage').style.display = 'none';
-
-    let summaryHTML = '';
-    let breakdown = '';
-
-    /* -------------------------------
-         ONEWAY SUMMARY
-       ------------------------------- */
-    if (currentTripType === 'oneway') {
-      const from = document.getElementById('onewayPickup').value;
-      const to   = document.getElementById('onewayDrop').value;
-
-      /* UPDATED TO 12-HOUR FORMAT */
-      const dt   = formatDateTime12h(document.getElementById('onewayDateTime').value);
-
-      const pax  = document.getElementById('onewayPassengers').value;
-      const distance = lastComputedDistance || 0;
-
-      summaryHTML =
-        `<b>From:</b> ${from}<br><b>To:</b> ${to}<br><b>Date & Time:</b> ${dt}`+
-        `<br><b>Passengers:</b> ${pax}<br><b>Distance:</b> ${distance} km`;
-
-      breakdown = ``;
-    }
-
-    /* -------------------------------
-         ROUNDTRIP SUMMARY
-       ------------------------------- */
-    else if (currentTripType === 'roundtrip') {
-      const from = document.getElementById('roundtripPickup').value;
-      const to   = document.getElementById('roundtripDrop').value;
-
-      /* UPDATED TO 12-HOUR FORMAT */
-      const pickup = formatDateTime12h(document.getElementById('roundtripPickupDateTime').value);
-      const ret    = formatDateTime12h(document.getElementById('roundtripReturnDateTime').value);
-
-      const pax    = document.getElementById('roundtripPassengers').value;
-      const distance = lastComputedDistance || 0;
-      const days     = lastComputedDays || 1;
-
-      let stops = [];
-      document.querySelectorAll('#intermediateStops .location-input').forEach(i => {
-        if (i.value && i.value.trim()) stops.push(i.value.trim());
-      });
-      const stopLine = stops.length ? `<b>Intermediate Stops:</b> ${stops.join(', ')}<br>` : '';
-
-      summaryHTML =
-        `<b>From:</b> ${from}<br>${stopLine}<b>To:</b> ${to}`+
-        `<br><b>Pickup:</b> ${pickup}<br><b>Return:</b> ${ret}`+
-        `<br><b>Passengers:</b> ${pax}<br><b>Total Distance:</b> ${distance} km<br><b>No. of Days:</b> ${days}`;
-
-      breakdown = ``;
-    }
-
-    /* -------------------------------
-         LOCAL TRIP SUMMARY
-       ------------------------------- */
-    else {
-      const pickupLoc = document.getElementById('localPickup').value;
-
-      /* UPDATED TO 12-HOUR FORMAT */
-      const dt  = formatDateTime12h(document.getElementById('localDateTime').value);
-
-      const pax = document.getElementById('localPassengers').value;
-
-      summaryHTML =
-        `<b>Pickup:</b> ${pickupLoc}<br><b>Date & Time:</b> ${dt}`+
-        `<br><b>Passengers:</b> ${pax}<br><b>Package:</b> ${selectedLocalPackage.toUpperCase()}`;
-
-      const pkgCfg = vehiclePricing.local[selectedLocalPackage] || {};
-      if (pkgCfg[selectedVehicle]) {
-        const pkg = pkgCfg[selectedVehicle];
-        lastBasePrice = parseInt(pkg.packageRate, 10) || lastBasePrice;
-        breakdown = ``;
-      } else {
-        breakdown = 'Package details not available.';
-      }
-    }
-
-    /* -------------------------------
-         GST SPLIT (UNCHANGED)
-       ------------------------------- */
-    const totalGst = Math.round(lastBasePrice * 0.05);
-    const cgst = Math.floor(totalGst / 2);
-    const sgst = totalGst - cgst;
-    lastGst = totalGst;
-
-    breakdown += ``;
-
-    document.getElementById('fareBreakdownText').textContent = breakdown;
-    document.getElementById('summaryTripDetails').innerHTML = summaryHTML;
-    document.getElementById('summaryVehicle').textContent = `Vehicle: ${selectedVehicle || 'Not selected'}`;
-    document.getElementById('summaryBasePrice').textContent = `Base Fare: ₹${lastBasePrice}`;
-
-    /* -------------------------------
-         TERMS (unchanged)
-       ------------------------------- */
-    if (currentTripType === "oneway") {
-      const cfg = vehiclePricing.oneway[selectedVehicle] || {};
-      const perKm = cfg.perKm || 0;
-      terms.oneway[0] = `Extra KM Charge: ₹${perKm}/km`;
-    }
-
-    const ul = document.getElementById("termsList");
-    ul.innerHTML = (terms[currentTripType] || [])
-      .map(t => `<li>${t}</li>`)
-      .join("");
-
-    document.getElementById('bookingPreviewSection').style.display = 'block';
-
-    /* Add-ons recalculation logic (unchanged) */
-    document.querySelectorAll('.addon-checkbox').forEach(chk => chk.checked = false);
-
-    function updateTotalFare(){
-      let addons = 0;
-      document.querySelectorAll('.addon-checkbox:checked').forEach(chk => {
-        addons += parseInt(chk.dataset.price || 0, 10);
-      });
-      const total = lastBasePrice + lastGst + addons;
-      document.getElementById('totalFare').textContent = `₹${total}`;
-    }
-
-    updateTotalFare();
-    document.querySelectorAll('.addon-checkbox').forEach(chk=>chk.onchange = updateTotalFare);
-
-    document.getElementById('paymentOptionsSection').style.display = 'none';
-  }
-  /* ==================================
-     DISPLAY VEHICLE CARDS
-     ================================== */
-  function displayAllVehiclePrices(distance, days) {
-    const data = vehiclePricing[currentTripType] || {};
-    const grid = document.getElementById('vehicleTariffGrid');
-    const paxWarning = document.getElementById('paxWarning');
-    grid.innerHTML = '';
-    paxWarning.style.display = 'none';
-    paxWarning.textContent = '';
-
-    const paxField = document.querySelector(`#${currentTripType}Passengers`);
-    const pax = parseInt(paxField ? paxField.value : 0, 10) || 0;
-
-    /* Passenger rules */
-    if (currentTripType === 'oneway' && pax > 7) {
-      paxWarning.textContent = "For more than 7 passengers, please contact us for Tempo Traveller bookings.";
-      paxWarning.style.display = 'block';
-      document.getElementById('vehicleTariffSection').style.display = 'block';
-      return;
-    }
-
-    Object.keys(data).forEach(v => {
-      const p = data[v];
-
-      // passenger-based filtering
-      if (pax > 0) {
-        if (pax > 4 && (v.includes('Swift Dzire') || v.includes('Toyota Etios'))) return;
-        if (v.includes('Innova Crysta (6+1)') && pax > 6) return;
-        if (v.includes('Innova Crysta (7+1)') && pax > 7) return;
-        if ((v.includes('Innova') && !v.includes('Crysta')) && pax > 7) return;
-        if ((v.includes('Xylo') || v.includes('Ertiga') || v.includes('SUV')) && pax > 7) return;
-        if (v.includes('Traveller')) {
-          if (currentTripType === 'oneway' || currentTripType === 'local') return;
-          if (pax <= 7) return;
-        }
-      }
-
-      let total = 0;
-
-      /* ONEWAY */
-      if (currentTripType === 'oneway') {
-        const perKm = p.perKm || 0;
-
-        if (distance < 35) {
-          grid.innerHTML = "";
-          paxWarning.style.display = 'block';
-          paxWarning.textContent = "⚠️ Minimum distance for One-Way booking is 35 KM.";
-          document.getElementById('vehicleTariffSection').style.display = 'block';
-          return;
-        }
-
-        if (distance >= 35 && distance <= 120) {
-          total = Math.round(distance * perKm * 2);
-        } else {
-          total = Math.round(distance * perKm);
-        }
-      }
-
-      /* ROUNDTRIP */
-      else {
-        const dayRent = p.dayRent || 0;
-        const perKm = p.perKm || 0;
-        total = Math.round((dayRent * days) + (distance * perKm));
-      }
-
-      const card = document.createElement('div');
-      card.className = 'vehicle-tariff-card';
-      card.innerHTML = `
-        <div style="min-height:56px;">
-          <div class="vehicle-icon-circle-horizontal">
-            <img src="${p.image}" alt="${v}" onerror="this.style.display='none'">
-          </div>
-          <div class="vehicle-name-horizontal">${v}</div>
-          <div class="vehicle-category">${p.category||''}</div>
-        </div>
-        <div class="tariff-price">Rs. ${total}</div>
-      `;
-
-      grid.appendChild(card);
-      attachVehicleClickHandler(card, total);
-    });
-
-    document.getElementById('vehicleTariffSection').style.display = 'block';
-  }
-
-  /* ==================================
-     DISPLAY LOCAL PACKAGE VEHICLE CARDS
-     ================================== */
-  function displayLocalTariffs(){
-    const data = vehiclePricing.local[selectedLocalPackage] || {};
-    const grid = document.getElementById('vehicleTariffGrid');
-    grid.innerHTML = '';
-    const pax = parseInt(document.getElementById('localPassengers').value || 0, 10) || 0;
-
-    Object.keys(data).forEach(v=>{
-      if (v.toLowerCase().includes('traveller')) return;
-      if (pax === 5 && (v === 'Swift Dzire' || v === 'Toyota Etios')) return;
-      if (v === 'Innova Crysta (6+1)' && pax === 7) return;
-      if (v === 'Innova Crysta (7+1)' && pax <= 6 && pax > 0) return;
-
-      const p = data[v];
-      const base = p.packageRate || 0;
-
-      const card = document.createElement('div');
-      card.className = 'vehicle-tariff-card';
-      card.innerHTML = `
-        <div style="min-height:56px;">
-          <div class="vehicle-icon-circle-horizontal">
-            <img src="${p.image}" alt="${v}" onerror="this.style.display='none'">
-          </div>
-          <div class="vehicle-name-horizontal">${v}</div>
-          <div class="vehicle-category">${p.category||''}</div>
-        </div>
-        <div class="tariff-price">Rs. ${base}</div>
-      `;
-
-      grid.appendChild(card);
-      attachVehicleClickHandler(card, base);
-    });
-
-    document.getElementById('travellerNote').style.display = 'block';
-    document.getElementById('vehicleTariffSection').style.display = 'block';
-  }
-
-  /* ==================================
-     AUTO RECALC WHEN PASSENGERS CHANGE
-     ================================== */
-  ['onewayPassengers','roundtripPassengers','localPassengers'].forEach(id=>{
-    const el = document.getElementById(id);
-    if (el) el.addEventListener('change', ()=> {
-      if (parseInt(el.value||0,10) > 0) calculateAndDisplayAllPrices();
-    });
-  });
-
-  /* ==================================
-     LOCAL PACKAGE SELECTION
-     ================================== */
-  document.querySelectorAll('.package-option').forEach(opt=>{
-    opt.addEventListener('click', function(){
-      document.querySelectorAll('.package-option').forEach(o=>o.classList.remove('active'));
-      this.classList.add('active');
-      selectedLocalPackage = this.dataset.package;
-      if (currentTripType === 'local') displayLocalTariffs();
-    });
-  });
-
-  /* ==================================
-     BACK BUTTONS
-     ================================== */
-  document.getElementById('backToVehiclesBtn').addEventListener('click', ()=>{
-    document.getElementById('customerInfoPage').style.display = 'none';
-    document.getElementById('vehicleTariffSection').style.display = 'block';
-
-    document.getElementById('onewayForm').style.display     = currentTripType==='oneway'?'block':'none';
-    document.getElementById('roundtripForm').style.display  = currentTripType==='roundtrip'?'block':'none';
-    document.getElementById('localForm').style.display      = currentTripType==='local'?'block':'none';
-  });
-
-  document.getElementById('backToCustomerBtn').addEventListener('click', ()=>{
-    document.getElementById('bookingPreviewSection').style.display = 'none';
-    document.getElementById('customerInfoPage').style.display = 'block';
-  });
-
-  /* ==================================
-     CUSTOMER → SUMMARY
-     ================================== */
-  document.getElementById('customerNextBtn').addEventListener('click', ()=>{
-    const name = document.getElementById('customerName').value.trim();
-    const phone = document.getElementById('customerPhone').value.trim();
-
-    if (!name || !phone) {
-      alert('Please enter name and phone.');
-      return;
-    }
-    if (phone.length !== 10 || !/^[0-9]+$/.test(phone)) {
-      alert('Enter a valid 10-digit phone number.');
-      return;
-    }
-
-    showBookingPreview();
-  });
-
-  /* ==================================
-     STRIP HTML (unchanged)
-     ================================== */
-  function stripHtml(html){
-    const tmp = document.createElement('DIV');
-    tmp.innerHTML = html;
-    return tmp.textContent || tmp.innerText || "";
-  }
-
-  /* ==================================
-     WHATSAPP MESSAGE AFTER SUMMARY
-     ================================== */
-  document.getElementById('finalProceedBtn').addEventListener('click', ()=>{
-    const name = document.getElementById('customerName').value.trim();
-    const phone = document.getElementById('customerPhone').value.trim();
-    if (!name || !phone) {
-      alert('Please enter name and phone.');
-      return;
-    }
-
-    /* Pickup Time Validation (1 hour before) */
-    let pickupTime = null;
-    if (currentTripType === 'oneway') {
-      pickupTime = new Date(document.getElementById('onewayDateTime').value);
-    } else if (currentTripType === 'roundtrip') {
-      pickupTime = new Date(document.getElementById('roundtripPickupDateTime').value);
-    } else if (currentTripType === 'local') {
-      pickupTime = new Date(document.getElementById('localDateTime').value);
-    }
-
-    if (pickupTime && !isNaN(pickupTime)) {
-      const now = new Date();
-      const diffMinutes = (pickupTime - now) / (1000 * 60);
-      if (diffMinutes < 60) {
-        alert('⚠️ Please book at least 1 hour before pickup time.');
-        return;
-      }
-    }
-
-    const totalText = document.getElementById('totalFare').textContent.replace('₹','').trim();
-
-    const addons = [];
-    document.querySelectorAll('.addon-checkbox:checked').forEach(chk=>{
-      addons.push(chk.nextElementSibling.textContent.trim());
-    });
-    const addonText = addons.length ? `\nAdd-ons:\n- ${addons.join('\n- ')}` : '';
-
-    const tripDetails = stripHtml(document.getElementById('summaryTripDetails').innerHTML);
-    const breakdown   = document.getElementById('fareBreakdownText').textContent;
-
-    const msg =
-  `🚗 New Booking - Prayaan Cabs
-
-  Name: ${name}
-  Phone: ${phone}
-  Trip Type: ${currentTripType.toUpperCase()}
-  Vehicle: ${selectedVehicle}
-  Base Fare: ₹${lastBasePrice}
-  GST (5%): ₹${lastGst}
-  Total Fare: ₹${totalText}${addonText}
-
-  Trip Details:
-  ${tripDetails}
-
-  Additional Charges / Notes:
-  ${breakdown}
-
-  Note: Tolls, parking & permits are extra.`;
-
-    const waUrl = `https://wa.me/919500530043?text=${encodeURIComponent(msg)}`;
-    window.open(waUrl, '_blank');
-  });
-
-  /* ==================================
-     SEND WHATSAPP AFTER PAYMENT
-     ================================== */
-  function sendToWhatsappAfterPayment(paymentId, paidAmount) {
-    const name = document.getElementById('customerName').value.trim();
-    const phone = document.getElementById('customerPhone').value.trim();
-    const tripDetails = stripHtml(document.getElementById('summaryTripDetails').innerHTML);
-    const breakdown   = document.getElementById('fareBreakdownText').textContent;
-    const totalFare = parseInt(document.getElementById('totalFare').textContent.replace('₹','').trim());
-
-    const balance = totalFare - paidAmount;
-
-    const msg =
-  `🚗 *New Booking - Prayaan Cabs*
-
-  Name: ${name}
-  Phone: ${phone}
-
-  *Payment Completed*
-  Payment ID: ${paymentId}
-  Paid Amount: ₹${paidAmount}
-  Balance: ₹${balance}
-
-  Trip Details:
-  ${tripDetails}
-
-  Fare Breakdown:
-  ${breakdown}
-
-  Note: Tolls, parking & permits extra.`;
-
-    const waUrl = `https://wa.me/919500530043?text=${encodeURIComponent(msg)}`;
-    window.open(waUrl, "_blank");
-  }
-  /* ==================================
-     CHECK PRICES BUTTONS
-     ================================== */
-  document.getElementById('onewayCheckBtn').addEventListener('click', ()=>{
-    const from = document.getElementById('onewayPickup').value.trim();
-    const to   = document.getElementById('onewayDrop').value.trim();
-    const pax  = parseInt(document.getElementById('onewayPassengers').value || 0);
-    if (!from || !to || pax <= 0) {
-      alert('Please enter From, To and Passenger details.');
-      return;
-    }
-    calculateAndDisplayAllPrices();
-  });
-
-  document.getElementById('roundtripCheckBtn').addEventListener('click', ()=>{
-    const from = document.getElementById('roundtripPickup').value.trim();
-    const to   = document.getElementById('roundtripDrop').value.trim();
-    const pickup = document.getElementById('roundtripPickupDateTime').value;
-    const ret    = document.getElementById('roundtripReturnDateTime').value;
-    const pax    = parseInt(document.getElementById('roundtripPassengers').value || 0);
-    if (!from || !to || !pickup || !ret || pax <= 0) {
-      alert('Please enter all details before checking prices.');
-      return;
-    }
-    calculateAndDisplayAllPrices();
-  });
-
-  document.getElementById('localCheckBtn').addEventListener('click', ()=>{
-    const pickup = document.getElementById('localPickup').value.trim();
-    const dt     = document.getElementById('localDateTime').value;
-    const pax    = parseInt(document.getElementById('localPassengers').value || 0);
-    if (!pickup || !dt || pax <= 0) {
-      alert('Please enter Pickup, Date & Passenger details.');
-      return;
-    }
-    calculateAndDisplayAllPrices();
-  });
-
-  /* ======================================================
-     HIDDEN SHEET SUBMISSION (UPDATED FOR LOCAL PACKAGE)
-     ====================================================== */
-  function submitToSheet(paymentType, paymentAmount, paymentId, paymentStatus) {
-    const name = document.getElementById('customerName').value.trim();
-    const phone = document.getElementById('customerPhone').value.trim();
-    const totalFareText = document.getElementById('totalFare').textContent.replace('₹','').trim();
-
-    const addons = Array.from(document.querySelectorAll('.addon-checkbox:checked'))
-      .map(c => c.nextElementSibling.textContent.trim())
-      .join(', ');
-
-    let pickup = "", drop = "", pickupDateTime = "", returnDateTime = "", intermediate = "";
-
-    if (currentTripType === "oneway") {
-      pickup = document.getElementById("onewayPickup").value;
-      drop   = document.getElementById("onewayDrop").value;
-      pickupDateTime = formatDateTime12h(document.getElementById("onewayDateTime").value);
-    }
-    else if (currentTripType === "roundtrip") {
-      pickup = document.getElementById("roundtripPickup").value;
-      drop   = document.getElementById("roundtripDrop").value;
-      pickupDateTime  = formatDateTime12h(document.getElementById("roundtripPickupDateTime").value);
-      returnDateTime  = formatDateTime12h(document.getElementById("roundtripReturnDateTime").value);
-
-      const stops = [];
-      document.querySelectorAll("#intermediateStops .location-input").forEach(i=>{
-        if (i.value && i.value.trim()) stops.push(i.value.trim());
-      });
-      intermediate = stops.join(" | ");
-    }
-    else if (currentTripType === "local") {
-      pickup = document.getElementById("localPickup").value;
-      pickupDateTime = formatDateTime12h(document.getElementById("localDateTime").value);
-    }
-
-    /* ================================
-       DAYS + KM LIMIT FIXED LOGIC
-       ================================ */
-    let days, kmLimit;
-
-    if (currentTripType === "oneway") {
-      days = 1;
-      kmLimit = lastComputedDistance; // Google KM
-    }
-    else if (currentTripType === "roundtrip") {
-      days = lastComputedDays;
-      kmLimit = lastComputedDistance; // Total KM
-    }
-    else if (currentTripType === "local") {
-      days = 1;
-      let pkg = vehiclePricing.local[selectedLocalPackage][selectedVehicle];
-      kmLimit = pkg ? pkg.freeKm : 0;
-    }
-
-    /* ========================================
-       Assign hidden input fields
-       ======================================== */
-    document.getElementById("sheet_name").value          = name;
-    document.getElementById("sheet_phone").value         = phone;
-    document.getElementById("sheet_tripType").value      = currentTripType;
-    document.getElementById("sheet_pickup").value        = pickup;
-    document.getElementById("sheet_intermediate").value  = intermediate;
-    document.getElementById("sheet_drop").value          = drop;
-    document.getElementById("sheet_pickupDateTime").value= pickupDateTime;
-    document.getElementById("sheet_returnDateTime").value= returnDateTime;
-    document.getElementById("sheet_vehicle").value       = selectedVehicle || "";
-    document.getElementById("sheet_baseFare").value      = lastBasePrice;
-    document.getElementById("sheet_gst").value           = lastGst;
-    document.getElementById("sheet_addons").value        = addons;
-    document.getElementById("sheet_totalFare").value     = totalFareText;
-    document.getElementById("sheet_paymentType").value   = paymentType;
-    document.getElementById("sheet_paymentAmount").value = paymentAmount;
-    document.getElementById("sheet_paymentStatus").value = paymentStatus;
-    document.getElementById("sheet_paymentId").value     = paymentId;
-
-    /* NEW → Days + KM Limit */
-    document.getElementById("sheet_days").value          = days;
-    document.getElementById("sheet_kmLimit").value       = kmLimit;
-
-    document.getElementById("sheetForm").submit();
-  }
-
-
-  /* ======================================================
-     PAY ONLINE → SHOW PAYMENT OPTIONS
-     ====================================================== */
-  document.getElementById("payOnlineBtn").addEventListener("click", function () {
-    submitToSheet("Online - Initiated", 0, "", "Pending");
-
-    const section = document.getElementById("paymentOptionsSection");
-    section.style.display = "block";
-
-  });
-
-  /* ======================================================
-     PAY NOW → RAZORPAY
-     ====================================================== */
-  document.getElementById("payNowBtn").addEventListener("click", function () {
-    const selected = document.querySelector("input[name='paymentOption']:checked");
-    if (!selected) {
-      alert("Please select a payment option (Advance or Full).");
-      return;
-    }
-
-    const totalFare = parseInt(
-      document.getElementById("totalFare").textContent.replace("₹","").trim()
-    );
-
-    let payable = 0;
-    let type = "";
-
-    if (selected.value === "advance") {
-      payable = Math.round(totalFare * 0.10);
-      type = "Online Advance";
-    } else {
-      payable = totalFare;
-      type = "Online Full";
-    }
-
-    const options = {
-      key: "rzp_live_RhxzNJboDF9avv",
-      amount: payable * 100,
-      currency: "INR",
-      name: "Prayaan Cabs",
-      description: "Cab Booking Payment",
-      handler: function (response) {
-        const pid = response.razorpay_payment_id;
-
-        submitToSheet(type, payable, pid, "Paid");
-        sendToWhatsappAfterPayment(pid, payable);
-      },
-      theme: { color: "#0d6efd" }
-    };
-
-    const rzp = new Razorpay(options);
-    rzp.open();
-  });
-
-  /* ======================================================
-     AUTO-MIN FOR DATETIME & AUTO RECALC
-     ====================================================== */
-  window.addEventListener('load', ()=>{
-    initAutocomplete();
-
-    const now = new Date();
-    now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
-    document.querySelectorAll('input[type="datetime-local"]').forEach(i=>{
-      i.min = now.toISOString().slice(0,16);
-    });
-
-    function reCalc() {
-      if (currentTripType === 'oneway') {
-        const from = document.getElementById('onewayPickup').value.trim();
-        const to   = document.getElementById('onewayDrop').value.trim();
-        const pax  = parseInt(document.getElementById('onewayPassengers').value || 0);
-        if (from && to && pax > 0) calculateAndDisplayAllPrices();
-      }
-      else if (currentTripType === 'roundtrip') {
-        const from = document.getElementById('roundtripPickup').value.trim();
-        const to   = document.getElementById('roundtripDrop').value.trim();
-        const p    = document.getElementById('roundtripPickupDateTime').value;
-        const r    = document.getElementById('roundtripReturnDateTime').value;
-        const pax  = parseInt(document.getElementById('roundtripPassengers').value || 0);
-        if (from && to && p && r && pax > 0) calculateAndDisplayAllPrices();
-      }
-      else if (currentTripType === 'local') {
-        const pickup = document.getElementById('localPickup').value.trim();
-        const dt     = document.getElementById('localDateTime').value;
-        const pax    = parseInt(document.getElementById('localPassengers').value || 0);
-        if (pickup && dt && pax > 0) calculateAndDisplayAllPrices();
-      }
-    }
-
-    [
-      'onewayPickup','onewayDrop','onewayDateTime','onewayPassengers',
-      'roundtripPickup','roundtripDrop','roundtripPickupDateTime','roundtripReturnDateTime','roundtripPassengers',
-      'localPickup','localDateTime','localPassengers'
-    ].forEach(id=>{
-      const el = document.getElementById(id);
-      if (el) el.addEventListener('change', reCalc);
-    });
-  });
-
-  function scrollTopSafe() {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-  }
-  document.getElementById("payOnlineBtn").addEventListener("click", function () {
-      submitToSheet("Online - Initiated", 0, "", "Pending");
-
-      const section = document.getElementById("paymentOptionsSection");
-      section.style.display = "block";
-
-  });
-
-
-  </script>
-
-
+</div>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section-shell intro-band">
+<div class="container">
+<div class="row g-4">
+<div class="col-md-4 reveal"><div class="value-card"><i class="bi bi-clock-history"></i><h3>On-time planning</h3><p>Airport, railway, corporate and family trips handled with clear pickup timing.</p></div></div>
+<div class="col-md-4 reveal"><div class="value-card"><i class="bi bi-currency-rupee"></i><h3>Transparent booking</h3><p>Compare vehicle options and continue with the existing online booking flow.</p></div></div>
+<div class="col-md-4 reveal"><div class="value-card"><i class="bi bi-map"></i><h3>Tour-ready routes</h3><p>Popular hill stations, pilgrimages and Kerala escapes from Coimbatore.</p></div></div>
+</div>
+</div>
+</section>
+<section class="section-shell package-showcase" id="tour-packages-preview">
+<div class="container">
+<div class="section-heading reveal">
+<span class="section-eyebrow">Tour Packages</span>
+<h2>Popular tour plans from Coimbatore</h2>
+<p>Short temple visits, hill station weekends and 7-day family vacation routes, organised with professional cab support.</p>
+</div>
+<div class="row g-4">
+<div class="col-xl-3 col-md-6">
+<a class="package-mini-card reveal" href="tour-packages.html#isha-marudhamalai">
+<img alt="Isha + Marudhamalai" loading="lazy" src="images/isha.webp"/>
+<div>
+<span>1 Day</span>
+<h3>Isha + Marudhamalai</h3>
+<p>Visit Perur Patteswarar Temple, Isha Yoga Center, and Marudhamalai.</p>
+<b>View Itinerary <i class="bi bi-arrow-up-right"></i></b>
+</div>
+</a>
+</div>
+<div class="col-xl-3 col-md-6">
+<a class="package-mini-card reveal" href="tour-packages.html#ooty">
+<img alt="Ooty" loading="lazy" src="images/ooty.webp"/>
+<div>
+<span>1 Day</span>
+<h3>Ooty</h3>
+<p>Doddabetta Peak, Ooty Lake, Botanical Garden, Rose Garden, Tea Factory and Chocolate Museum.</p>
+<b>View Itinerary <i class="bi bi-arrow-up-right"></i></b>
+</div>
+</a>
+</div>
+<div class="col-xl-3 col-md-6">
+<a class="package-mini-card reveal" href="tour-packages.html#ooty-2d">
+<img alt="Ooty" loading="lazy" src="images/ooty.webp"/>
+<div>
+<span>2 Days / 1 Night</span>
+<h3>Ooty</h3>
+<p>Coimbatore to Ooty, Doddabetta Peak, Tea Factory, Botanical Garden. Stay at Ooty.</p>
+<b>View Itinerary <i class="bi bi-arrow-up-right"></i></b>
+</div>
+</a>
+</div>
+<div class="col-xl-3 col-md-6">
+<a class="package-mini-card reveal" href="tour-packages.html#munnar-2d">
+<img alt="Munnar" loading="lazy" src="images/munnar.webp"/>
+<div>
+<span>2 Days / 1 Night</span>
+<h3>Munnar</h3>
+<p>Coimbatore to Munnar, Chinnar Wildlife Sanctuary, Lakkam Waterfalls, Eravikulam National Park. Stay at Munnar.</p>
+<b>View Itinerary <i class="bi bi-arrow-up-right"></i></b>
+</div>
+</a>
+</div>
+<div class="col-xl-3 col-md-6">
+<a class="package-mini-card reveal" href="tour-packages.html#ooty-3d">
+<img alt="Ooty" loading="lazy" src="images/ooty.webp"/>
+<div>
+<span>3 Days / 2 Nights</span>
+<h3>Ooty</h3>
+<p>Coimbatore to Ooty, Doddabetta Peak, Tea Factory, Botanical Garden. Stay at Ooty.</p>
+<b>View Itinerary <i class="bi bi-arrow-up-right"></i></b>
+</div>
+</a>
+</div>
+<div class="col-xl-3 col-md-6">
+<a class="package-mini-card reveal" href="tour-packages.html#mysore-coorg-3d">
+<img alt="Mysore + Coorg" loading="lazy" src="images/coorg.webp"/>
+<div>
+<span>3 Days / 2 Nights</span>
+<h3>Mysore + Coorg</h3>
+<p>Dubare Elephant Camp, Golden Temple and Nisargadhama Forest.</p>
+<b>View Itinerary <i class="bi bi-arrow-up-right"></i></b>
+</div>
+</a>
+</div>
+<div class="col-xl-3 col-md-6">
+<a class="package-mini-card reveal" href="tour-packages.html#ooty-mysore-4d">
+<img alt="Ooty + Mysore" loading="lazy" src="images/mysore.webp"/>
+<div>
+<span>4 Days / 3 Nights</span>
+<h3>Ooty + Mysore</h3>
+<p>Coimbatore to Coonoor, Sims Park, Dolphin's Nose, Lamb's Rock, Ooty and Tea Garden. Stay at Ooty.</p>
+<b>View Itinerary <i class="bi bi-arrow-up-right"></i></b>
+</div>
+</a>
+</div>
+<div class="col-xl-3 col-md-6">
+<a class="package-mini-card reveal" href="tour-packages.html#munnarthekkady-4d">
+<img alt="Munnar + Thekkady" loading="lazy" src="images/thekkady.webp"/>
+<div>
+<span>4 Days / 3 Nights</span>
+<h3>Munnar + Thekkady</h3>
+<p>Coimbatore to Munnar, sightseeing at Lakkam Waterfalls and Eravikulam National Park. Stay at Munnar.</p>
+<b>View Itinerary <i class="bi bi-arrow-up-right"></i></b>
+</div>
+</a>
+</div>
+<div class="col-xl-3 col-md-6">
+<a class="package-mini-card reveal" href="tour-packages.html#ooty-kodaikanal-5d">
+<img alt="Ooty + Kodaikanal" loading="lazy" src="images/ooty-kodaikanal.webp"/>
+<div>
+<span>5 Days / 4 Nights</span>
+<h3>Ooty + Kodaikanal</h3>
+<p>Coimbatore to Coonoor and Ooty. Visit Sim’s Park, Lamb’s Rock, Dolphin’s Nose, Tea Gardens, then transfer to Ooty and check-in. Stay at Ooty.</p>
+<b>View Itinerary <i class="bi bi-arrow-up-right"></i></b>
+</div>
+</a>
+</div>
+<div class="col-xl-3 col-md-6">
+<a class="package-mini-card reveal" href="tour-packages.html#ooty-coorg-mysore-bangalore-6d">
+<img alt="Ooty + Coorg + Mysore + Bangalore" loading="lazy" src="images/bangalore.webp"/>
+<div>
+<span>6 Days / 5 Nights</span>
+<h3>Ooty + Coorg + Mysore + Bangalore</h3>
+<p>Coimbatore to Ooty via Coonoor sightseeing. Stay at Ooty.</p>
+<b>View Itinerary <i class="bi bi-arrow-up-right"></i></b>
+</div>
+</a>
+</div>
+<div class="col-xl-3 col-md-6">
+<a class="package-mini-card reveal" href="tour-packages.html#ooty-kodaikanal-munnar-7d">
+<img alt="Ooty + Kodaikanal + Munnar" loading="lazy" src="images/munnar.webp"/>
+<div>
+<span>7 Days / 6 Nights</span>
+<h3>Ooty + Kodaikanal + Munnar</h3>
+<p>Coimbatore pickup, Coonoor sightseeing and transfer to Ooty. Stay at Ooty.</p>
+<b>View Itinerary <i class="bi bi-arrow-up-right"></i></b>
+</div>
+</a>
+</div>
+<div class="col-xl-3 col-md-6">
+<a class="package-mini-card reveal" href="tour-packages.html#munnar-thekkady-varkala-alleppey-kovalam-7d">
+<img alt="Munnar + Thekkady + Varkala + Alleppey + Kovalam" loading="lazy" src="images/kovalam.webp"/>
+<div>
+<span>7 Days / 6 Nights</span>
+<h3>Munnar + Thekkady + Varkala + Alleppey + Kovalam</h3>
+<p>Coimbatore to Munnar. Scenic drive and check-in. Stay at Munnar.</p>
+<b>View Itinerary <i class="bi bi-arrow-up-right"></i></b>
+</div>
+</a>
+</div>
+</div>
+<div class="text-center mt-5 reveal">
+<a class="btn-main" href="tour-packages.html">View All 45 Tour Packages <i class="bi bi-arrow-right"></i></a>
+</div>
+</div>
+</section>
+<section class="section-shell service-split">
+<div class="container">
+<div class="row align-items-center g-5">
+<div class="col-lg-5 reveal">
+<span class="section-eyebrow">Travel Operations</span>
+<h2>One brand for cabs, corporate movements and family tour planning.</h2>
+<p>Use the online booking flow for regular rides, or choose a tour package and enquire directly. Clean structure, better conversion, and easier maintenance.</p>
+</div>
+<div class="col-lg-7">
+<div class="service-grid-mini">
+<a  class="service-chip reveal" href="services.html"><i class="bi bi-signpost-split"></i><span style="color:var(--muted)">Outstation Cabs</span></a>
+<a class="service-chip reveal" href="services.html"><i class="bi bi-airplane"></i><span  style="color:var(--muted)">Airport Transfers</span></a>
+<a class="service-chip reveal" href="services.html"><i class="bi bi-building-check"></i><span  style="color:var(--muted)">Corporate Travel</span></a>
+<a class="service-chip reveal" href="tour-packages.html"><i class="bi bi-luggage"></i><span style="color:var(--muted)">Tour Packages</span></a>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<iframe class="sheet-frame" name="hiddenSheetFrame"></iframe>
+<form action="https://script.google.com/macros/s/AKfycbzE7Xai27jt42c85uGZYW7-g3daHC3Ahb3gdOUx7zOWoKFb7fTLiXKtYyAfP8vfesH3/exec" class="sheet-form" id="sheetForm" method="POST" target="hiddenSheetFrame">
+<input id="sheet_name" name="name" type="hidden"/>
+<input id="sheet_phone" name="phone" type="hidden"/>
+<input id="sheet_tripType" name="tripType" type="hidden"/>
+<input id="sheet_pickup" name="pickup" type="hidden"/>
+<input id="sheet_intermediate" name="intermediate" type="hidden"/>
+<input id="sheet_drop" name="drop" type="hidden"/>
+<input id="sheet_days" name="days" type="hidden"/>
+<input id="sheet_kmLimit" name="kmLimit" type="hidden"/>
+<input id="sheet_pickupDateTime" name="pickupDateTime" type="hidden"/>
+<input id="sheet_returnDateTime" name="returnDateTime" type="hidden"/>
+<input id="sheet_vehicle" name="vehicle" type="hidden"/>
+<input id="sheet_baseFare" name="baseFare" type="hidden"/>
+<input id="sheet_gst" name="gst" type="hidden"/>
+<input id="sheet_addons" name="addons" type="hidden"/>
+<input id="sheet_totalFare" name="totalFare" type="hidden"/>
+<input id="sheet_paymentType" name="paymentType" type="hidden"/>
+<input id="sheet_paymentAmount" name="paymentAmount" type="hidden"/>
+<input id="sheet_paymentStatus" name="paymentStatus" type="hidden"/>
+<input id="sheet_paymentId" name="paymentId" type="hidden"/>
+</form>
+<div aria-hidden="true" class="modal fade" id="previewModal" tabindex="-1">
+<div class="modal-dialog modal-dialog-centered">
+<div class="modal-content preview-modal">
+<div class="modal-header">
+<h5 class="modal-title">Confirm Your Enquiry</h5>
+<button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button"></button>
+</div>
+<div class="modal-body" id="previewContent"></div>
+<div class="modal-footer">
+<button class="modal-cancel" data-bs-dismiss="modal" type="button">Edit</button>
+<button class="modal-send" id="sendWhatsapp" type="button">Send to WhatsApp</button>
+</div>
+</div>
+</div>
+</div>
+<footer class="site-footer">
+<div class="container">
+<div class="footer-grid">
+<div>
+<a class="footer-brand" href="index.html">
+<img alt="Prayaan Cabs logo" src="https://prayaancabs.com/images/Logo.png"/>
+
+</a>
+<p>Premium cab rentals, tour packages, airport transfers and corporate travel support across South India.</p>
+<div class="footer-socials">
+<a aria-label="Facebook" href="#"><i class="bi bi-facebook"></i></a>
+<a aria-label="Instagram" href="#"><i class="bi bi-instagram"></i></a>
+<a aria-label="WhatsApp" href="https://wa.me/919500530043"><i class="bi bi-whatsapp"></i></a>
+</div>
+</div>
+<div>
+<h5>Company</h5>
+<a href="services.html">Services</a>
+<a href="tour-packages.html">Tour Packages</a>
+<a href="about.html">About Us</a>
+<a href="vendor.html">Vendor Registration</a>
+</div>
+<div>
+<h5>Support</h5>
+<a href="privacy-policy.html">Privacy Policy</a>
+<a href="delete-account.html">Delete Account</a>
+<a href="index.html#booking">Book Online</a>
+</div>
+<div>
+<h5>Contact</h5>
+<p><i class="bi bi-telephone-fill"></i> <a href="tel:+919500530043">+91 95005 30043</a></p>
+<p><i class="bi bi-envelope-fill"></i> <a href="mailto:prayaancabs@gmail.com">prayaancabs@gmail.com</a></p>
+<p><i class="bi bi-geo-alt-fill"></i> 6/391 B, Near SBIOA School, Sathyabhama Nagar, Pattanam, Coimbatore - 641016</p>
+</div>
+</div>
+<div class="footer-bottom">
+<span>© 2026 Prayaan Cabs. All Rights Reserved.</span>
+<span>Designed &amp; Developed by <a href="https://marcinmind.in" rel="noopener" target="_blank">Marc in Mind Technologies</a></span>
+</div>
+</div>
+</footer>
+<div aria-label="Quick contact" class="bottom-contact-bar">
+<a href="tel:+919500530043"><i class="bi bi-telephone-fill"></i><span>Call</span></a>
+<a href="https://wa.me/919500530043?text=Hello%20Prayaan%20Cabs%2C%20I%20need%20cab%20service." rel="noopener" target="_blank"><i class="bi bi-whatsapp"></i><span>WhatsApp</span></a>
+</div>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/enquiry.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBC6yIwGEbnc5IM_Fpa8M-CrZsnUt83BPQ&amp;libraries=places"></script>
+<script src="assets/js/booking.js"></script>
 </body>
 </html>

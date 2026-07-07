@@ -1,0 +1,131 @@
+
+.package-hero{background:radial-gradient(circle at 14% 18%,rgba(246,185,59,.18),transparent 24%),linear-gradient(135deg,#07162d 0%,#0d2f5f 58%,#0658c9 100%);color:#fff}.package-hero .section-eyebrow{color:#9fe4ff}.package-hero .section-eyebrow:before{background:var(--gold)}.package-hero p{color:#d7e6f8}.tour-filter-section{padding:70px 0 30px;background:#fff}.duration-tabs{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}.duration-btn{border:1px solid var(--line);background:#fff;color:var(--ink);font-weight:900;border-radius:999px;padding:12px 18px;transition:.25s ease}.duration-btn:hover,.duration-btn.active{background:var(--navy);border-color:var(--navy);color:#fff;transform:translateY(-2px)}.tour-card-section{padding:34px 0 90px;background:linear-gradient(180deg,#fff,#f7fbff)}.tour-card{height:100%;background:#fff;border:1px solid var(--line);border-radius:28px;overflow:hidden;box-shadow:var(--shadow-sm);transition:.3s ease}.tour-card:hover{transform:translateY(-10px);box-shadow:var(--shadow)}.tour-card-image{position:relative;height:230px;background:#e6edf5;overflow:hidden}.tour-card-image img{width:100%;height:100%;object-fit:cover;transition:.45s ease}.tour-card:hover img{transform:scale(1.06)}.tour-badge{position:absolute;top:16px;left:16px;border-radius:999px;background:#fff;color:var(--blue);font-weight:900;padding:7px 11px;font-size:.78rem}.tour-card-body{padding:24px}.tour-card-body h3{font-family:var(--display);font-weight:800;font-size:1.45rem}.tour-card-body p{color:var(--muted);line-height:1.7}.tour-route{display:flex;gap:8px;color:#40506a;font-weight:800;font-size:.9rem;margin:12px 0 18px}.tour-card-actions{display:flex;gap:10px}.tour-card-actions button,.tour-card-actions a{flex:1;border:0;border-radius:16px;padding:12px;font-weight:900;text-align:center}.view-package-btn{background:#eef6ff;color:var(--blue)}.enquire-package-btn{background:linear-gradient(135deg,var(--blue),var(--blue-2));color:#fff}.package-modal,.preview-modal{border:0;border-radius:26px;overflow:hidden}.package-modal .modal-header{background:linear-gradient(135deg,var(--navy),#0d2f5f);color:#fff;border:0;padding:24px}.package-modal .modal-title{font-family:var(--display);font-weight:800}.package-modal .modal-header p{margin:6px 0 0;color:#bfd4ec}.modal-kicker{display:inline-flex;color:var(--gold);font-weight:900;font-size:.82rem;margin-bottom:5px}.modal-body{padding:26px}.modal-badges{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}.modal-badges span{padding:8px 10px;border-radius:999px;background:#eef6ff;color:var(--blue);font-weight:900;font-size:.82rem}.modal-subtitle{font-family:var(--display);font-weight:800;color:var(--navy);font-size:1.1rem;margin:18px 0 12px}.itinerary-list{display:grid;gap:10px}.itinerary-item{display:flex;gap:12px;padding:14px;border-radius:16px;background:#f7fbff;border:1px solid var(--line);color:#46556a}.itinerary-item strong{width:34px;height:34px;flex:0 0 34px;border-radius:12px;background:#fff;color:var(--blue);display:grid;place-items:center}#packageEnquiryForm label{font-weight:900;margin-bottom:8px;color:#23324a}#packageEnquiryForm input,#packageEnquiryForm select{width:100%;min-height:50px;border:1px solid #dce7f4;border-radius:15px;padding:12px 14px}.accommodation-extra{display:none}.accommodation-extra.show{display:block}.child-note{padding:12px 14px;border-radius:14px;background:#fff8e8;color:#8a5a00;margin-top:12px}.package-submit-btn,.modal-send,.modal-cancel{border:0;border-radius:16px;padding:13px 18px;font-weight:900}.package-submit-btn{width:100%;margin-top:20px;background:linear-gradient(135deg,var(--blue),var(--blue-2));color:#fff}.modal-send{background:#13a76b;color:#fff}.modal-cancel{background:#eef1f5;color:#23324a}.preview-line{display:flex;justify-content:space-between;gap:12px;border-bottom:1px dashed var(--line);padding:10px 0}.preview-line strong{color:var(--ink)}.preview-line span{text-align:right;color:var(--muted);font-weight:800}@media(max-width:767px){.duration-tabs{justify-content:flex-start}.tour-card-actions{flex-direction:column}.preview-line{display:block}.preview-line span{text-align:left;display:block;margin-top:3px}}
+
+
+/* Professional tour packages page */
+.package-hero{
+  background:linear-gradient(135deg,#071a33 0%,#0b3b73 62%,#0b63ce 100%);
+}
+
+.page-hero{
+  padding:84px 0 74px;
+}
+
+.page-hero h1{
+  font-size:clamp(2rem,4vw,3.45rem);
+  font-weight:800;
+}
+
+.tour-filter-section{
+  padding:54px 0 24px;
+}
+
+.duration-tabs{
+  gap:10px;
+}
+
+.duration-btn{
+  border-radius:12px;
+  font-size:.94rem;
+  padding:10px 16px;
+  background:#fff;
+  border:1px solid #dfe9f5;
+  color:#213047;
+}
+
+.duration-btn:hover,
+.duration-btn.active{
+  background:var(--blue);
+  border-color:var(--blue);
+  color:#fff;
+  transform:none;
+  box-shadow:0 10px 20px rgba(11,99,206,.14);
+}
+
+.tour-card-section{
+  background:#f7faff;
+  padding-top:28px;
+}
+
+.tour-card{
+  border-radius:20px;
+  box-shadow:0 10px 28px rgba(15,23,42,.08);
+}
+
+.tour-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 16px 38px rgba(15,23,42,.12);
+}
+
+.tour-card-image{
+  height:205px;
+}
+
+.tour-card-body{
+  padding:22px;
+}
+
+.tour-card-topline{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-bottom:12px;
+}
+
+.tour-card-topline span,
+.modal-badges span{
+  display:inline-flex;
+  align-items:center;
+  padding:6px 10px;
+  border-radius:999px;
+  background:#eef6ff;
+  color:#0b63ce;
+  font-size:.78rem;
+  font-weight:800;
+}
+
+.tour-card h3{
+  font-family:var(--font);
+  font-size:1.2rem;
+  font-weight:800;
+  letter-spacing:-.02em;
+}
+
+.tour-card-body p{
+  color:var(--muted);
+  min-height:72px;
+}
+
+.view-package-btn,
+.enquire-package-btn,
+.package-submit-btn,
+.modal-send{
+  border-radius:12px;
+  font-weight:800;
+}
+
+.view-package-btn{
+  background:#fff;
+  border:1px solid #dbe6f2;
+  color:var(--navy);
+}
+
+.enquire-package-btn,
+.package-submit-btn,
+.modal-send{
+  background:var(--blue);
+  border-color:var(--blue);
+}
+
+.package-modal,
+.preview-modal{
+  border-radius:20px;
+}
+
+.itinerary-item{
+  border-radius:14px;
+}
+
+.highlight-package .tour-card{
+  outline:3px solid rgba(11,99,206,.25);
+}
