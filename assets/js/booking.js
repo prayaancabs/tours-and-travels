@@ -375,7 +375,7 @@ totalDistance = forwardDistance + returnDistance + extraKM;
 
       summaryHTML =
         `<b>From:</b> ${from}<br><b>To:</b> ${to}<br><b>Date & Time:</b> ${dt}`+
-        `<br><b>Passengers:</b> ${pax}`;
+        `<br><b>Passengers:</b> ${pax}<br><b>Distance:</b> ${distance/2} km`;
 
       breakdown = ``;
     }

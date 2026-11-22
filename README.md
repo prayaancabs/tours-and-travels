@@ -1,18 +1,47 @@
-# Prayaan Cabs — Professional Booking Tabs Refresh
+# Prayaan Cabs Website
 
-This version uses one CSS file only: `style.css`.
+Premium UI refresh with the existing booking/payment functionality preserved.
 
-## Main changes
-- Home top section is now **Book Online** with two tabs.
-- Default tab is **Enquire Now**, using Beast Holidays-style enquiry fields and WhatsApp preview flow.
-- Second tab is **Book Online**, keeping the existing one-way, round-trip and local booking/Razorpay flow.
-- Blue hero background is applied across all major pages.
-- Removed the extra navbar brand text span from all pages; only the logo is shown in the navbar.
-- Tour Packages remains dynamic with 1-day to 7-day package tabs.
+## Shared layout
+- `assets/js/header.js` — single shared site header and mobile navigation
+- `assets/js/footer.js` — single shared footer and quick-contact bar
+- `assets/css/premium.css` — premium business-class visual layer and responsive animations
 
-## Upload
-Upload the contents of this folder to `public_html`. Keep your existing `images/` folder.
+## Protected functionality
+The existing booking, automatic fare calculation, Razorpay flow, Google Maps flow, Google Sheet submission, package data and enquiry logic remain in their original functional files.
 
-## File structure
-- `style.css` is the only local CSS file.
-- JavaScript is inside `assets/js/`.
+## Vendor registration
+Vendor registration page, script and stylesheet were removed completely.
+
+## Maintenance
+Edit common navigation in `header.js` and common footer/contact details in `footer.js`; no need to edit each HTML page.
+
+## Booking-first sharp UI revision
+- Booking form moved to the first screen immediately below the shared header.
+- Rounded container styling removed in favor of a sharp executive/business-class layout.
+- Home booking background upgraded with fleet imagery, animated grid, light beams and subtle square-particle motion.
+- Existing booking, fare calculation, Razorpay, Google Sheet, package and tracking JavaScript remains unchanged.
+
+
+V8 vehicle card adjustment: vehicle name is now at the top; vehicle image is bottom-left and live fare is bottom-right. Fare calculation and booking logic remain unchanged.
+
+
+## Pollachi section
+- `/pollachi/` is an independent Prayaan Cabs Pollachi section.
+- It uses the shared root `header.js` and `footer.js`, shared images/styles, and its own package/enquiry JavaScript.
+- Pollachi enquiry is WhatsApp-only and does not use Razorpay or Google Sheets.
+
+
+## Tiruppur section
+- `/tiruppur/` is an independent Prayaan Cabs Tiruppur section.
+- It uses the single shared root `header.js` and `footer.js`, shared images/styles, and its own package/enquiry JavaScript.
+- Tiruppur enquiry is WhatsApp-only and does not use Razorpay or Google Sheets.
+- The top enquiry form follows the latest simplified Pollachi field/placeholder layout supplied by the site owner.
+
+
+Palakkad section added under /palakkad/ with 60 tour packages, including 15 additional Kerala-focused routes.
+
+## Our Fleets update
+- Added `our-fleets.html` for Coimbatore, Mettupalayam, Pollachi, Tiruppur and Palakkad.
+- Added Our Fleets to the shared desktop/mobile header and footer Company links.
+- Added shared `assets/css/fleets.css` for the fleet pages.

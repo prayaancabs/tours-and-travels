@@ -1,0 +1,107 @@
+/* =========================================================
+   PRAYAAN CABS — OUR FLEETS
+   Shared across Coimbatore, Mettupalayam, Pollachi, Tiruppur & Palakkad
+========================================================= */
+.fleet-page{background:#f5f8fc}
+.fleet-page main{overflow:hidden}
+
+.fleet-hero{
+  position:relative;
+  padding:88px 0 76px;
+  color:#fff;
+  background:
+    radial-gradient(circle at 78% 16%,rgba(18,151,238,.20),transparent 25%),
+    radial-gradient(circle at 8% 82%,rgba(238,188,69,.09),transparent 24%),
+    linear-gradient(126deg,#061426 0%,#09284d 54%,#0b5eaa 100%);
+}
+.fleet-hero::before{
+  content:"";position:absolute;inset:0;pointer-events:none;opacity:.35;
+  background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);
+  background-size:42px 42px;
+  mask-image:linear-gradient(to bottom,#000,transparent 90%);
+}
+.fleet-hero-layout{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(300px,.7fr);gap:54px;align-items:center}
+.fleet-hero .section-eyebrow{color:#a9d9ff;margin-bottom:14px}
+.fleet-hero .section-eyebrow::before{background:#eebc45}
+.fleet-hero h1{margin:0 0 18px;color:#fff;font-size:clamp(2.8rem,6vw,5.4rem);font-weight:850;letter-spacing:-.055em;line-height:.98}
+.fleet-hero p{max-width:720px;margin:0;color:#d5e2ef;font-size:1.05rem;line-height:1.8}
+.fleet-hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.fleet-hero-actions .btn-main,.fleet-hero-actions .btn-ghost{min-height:50px}
+.fleet-hero-actions .btn-ghost{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.24);color:#fff!important}
+.fleet-hero-actions .btn-ghost:hover{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.38)}
+.fleet-hero-panel{border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.075);box-shadow:0 26px 70px rgba(0,0,0,.22);backdrop-filter:blur(14px);padding:28px}
+.fleet-hero-panel>span{display:block;margin-bottom:16px;color:#a9bdd2;font-size:.7rem;font-weight:850;text-transform:uppercase;letter-spacing:.13em}
+.fleet-hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.06)}
+.fleet-hero-stat{min-height:105px;padding:20px;background:rgba(6,20,38,.62);display:flex;flex-direction:column;justify-content:center}
+.fleet-hero-stat strong{font-size:1.45rem;letter-spacing:-.03em;color:#fff}
+.fleet-hero-stat small{margin-top:4px;color:#a9bdd2;font-size:.76rem;line-height:1.45}
+
+.fleet-jump{position:sticky;top:77px;z-index:20;background:rgba(255,255,255,.96);border-bottom:1px solid #dfe8f2;box-shadow:0 10px 28px rgba(6,20,38,.06);backdrop-filter:blur(12px)}
+.fleet-jump .container{display:flex;align-items:center;gap:2px;overflow-x:auto;scrollbar-width:none}
+.fleet-jump .container::-webkit-scrollbar{display:none}
+.fleet-jump a{position:relative;flex:0 0 auto;padding:16px 18px;color:#34455a;font-size:.84rem;font-weight:800;white-space:nowrap;transition:.2s ease}
+.fleet-jump a::after{content:"";position:absolute;left:18px;right:18px;bottom:0;height:2px;transform:scaleX(0);background:#0868d7;transition:.2s ease}
+.fleet-jump a:hover{color:#0868d7;background:#f3f8fe}
+.fleet-jump a:hover::after{transform:scaleX(1)}
+
+.fleet-section{padding:76px 0}
+.fleet-section:nth-of-type(even){background:#fff}
+.fleet-section:nth-of-type(odd){background:#f5f8fc}
+.fleet-section-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:28px;margin-bottom:30px;padding-bottom:22px;border-bottom:1px solid #dfe8f2}
+.fleet-section-heading .section-eyebrow{margin-bottom:10px}
+.fleet-section-heading h2{margin:0;color:#071a33;font-size:clamp(1.8rem,3vw,2.65rem);font-weight:850;letter-spacing:-.035em}
+.fleet-section-heading p{max-width:660px;margin:10px 0 0;color:#647286;line-height:1.72}
+.fleet-count{flex:0 0 auto;padding:8px 11px;border:1px solid #d8e5f1;background:#fff;color:#0868d7;font-size:.72rem;font-weight:850;letter-spacing:.08em;text-transform:uppercase}
+.fleet-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.fleet-card{position:relative;display:flex;flex-direction:column;min-height:100%;overflow:hidden;background:#fff;border:1px solid #dfe8f2;box-shadow:0 10px 28px rgba(6,20,38,.06);transition:transform .24s ease,box-shadow .24s ease,border-color .24s ease}
+.fleet-card:hover{transform:translateY(-6px);border-color:#c5dbef;box-shadow:0 22px 48px rgba(6,20,38,.12)}
+.fleet-card-image{position:relative;aspect-ratio:16/10;overflow:hidden;background:linear-gradient(145deg,#edf4fa,#fff)}
+.fleet-card-image::after{content:"";position:absolute;inset:auto 0 0;height:42%;background:linear-gradient(to top,rgba(6,20,38,.12),transparent);pointer-events:none}
+.fleet-card-image img{width:100%;height:100%;object-fit:cover;transition:transform .35s ease}
+.fleet-card:hover .fleet-card-image img{transform:scale(1.035)}
+.fleet-card-body{display:flex;flex-direction:column;flex:1;padding:21px}
+.fleet-category{display:inline-block;margin-bottom:9px;color:#0868d7;font-size:.67rem;font-weight:850;text-transform:uppercase;letter-spacing:.10em}
+.fleet-card h3{margin:0 0 10px;color:#071a33;font-size:1.08rem;font-weight:850;letter-spacing:-.02em}
+.fleet-card p{display:flex;align-items:center;gap:8px;margin:0 0 18px;color:#647286;font-size:.86rem}
+.fleet-card p i{color:#0868d7}
+.fleet-card a{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:auto;padding-top:15px;border-top:1px solid #e6edf5;color:#0b63ce;font-size:.8rem;font-weight:850;transition:.2s ease}
+.fleet-card a:hover{color:#071a33}
+.fleet-card a i{font-size:1rem}
+
+.fleet-assurance{padding:0 0 76px;background:#f5f8fc}
+.fleet-assurance-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.fleet-assurance-card{height:100%;padding:24px;background:#fff;border:1px solid #dfe8f2;box-shadow:0 10px 28px rgba(6,20,38,.06)}
+.fleet-assurance-card i{display:grid;place-items:center;width:46px;height:46px;margin-bottom:16px;background:#eef6ff;color:#0868d7;font-size:1.2rem}
+.fleet-assurance-card h3{margin:0 0 8px;font-size:1.02rem;font-weight:850;color:#071a33}
+.fleet-assurance-card p{margin:0;color:#647286;font-size:.88rem;line-height:1.7}
+
+.fleet-cta{padding:76px 0;background:#fff}
+.fleet-cta-panel{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:space-between;gap:36px;padding:38px 40px;background:linear-gradient(125deg,#061426,#0a2c52 65%,#0b5eaa);color:#fff;box-shadow:0 24px 60px rgba(6,20,38,.18)}
+.fleet-cta-panel::after{content:"";position:absolute;right:-80px;top:-100px;width:280px;height:280px;border:1px solid rgba(255,255,255,.10);transform:rotate(35deg)}
+.fleet-cta-panel>div{position:relative;z-index:2}
+.fleet-cta-panel .section-eyebrow{color:#a9d9ff;margin-bottom:10px}.fleet-cta-panel .section-eyebrow::before{background:#eebc45}
+.fleet-cta-panel h2{margin:0 0 9px;color:#fff;font-size:clamp(1.7rem,3vw,2.5rem);font-weight:850;letter-spacing:-.035em}
+.fleet-cta-panel p{max-width:720px;margin:0;color:#c7d6e5;line-height:1.7}
+.fleet-cta-actions{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:10px;min-width:max-content}
+
+@media(max-width:1199px){
+  .fleet-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .fleet-hero-layout{grid-template-columns:minmax(0,1fr) 320px;gap:34px}
+}
+@media(max-width:991px){
+  .fleet-hero{padding:66px 0 60px}.fleet-hero-layout{grid-template-columns:1fr}.fleet-hero-panel{max-width:620px}
+  .fleet-jump{top:77px}.fleet-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .fleet-cta-panel{align-items:flex-start;flex-direction:column}.fleet-cta-actions{justify-content:flex-start;min-width:0}
+}
+@media(max-width:767px){
+  .fleet-hero{padding:54px 0 48px}.fleet-hero h1{font-size:2.75rem}.fleet-hero p{font-size:.96rem}.fleet-hero-panel{padding:18px}
+  .fleet-hero-actions{display:grid;grid-template-columns:1fr}.fleet-hero-actions a{width:100%}
+  .fleet-jump{top:76px}.fleet-jump a{padding:14px 13px;font-size:.78rem}.fleet-jump a::after{left:13px;right:13px}
+  .fleet-section{padding:58px 0}.fleet-section-heading{align-items:flex-start;flex-direction:column;gap:14px;margin-bottom:22px;padding-bottom:18px}
+  .fleet-grid{grid-template-columns:1fr;gap:14px}.fleet-card{display:grid;grid-template-columns:125px 1fr}.fleet-card-image{aspect-ratio:auto;height:100%;min-height:165px}.fleet-card-body{padding:17px}.fleet-card h3{font-size:1rem}
+  .fleet-assurance{padding:0 0 58px}.fleet-assurance-grid{grid-template-columns:1fr}
+  .fleet-cta{padding:58px 0}.fleet-cta-panel{padding:28px 22px}.fleet-cta-actions{display:grid;width:100%;grid-template-columns:1fr}.fleet-cta-actions a{width:100%}
+}
+@media(max-width:430px){
+  .fleet-card{grid-template-columns:1fr}.fleet-card-image{height:190px}.fleet-hero-stats{grid-template-columns:1fr 1fr}.fleet-hero-stat{min-height:88px;padding:15px}.fleet-hero-stat strong{font-size:1.2rem}
+}

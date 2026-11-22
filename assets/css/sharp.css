@@ -1,0 +1,28 @@
+/* Prayaan Cabs V6.1 — hard square system. Loaded last on every page. */
+:root{
+  --bs-border-radius:0!important;
+  --bs-border-radius-sm:0px!important;
+  --bs-border-radius-lg:0px!important;
+  --bs-border-radius-xl:0px!important;
+  --bs-border-radius-xxl:0px!important;
+  --bs-border-radius-pill:0px!important;
+}
+html *, html *::before, html *::after{
+  border-radius:0!important;
+}
+/* Explicit coverage for Bootstrap, booking/enquiry/package UI and third-party location dropdowns. */
+input,select,textarea,button,
+.btn,.form-control,.form-select,.input-group,.input-group-text,
+.card,.modal,.modal-dialog,.modal-content,.modal-header,.modal-footer,
+.dropdown-menu,.dropdown-item,.offcanvas,.accordion-item,.accordion-button,
+.alert,.badge,.nav-link,.page-link,.toast,.list-group-item,.progress,.progress-bar,
+.pac-container,.pac-item,
+.booking-hub-card,.booking-form-card,.trip-type-btn-horizontal,.booking-field,
+.package-option,.vehicle-tariff-card,.summary-box,.addon-options,
+.enquiry-card,.quick-enquiry,.enquiry-form,.package-modal,.preview-modal,
+.duration-panel,.duration-btn,.tour-card,.tour-card-image,.tour-badge,
+.tour-card-actions a,.tour-card-actions button,.filter-panel,.package-sidebar,
+.site-navbar,.site-mobile-menu,.tour-header-dropdown,.mobile-tour-group,
+.mobile-tour-toggle,.mobile-tour-submenu,.bottom-contact-bar a{
+  border-radius:0!important;
+}

@@ -1,0 +1,200 @@
+/* Prayaan Cabs V8 — compact vehicle fare cards
+   Presentation only. Booking calculations and selection logic are untouched. */
+
+#vehicleTariffSection{
+  scroll-margin-top:96px;
+  margin-top:20px!important;
+  padding-top:18px!important;
+}
+
+#vehicleTariffSection > h5{
+  margin-bottom:12px!important;
+  text-align:left!important;
+  font-weight:800!important;
+  letter-spacing:-.02em;
+  color:#10233f!important;
+}
+
+.vehicle-tariff-grid{
+  display:grid!important;
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  gap:12px!important;
+  margin-top:10px!important;
+  text-align:left!important;
+}
+
+.vehicle-tariff-card{
+  display:grid!important;
+  grid-template-columns:46% 54%!important;
+  grid-template-rows:auto auto 96px!important;
+  grid-template-areas:
+    "name name"
+    "category category"
+    "media fare"!important;
+  min-height:0!important;
+  padding:0!important;
+  overflow:hidden!important;
+  position:relative!important;
+  background:#fff!important;
+  border:1px solid #d7e3ef!important;
+  border-left:3px solid transparent!important;
+  border-radius:0!important;
+  box-shadow:0 7px 18px rgba(7,29,55,.055)!important;
+  transition:border-color .2s ease,box-shadow .2s ease,transform .2s ease!important;
+}
+
+/* The current booking.js wraps image/name/category in one div. display:contents
+   lets CSS place those existing elements into this compact grid without changing JS. */
+.vehicle-tariff-card > div:first-child{
+  display:contents!important;
+  min-height:0!important;
+}
+
+.vehicle-tariff-card::before{
+  display:none!important;
+  content:none!important;
+}
+
+.vehicle-tariff-card:hover{
+  transform:translateY(-2px)!important;
+  border-color:#9bc4ee!important;
+  border-left-color:#0876e0!important;
+  box-shadow:0 12px 24px rgba(7,29,55,.09)!important;
+}
+
+.vehicle-tariff-card.selected{
+  transform:none!important;
+  border-color:#0876e0!important;
+  border-left-color:#0876e0!important;
+  background:#fff!important;
+  box-shadow:0 0 0 2px rgba(8,118,224,.11),0 12px 24px rgba(7,29,55,.08)!important;
+}
+
+.vehicle-tariff-card.selected::after{
+  content:"Selected"!important;
+  display:block!important;
+  position:absolute!important;
+  top:0!important;
+  left:0!important;
+  right:auto!important;
+  bottom:auto!important;
+  padding:4px 7px!important;
+  background:#0876e0!important;
+  color:#fff!important;
+  font-size:.56rem!important;
+  font-weight:900!important;
+  line-height:1.2!important;
+  letter-spacing:.07em!important;
+  text-transform:uppercase!important;
+  border-radius:0!important;
+  z-index:2!important;
+}
+
+.vehicle-icon-circle-horizontal{
+  grid-area:media!important;
+  width:100%!important;
+  height:96px!important;
+  margin:0!important;
+  padding:10px 12px!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  background:linear-gradient(180deg,#f8fbfe 0%,#eef4f9 100%)!important;
+  border-right:1px solid #e1eaf3!important;
+  border-radius:0!important;
+}
+
+.vehicle-icon-circle-horizontal img{
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  max-width:145px!important;
+  object-fit:contain!important;
+  margin:0 auto!important;
+  filter:drop-shadow(0 6px 6px rgba(6,20,38,.13))!important;
+  transition:transform .22s ease!important;
+}
+
+.vehicle-tariff-card:hover .vehicle-icon-circle-horizontal img{
+  transform:scale(1.035)!important;
+}
+
+.tariff-price{
+  grid-area:fare!important;
+  margin:0!important;
+  padding:11px 10px!important;
+  min-height:96px!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:4px!important;
+  border:0!important;
+  background:#fff!important;
+  color:#0a2547!important;
+  text-align:center!important;
+  font-size:1.25rem!important;
+  font-weight:900!important;
+  line-height:1.05!important;
+  letter-spacing:-.035em!important;
+}
+
+.tariff-price::before{
+  content:"LIVE FARE";
+  display:block;
+  color:#0876e0;
+  font-size:.56rem;
+  font-weight:900;
+  line-height:1;
+  letter-spacing:.08em;
+}
+
+.vehicle-name-horizontal{
+  grid-area:name!important;
+  min-height:0!important;
+  margin:0!important;
+  padding:10px 12px 2px!important;
+  border-bottom:0!important;
+  color:#172236!important;
+  font-size:.86rem!important;
+  font-weight:900!important;
+  line-height:1.25!important;
+  text-align:left!important;
+}
+
+.vehicle-category{
+  grid-area:category!important;
+  margin:0!important;
+  padding:0 12px 8px!important;
+  color:#7d8da1!important;
+  font-size:.62rem!important;
+  font-weight:750!important;
+  line-height:1.2!important;
+  text-align:left!important;
+  text-transform:uppercase!important;
+  letter-spacing:.04em!important;
+}
+
+@media (max-width:767.98px){
+  #vehicleTariffSection{margin-top:16px!important;padding-top:15px!important}
+  #vehicleTariffSection > h5{font-size:1rem!important;margin-bottom:10px!important}
+  .vehicle-tariff-grid{grid-template-columns:1fr!important;gap:9px!important}
+  .vehicle-tariff-card{
+    grid-template-columns:48% 52%!important;
+    grid-template-rows:auto auto 88px!important;
+  }
+  .vehicle-icon-circle-horizontal{height:88px!important;padding:7px 10px!important}
+  .tariff-price{min-height:88px!important;font-size:1.12rem!important;padding:8px!important}
+  .vehicle-name-horizontal{font-size:.8rem!important;padding:8px 10px 2px!important}
+  .vehicle-category{font-size:.58rem!important;padding:0 10px 7px!important}
+}
+
+@media (max-width:390px){
+  .vehicle-tariff-card{grid-template-columns:47% 53%!important;grid-template-rows:auto auto 82px!important}
+  .vehicle-icon-circle-horizontal{height:82px!important}
+  .tariff-price{min-height:82px!important;font-size:1.05rem!important}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .vehicle-tariff-card,.vehicle-icon-circle-horizontal img{transition:none!important}
+}

@@ -56,13 +56,8 @@
       label: '7 Days',
       title: 'Full vacation packages',
       hash: 'seven-day-tour-packages'
-    },
-    '8D': {
-      label: '8 Days',
-      title: 'Complete long vacation packages',
-      hash: 'eight-day-tour-packages'
     }
-  };
+};
 
   function escapeHtml(value) {
     return String(value || '').replace(/[&<>"']/g, char => ({
@@ -354,16 +349,6 @@
     });
   });
 
-  const accommodation = byId('packageAccommodation');
-
-  if (accommodation) {
-    accommodation.addEventListener('change', () => {
-      document.querySelectorAll('.accommodation-extra').forEach(field => {
-        field.classList.toggle('show', accommodation.value === 'Yes');
-      });
-    });
-  }
-
   const goToEnquiryButtons = [
     byId('goToEnquiryTab'),
     byId('goToEnquiryTabFromItinerary')
@@ -400,19 +385,11 @@
         pickup: byId('customerPickup').value.trim(),
         date: byId('travelDate').value,
         vehicle: byId('vehicleSelect').value,
-        passengers: byId('passengerCount').value,
-        accommodation: byId('packageAccommodation').value,
-        adults: byId('adultCount').value || '-',
-        children: byId('childCount').value || '0'
+        passengers: byId('passengerCount').value
       };
 
       if (!/^\d{10}$/.test(data.phone)) {
         alert('Please enter a valid 10-digit phone number.');
-        return;
-      }
-
-      if (data.accommodation === 'Yes' && data.adults === '-') {
-        alert('Please enter adult count for accommodation.');
         return;
       }
 
@@ -434,9 +411,6 @@ Pickup: ${data.pickup}
 Travel Date: ${data.date}
 Vehicle: ${data.vehicle}
 Passengers: ${data.passengers}
-Accommodation: ${data.accommodation}
-Adults: ${data.adults}
-Children: ${data.children}
 
 Itinerary:
 ${itineraryText}
@@ -455,10 +429,7 @@ Please share availability and final package details.`;
         pickup: 'Pickup',
         date: 'Travel Date',
         vehicle: 'Vehicle',
-        passengers: 'Passengers',
-        accommodation: 'Accommodation',
-        adults: 'Adults',
-        children: 'Children'
+        passengers: 'Passengers'
       };
 
       setHtml('packagePreviewContent', Object.entries(data)

@@ -88,7 +88,7 @@ body.tour-page .duration-sidebar {
   gap: 10px;
   padding: 14px;
   border: 1px solid #dfe9f5;
-  border-radius: 24px;
+  border-radius:0!important;
   background: rgba(255, 255, 255, .92);
   backdrop-filter: blur(14px);
   box-shadow: 0 18px 45px rgba(15, 23, 42, .08);
@@ -97,7 +97,7 @@ body.tour-page .duration-sidebar {
 body.tour-page .duration-pill {
   width: 100%;
   border: 1px solid transparent;
-  border-radius: 17px;
+  border-radius:0!important;
   padding: 14px 15px;
   background: #fff;
   color: #17243a;
@@ -150,7 +150,7 @@ body.tour-page .tour-results-top {
   margin-bottom: 18px;
   padding: 18px 20px;
   border: 1px solid #dfe9f5;
-  border-radius: 22px;
+  border-radius:0!important;
   background: #fff;
   box-shadow: 0 12px 32px rgba(15, 23, 42, .06);
 }
@@ -174,7 +174,7 @@ body.tour-page .tour-results-top h3 {
 
 body.tour-page .tour-results-top strong {
   padding: 8px 12px;
-  border-radius: 999px;
+  border-radius:0!important;
   background: #eef6ff;
   color: var(--blue, #086ad8);
   font-size: .82rem;
@@ -196,7 +196,7 @@ body.tour-page .tour-mini-card {
   grid-template-columns: 150px 1fr;
   overflow: hidden;
   border: 1px solid #dfe9f5;
-  border-radius: 24px;
+  border-radius:0!important;
   background: #fff;
   box-shadow: 0 12px 30px rgba(15, 23, 42, .08);
   transition: .28s ease;
@@ -231,7 +231,7 @@ body.tour-page .mini-duration {
   top: 10px;
   left: 10px;
   padding: 5px 8px;
-  border-radius: 999px;
+  border-radius:0!important;
   background: rgba(255, 255, 255, .96);
   color: var(--blue, #086ad8);
   font-size: .68rem;
@@ -255,7 +255,7 @@ body.tour-page .mini-card-top {
 body.tour-page .mini-card-top span {
   display: inline-flex;
   padding: 5px 9px;
-  border-radius: 999px;
+  border-radius:0!important;
   background: #eef6ff;
   color: var(--blue, #086ad8);
   font-size: .7rem;
@@ -323,7 +323,7 @@ body.tour-page .mini-card-footer span {
   align-items: center;
   gap: 6px;
   padding: 6px 9px;
-  border-radius: 999px;
+  border-radius:0!important;
   background: #f5f8fc;
   color: #53647c;
   font-size: .74rem;
@@ -338,7 +338,7 @@ body.tour-page .mini-actions {
 body.tour-page .mini-actions button {
   flex: 1;
   border: 0;
-  border-radius: 13px;
+  border-radius:0!important;
   padding: 10px 11px;
   font-size: .82rem;
   font-weight: 900;
@@ -365,7 +365,7 @@ body.tour-page .tour-empty-state {
   padding: 42px 20px;
   text-align: center;
   border: 1px dashed #c9d8ea;
-  border-radius: 24px;
+  border-radius:0!important;
   background: #fff;
   color: #66758a;
 }
@@ -401,7 +401,7 @@ body.tour-page .highlight-package {
 body.tour-page .package-modal,
 body.tour-page .preview-modal {
   border: 0;
-  border-radius: 24px;
+  border-radius:0!important;
   overflow: hidden;
 }
 
@@ -449,7 +449,7 @@ body.tour-page .package-detail-tabs {
 
 body.tour-page .package-detail-tabs .nav-link {
   border: 1px solid #dce7f4;
-  border-radius: 999px;
+  border-radius:0!important;
   padding: 8px 14px;
   color: #26364d;
   font-size: .84rem;
@@ -472,7 +472,7 @@ body.tour-page .package-overview-card {
 body.tour-page .overview-box {
   padding: 14px;
   border: 1px solid #dfe9f5;
-  border-radius: 16px;
+  border-radius:0!important;
   background: #f8fbff;
 }
 
@@ -510,7 +510,7 @@ body.tour-page .modal-badges span {
   display: inline-flex;
   align-items: center;
   padding: 7px 10px;
-  border-radius: 999px;
+  border-radius:0!important;
   background: #eef6ff;
   color: var(--blue, #086ad8);
   font-size: .78rem;
@@ -534,7 +534,7 @@ body.tour-page .itinerary-item {
   gap: 12px;
   padding: 14px;
   border: 1px solid #dfe9f5;
-  border-radius: 16px;
+  border-radius:0!important;
   background: #f8fbff;
   color: #46556a;
 }
@@ -545,7 +545,7 @@ body.tour-page .itinerary-item strong {
   flex: 0 0 34px;
   display: grid;
   place-items: center;
-  border-radius: 12px;
+  border-radius:0!important;
   background: #fff;
   color: var(--blue, #086ad8);
   box-shadow: 0 8px 18px rgba(15, 23, 42, .06);
@@ -557,7 +557,7 @@ body.tour-page .package-submit-btn,
 body.tour-page .modal-send,
 body.tour-page .modal-cancel {
   border: 0;
-  border-radius: 14px;
+  border-radius:0!important;
   padding: 12px 17px;
   font-weight: 900;
 }
@@ -597,7 +597,7 @@ body.tour-page #packageEnquiryForm select {
   width: 100%;
   min-height: 45px;
   border: 1px solid #dce7f4;
-  border-radius: 13px;
+  border-radius:0!important;
   padding: 10px 13px;
   color: #17243a;
   font-size: .92rem;
@@ -625,7 +625,7 @@ body.tour-page .accommodation-extra.show {
 
 body.tour-page .child-note {
   padding: 12px 14px;
-  border-radius: 14px;
+  border-radius:0!important;
   background: #fff8e8;
   color: #8a5a00;
   margin-top: 12px;
@@ -686,7 +686,7 @@ body.tour-page.modal-open .bottom-contact-bar {
 
   body.tour-page .duration-sidebar::-webkit-scrollbar-thumb {
     background: #c9d8ea;
-    border-radius: 99px;
+    border-radius:0!important;
   }
 }
 
@@ -710,7 +710,7 @@ body.tour-page.modal-open .bottom-contact-bar {
 
   body.tour-page .tour-mini-card {
     grid-template-columns: 118px 1fr;
-    border-radius: 20px;
+    border-radius:0!important;
   }
 
   body.tour-page .mini-card-image {

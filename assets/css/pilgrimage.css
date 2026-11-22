@@ -1,0 +1,17 @@
+/* Shared pilgrimage tour package page */
+body.pilgrimage-page .package-hero {
+  background:
+    radial-gradient(circle at 14% 20%, rgba(246,189,33,.25), transparent 28%),
+    radial-gradient(circle at 88% 16%, rgba(11,141,241,.25), transparent 30%),
+    linear-gradient(135deg,#07162d 0%,#18385d 52%,#0a5fb6 100%) !important;
+}
+body.pilgrimage-page .pilgrimage-card .mini-card-top span { background:#fff6da; color:#7a5200; }
+body.pilgrimage-page .pilgrimage-card .mini-duration { color:#7a5200; }
+body.pilgrimage-page .pilgrimage-note {
+  margin-top:18px; padding:14px 16px; border:1px solid #e2e8f0; background:#fff; color:#526176;
+  font-size:.88rem; line-height:1.6;
+}
+body.pilgrimage-page .pilgrimage-note strong { color:#12213a; }
+@media (max-width: 767.98px) {
+  body.pilgrimage-page .pilgrimage-note { margin-top:12px; }
+}
