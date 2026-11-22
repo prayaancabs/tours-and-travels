@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Pilgrimage Tour Packages From Pollachi | Prayaan Cabs Pollachi</title>
+<link rel="icon" type="image/png" href="../images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17734250014"></script>
+<script defer src="../assets/js/tracking.js"></script>
+<link href="../style.css?v=6.1" rel="stylesheet">
+<link href="../tour-packages.css?v=6.1" rel="stylesheet">
+<link href="../assets/css/premium.css?v=6.1" rel="stylesheet">
+<link href="../assets/css/sharp.css?v=6.1" rel="stylesheet">
+<link href="../assets/css/pilgrimage.css?v=1.0" rel="stylesheet">
+</head>
+<body class="tour-page pilgrimage-page inner-page">
+<div id="site-header"></div><script src="../assets/js/header.js"></script>
+<main>
+<section class="page-hero package-hero">
+  <div class="container"><div class="page-hero-inner reveal">
+    <span class="section-eyebrow">Pollachi Pilgrimage Tours</span>
+    <h1>Pilgrimage Tour Packages From Pollachi</h1>
+    <p>Choose nearby one-day temple trips, major pilgrimage destinations and 3–4 day temple circuits with private cab support.</p>
+  </div></div>
+</section>
+<section class="tour-browser-section">
+  <div class="container">
+    <div class="section-heading reveal">
+      <span class="section-eyebrow">Choose Duration</span>
+      <h2>Explore Pilgrimage Packages</h2>
+      <p>Use the duration filters to view one-day trips, 2-day destinations and longer combination circuits.</p>
+    </div>
+    <div class="tour-browser-shell reveal">
+      <aside aria-label="Pilgrimage package duration filter" class="duration-sidebar">
+        <button class="duration-pill active" data-duration="ALL" data-duration-hash="all-pilgrimage-packages" id="all-pilgrimage-packages" type="button"><span>All Packages</span><small id="count-ALL">0 packages</small></button>
+        <button class="duration-pill" data-duration="1D" data-duration-hash="1day" id="1day" type="button"><span>1 Day</span><small id="count-1D">0 packages</small></button>
+        <button class="duration-pill" data-duration="2D" data-duration-hash="2days1night" id="2days1night" type="button"><span>2 Days / 1 Night</span><small id="count-2D">0 packages</small></button>
+        <button class="duration-pill" data-duration="3D" data-duration-hash="3days2nights" id="3days2nights" type="button"><span>3 Days / 2 Nights</span><small id="count-3D">0 packages</small></button>
+        <button class="duration-pill" data-duration="4D" data-duration-hash="4days3nights" id="4days3nights" type="button"><span>4 Days / 3 Nights</span><small id="count-4D">0 packages</small></button>
+      </aside>
+      <div class="tour-results-panel">
+        <div class="tour-results-top"><div><span id="activeDurationLabel">All Packages</span><h3 id="activeDurationTitle">All pilgrimage routes from Pollachi</h3></div><strong id="packageCount">0 packages</strong></div>
+        <div aria-live="polite" class="tour-list-grid" id="packageGrid"></div>
+        <div class="pilgrimage-note"><strong>Note:</strong> Temple timings, darshan queues, seasonal restrictions and accommodation can affect the final day plan. The itinerary can be adjusted before confirmation.</div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<div class="modal fade" id="packageModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable"><div class="modal-content package-modal">
+    <div class="modal-header"><div><span class="modal-kicker" id="modalPackageDuration"></span><h5 class="modal-title" id="modalPackageTitle">Package Details</h5><p id="modalPackageRoute">Route</p></div><button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button></div>
+    <div class="modal-body">
+      <ul class="nav package-detail-tabs" id="packageDetailTabs" role="tablist">
+        <li class="nav-item"><button class="nav-link" data-bs-target="#packageOverviewTab" data-bs-toggle="tab" id="packageOverviewBtn" type="button">Overview</button></li>
+        <li class="nav-item"><button class="nav-link active" data-bs-target="#packageItineraryTab" data-bs-toggle="tab" id="packageItineraryBtn" type="button">Itinerary</button></li>
+        <li class="nav-item"><button class="nav-link" data-bs-target="#packageEnquiryTab" data-bs-toggle="tab" id="packageEnquiryBtn" type="button">Enquire Now</button></li>
+      </ul>
+      <div class="tab-content package-tab-content">
+        <div class="tab-pane fade" id="packageOverviewTab">
+          <div class="package-overview-card">
+            <div class="overview-box"><small>Package ID</small><strong id="modalPackageId">-</strong></div>
+            <div class="overview-box"><small>Duration</small><strong id="modalOverviewDuration">-</strong></div>
+            <div class="overview-box"><small>Category</small><strong id="modalOverviewCategory">-</strong></div>
+            <div class="overview-box"><small>Route</small><strong id="modalOverviewRoute">-</strong></div>
+          </div>
+          <p class="modal-summary-text" id="modalOverviewSummary"></p>
+          <button class="modal-tab-enquire-btn" id="goToEnquiryTab" type="button">Enquire For This Package</button>
+        </div>
+        <div class="tab-pane fade show active" id="packageItineraryTab"><div class="modal-badges" id="modalPackageBadges"></div><h6 class="modal-subtitle">Itinerary</h6><div class="itinerary-list" id="modalItinerary"></div><button class="modal-tab-enquire-btn" id="goToEnquiryTabFromItinerary" type="button">Enquire Now</button></div>
+        <div class="tab-pane fade" id="packageEnquiryTab"><div id="modalEnquiryFormArea"><h6 class="modal-subtitle">Send Enquiry</h6>
+          <form data-prevent-submit="true" id="packageEnquiryForm" novalidate>
+            <div class="row g-3">
+              <div class="col-md-6"><label>Pickup / From</label><input id="packageFrom" placeholder="Enter your pickup location" required type="text"></div>
+              <div class="col-md-6"><label>Destination / Package</label><input id="packageDestination" readonly required type="text"></div>
+              <div class="col-md-6"><label>Drop Location</label><input id="packageDrop" placeholder="Enter your drop location" required type="text"></div>
+              <div class="col-md-6"><label>Pickup Date &amp; Time</label><input id="packagePickupDateTime" required type="datetime-local"></div>
+              <div class="col-md-6"><label>Drop Date &amp; Time</label><input id="packageDropDateTime" required type="datetime-local"></div>
+              <div class="col-md-6"><label>Vehicle</label><select id="vehicleSelect" required><option value="">Select Vehicle</option><option>Sedan (4+1)</option><option>Ertiga (6+1)</option><option>Innova (7+1)</option><option>Innova Crysta (6+1)</option><option>Innova Crysta (7+1)</option><option>Toyota Hycross (7+1)</option><option>Tempo Traveller (12-18 Seater)</option><option>Urbania (12-16 Seater)</option><option>Coach (21 Seater)</option></select></div>
+              <div class="col-md-6"><label>Passenger Count</label><input id="passengerCount" min="1" value="1" required type="number"></div>
+              <div class="col-md-6"><label>Accommodation Required?</label><select id="packageAccommodation" required><option value="">Select</option><option value="Yes">Yes</option><option value="No">No</option></select></div>
+            </div>
+            <button class="package-submit-btn" id="previewPackageBtn" type="button">Preview &amp; Submit</button>
+          </form>
+        </div></div>
+      </div>
+    </div>
+  </div></div>
+</div>
+<div class="modal fade" id="previewPackageModal" tabindex="-1" aria-hidden="true"><div class="modal-dialog modal-dialog-centered"><div class="modal-content preview-modal"><div class="modal-header"><h5 class="modal-title">Confirm Your Enquiry</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body" id="packagePreviewContent"></div><div class="modal-footer"><button class="modal-cancel" id="editPackagePreview" type="button">Edit</button><button class="modal-send" id="sendPackageWhatsapp" type="button">Send to WhatsApp</button></div></div></div></div>
+
+<div id="site-footer"></div><script src="../assets/js/footer.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/js/main.js"></script>
+<script src="assets/js/pilgrimage-packages-data.js"></script>
+<script src="../assets/js/pilgrimage-packages.js"></script>
+</body></html>

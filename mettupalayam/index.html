@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="description" content="Prayaan Cabs Mettupalayam for tour packages, outstation cabs and private travel from Mettupalayam.">
+<title>Prayaan Cabs Mettupalayam | Tour Packages & Cab Enquiry</title>
+<link rel="shortcut icon" href="../images/favicon.png">
+<link rel="icon" type="image/png" href="../images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17734250014"></script>
+<script defer src="../assets/js/tracking.js"></script>
+<link href="../style.css?v=6.1" rel="stylesheet">
+<link href="../assets/css/premium.css?v=6.1" rel="stylesheet">
+<link href="../assets/css/sharp.css?v=6.1" rel="stylesheet">
+<link href="mettupalayam.css?v=1.1" rel="stylesheet">
+</head>
+<body class="mettupalayam-home">
+<div id="site-header"></div><script src="../assets/js/header.js"></script>
+<main>
+<section class="booking-hub-section booking-first-screen mtp-enquiry-first" id="enquiry">
+  <div class="container">
+    <div class="booking-premium-heading reveal">
+      <span class="section-eyebrow">Prayaan Cabs Mettupalayam</span>
+      <h1>Plan Your Journey From Mettupalayam</h1>
+      <p>Share your exact pickup point, destination, travel dates and vehicle preference. Preview the details before sending the enquiry on WhatsApp.</p>
+    </div>
+
+    <div class="booking-hub-card reveal delay">
+      <div class="booking-form-card mtp-enquiry-card">
+        <div class="mtp-form-intro">
+          <div>
+            <span class="mtp-form-kicker">Quick Travel Enquiry</span>
+            <h2>Tell us your route and travel plan</h2>
+            <p>No payment is required. Enter the exact locations so our team can review the route correctly.</p>
+          </div>
+          <div class="mtp-whatsapp-badge"><i class="bi bi-whatsapp"></i><span>WhatsApp enquiry</span></div>
+        </div>
+
+        <form id="mettupalayamEnquiryForm" data-prevent-submit="true" novalidate>
+          <div class="mtp-route-grid">
+            <div class="mtp-field">
+              <label class="form-label" for="mtpFrom"><i class="bi bi-geo-alt"></i> Pickup / From</label>
+              <input class="form-control" id="mtpFrom" type="text" placeholder="Mettupalayam" autocomplete="off" required>
+              <small>Enter the exact pickup point, such as a railway station, bus stand, hotel or address.</small>
+            </div>
+            <div class="mtp-route-arrow" aria-hidden="true"><i class="bi bi-arrow-right"></i></div>
+            <div class="mtp-field">
+              <label class="form-label" for="mtpDestination"><i class="bi bi-signpost-split"></i> Destination</label>
+              <input class="form-control" id="mtpDestination" type="text" placeholder="Ooty" autocomplete="off" required>
+              <small>Type the destination or main place you want to visit.</small>
+            </div>
+            <div class="mtp-route-arrow" aria-hidden="true"><i class="bi bi-arrow-right"></i></div>
+            <div class="mtp-field">
+              <label class="form-label" for="mtpDrop"><i class="bi bi-geo"></i> Drop Location</label>
+              <input class="form-control" id="mtpDrop" type="text" placeholder="Mettupalayam" autocomplete="off" required>
+              <small>Enter the final drop point for the trip.</small>
+            </div>
+          </div>
+
+          <div class="mtp-form-divider"><span>Travel schedule</span></div>
+
+          <div class="row g-3 mtp-detail-grid">
+            <div class="col-lg-6">
+              <div class="mtp-field">
+                <label class="form-label" for="mtpPickupDateTime"><i class="bi bi-calendar2-check"></i> Pickup Date &amp; Time</label>
+                <input class="form-control" id="mtpPickupDateTime" type="datetime-local" required>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="mtp-field">
+                <label class="form-label" for="mtpDropDateTime"><i class="bi bi-calendar2-week"></i> Drop Date &amp; Time</label>
+                <input class="form-control" id="mtpDropDateTime" type="datetime-local" required>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="mtp-field">
+                <label class="form-label" for="mtpVehicle"><i class="bi bi-car-front"></i> Vehicle Selection</label>
+                <select class="form-select" id="mtpVehicle" required>
+                  <option value="">Select vehicle</option>
+                  <option>Sedan (4+1)</option>
+                  <option>Ertiga (6+1)</option>
+                  <option>Innova (7+1)</option>
+                  <option>Innova Crysta (6+1)</option>
+                  <option>Innova Crysta (7+1)</option>
+                  <option>Toyota Hycross (7+1)</option>
+                  <option>Tempo Traveller (12-18 Seater)</option>
+                  <option>Urbania (12-16 Seater)</option>
+                  <option>Coach (21 Seater)</option>
+                </select>
+                <small>Seating is shown as passenger capacity + driver where applicable.</small>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <div class="mtp-field">
+                <label class="form-label" for="mtpPassengers"><i class="bi bi-people"></i> Passenger Count</label>
+                <input class="form-control" id="mtpPassengers" type="number" min="1" placeholder="4" required>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <fieldset class="mtp-field mtp-accommodation-field">
+                <legend><i class="bi bi-building"></i> Accommodation?</legend>
+                <div class="mtp-choice-group" role="radiogroup" aria-label="Accommodation required">
+                  <label class="mtp-choice"><input type="radio" name="mtpAccommodation" value="No" checked><span>No</span></label>
+                  <label class="mtp-choice"><input type="radio" name="mtpAccommodation" value="Yes"><span>Yes</span></label>
+                </div>
+              </fieldset>
+            </div>
+          </div>
+
+          <div class="mtp-form-footer">
+            <p><i class="bi bi-shield-check"></i> Your enquiry is only prepared for WhatsApp preview. No online payment is collected here.</p>
+            <button class="package-submit-btn mtp-preview-btn" id="mtpPreviewBtn" type="button">Preview Enquiry <i class="bi bi-arrow-right"></i></button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section-shell">
+  <div class="container">
+    <div class="section-heading reveal"><span class="section-eyebrow">Mettupalayam Based Travel</span><h2>Prayaan Cabs Mettupalayam</h2><p>Private cab support for hill stations, family tours, pilgrimage trips and longer South India routes starting from Mettupalayam.</p></div>
+    <div class="row g-4">
+      <div class="col-md-4 reveal"><div class="value-card"><i class="bi bi-mountains"></i><h3>Ooty &amp; Nilgiris</h3><p>Convenient Mettupalayam pickup for Ooty, Coonoor and Nilgiris tour plans.</p></div></div>
+      <div class="col-md-4 reveal"><div class="value-card"><i class="bi bi-car-front"></i><h3>Private Vehicles</h3><p>Choose from sedans, MPVs, Innova Crysta, Tempo Traveller and Urbania.</p></div></div>
+      <div class="col-md-4 reveal"><div class="value-card"><i class="bi bi-luggage"></i><h3>45 Tour Packages</h3><p>Explore the same complete package collection with routes starting from Mettupalayam.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section-shell package-showcase">
+  <div class="container">
+    <div class="section-heading reveal"><span class="section-eyebrow">Popular Routes</span><h2>Tour Packages From Mettupalayam</h2><p>Open a package to view the itinerary and send a package-specific enquiry.</p></div>
+    <div class="row g-4">
+      <div class="col-lg-4 col-md-6"><a class="mtp-tour-card reveal" href="tour-packages.html#ooty"><img src="../images/ooty.webp" alt="Ooty tour from Mettupalayam"><div><small>1 Day</small><h3>Ooty</h3><p>Mettupalayam → Ooty → Mettupalayam</p></div></a></div>
+      <div class="col-lg-4 col-md-6"><a class="mtp-tour-card reveal" href="tour-packages.html#ooty-2d"><img src="../images/ooty.webp" alt="Ooty two day tour from Mettupalayam"><div><small>2 Days / 1 Night</small><h3>Ooty &amp; Coonoor</h3><p>Mettupalayam → Ooty → Coonoor → Mettupalayam</p></div></a></div>
+      <div class="col-lg-4 col-md-6"><a class="mtp-tour-card reveal" href="tour-packages.html#munnar-2d"><img src="../images/munnar.webp" alt="Munnar tour from Mettupalayam"><div><small>2 Days / 1 Night</small><h3>Munnar</h3><p>Mettupalayam → Munnar → Mettupalayam</p></div></a></div>
+    </div>
+    <div class="text-center mt-4"><a class="btn-main" href="tour-packages.html">View All 45 Tour Packages <i class="bi bi-arrow-right"></i></a><p class="cross-location-note">Starting elsewhere? Explore <a href="/tour-packages.html">tour packages from Coimbatore</a>, <a href="/pollachi/tour-packages.html">Pollachi</a>, <a href="/tiruppur/tour-packages.html">Tiruppur</a> or <a href="/palakkad/tour-packages.html">Palakkad</a>.</p></div>
+  </div>
+</section>
+
+<section class="section-shell cta-panel-section"><div class="container"><div class="cta-panel reveal"><h2>Need help choosing a route?</h2><p>Send the enquiry above or browse package itineraries prepared for Mettupalayam pickup.</p><div><a class="btn-main" href="#enquiry">Send Enquiry</a><a class="btn-ghost dark" href="tour-packages.html">Tour Packages</a></div></div></div></section>
+</main>
+
+<div class="modal fade" id="mtpPreviewModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered"><div class="modal-content preview-modal"><div class="modal-header"><h5 class="modal-title">Confirm Your Enquiry</h5><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body" id="mtpPreviewContent"></div><div class="modal-footer"><button class="modal-cancel" id="mtpEditPreview" type="button">Edit</button><button class="modal-send" id="mtpSubmitWhatsapp" type="button">Submit Enquiry</button></div></div></div>
+</div>
+
+<div id="site-footer"></div><script src="../assets/js/footer.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../assets/js/main.js"></script>
+<script src="assets/js/packages-data.js"></script>
+<script src="assets/js/enquiry.js"></script>
+</body></html>
